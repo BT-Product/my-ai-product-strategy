@@ -98,4 +98,4 @@
 
 ## Confidence Level
 <!-- H / M / L — how confident are you in this bet after the diagnostic? -->
-**L.** Every axis scores 1–2 today, and there's no user evidence yet. A two-week test raises it if men choose our advice over a plain assistant **and** report back, both at 70% or higher. It ends the bet if either falls below 50%.
+**L.** Every axis scores 1–2 today, and there's no user evidence yet. A two-week test raises it if men choose our advice over a plain assistant **and** report back, both at 70% or higher. It ends or repositions the bet if the side-by-side falls below 40% or report-back falls below 50%. Thresholds and sample design are in [prototype.md](prototype.md).

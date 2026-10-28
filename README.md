@@ -8,7 +8,7 @@
 
 | Component | Module | Status | Key Artifact |
 |-----------|--------|--------|-------------|
-| **The Bet** | M1 | [ ] | `01-the-bet/` |
+| **The Bet** | M1 | [x] | `01-the-bet/` |
 | **The Moat** | M2 | [ ] | `02-the-moat/` |
 | **The Margin** | M3 | [ ] | `03-the-margin/` |
 | **The Contract** | M4 | [ ] | `04-the-contract/` |
@@ -21,13 +21,13 @@
 
 **What we're building, for whom, why now.**
 
-- **Product:**
-- **AI Value Archetype:**
-- **Vulnerability Scores:** Moat __/5 · Data __/5 · Platform __/5
-- **Top Risk:**
-- **Confidence:** H / M / L
-- **Prototype:** [link]
-- **Kill Criteria:**
+- **Product:** Mercer + Taylor, an AI personal stylist that tells busy professional men (30s–40s, around $250K, in tech, finance and real estate) exactly what to wear from their own closet for the moments that matter.
+- **AI Value Archetype:** Copilot, moving toward Orchestrator at Horizon 2.
+- **Vulnerability Scores** (today → target; 1 = pain, 5 = strong): Moat 1 → 4 · Data 1 → 3 · Platform 2 → 3
+- **Top Risk:** Users don't report back. The product still looks like it works, but nothing compounds.
+- **Confidence:** L. No user evidence yet; set by the Nov 2–15 test.
+- **Prototype:** live by Sun Nov 1, 2026 (link pending).
+- **Kill Criteria:** Under 40% blind side-by-side wins against a plain assistant · under 50% morning-after "Wear again?" check-ins · under 20% unprompted use at a second event · won't pay at the threshold set in M3.
 
 → Details: [`01-the-bet/`](01-the-bet/)
 
