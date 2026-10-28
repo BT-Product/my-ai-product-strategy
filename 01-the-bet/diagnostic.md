@@ -94,7 +94,7 @@
 
 **Mitigation:** Reporting back is designed as the reward, not a form: the pre-event "Check me" and the instant rescue when he taps "This isn't me."
 
-**Kill rule:** Fewer than 50% of events get a check-in within 48 hours.
+**Kill rule:** Fewer than 50% of events get a check-in within 48 hours. Only the morning-after "Wear again?" tap counts as a check-in. "Check me" and "This isn't me" happen while he's anxious and motivated, so they would flatter the number. The outcome tap is the hardest to get and the one the Data Advantage depends on.
 
 ## Confidence Level
 <!-- H / M / L — how confident are you in this bet after the diagnostic? -->
