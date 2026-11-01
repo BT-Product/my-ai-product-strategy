@@ -27,7 +27,7 @@
 - **Top Risk:** Users don't report back. The product still looks like it works, but nothing compounds.
 - **Confidence:** L. No user evidence yet; set by the Nov 2–15 test.
 - **Prototype:** live by Sun Nov 1, 2026 (link pending).
-- **Kill Criteria:** Under 40% blind side-by-side wins against a plain assistant · under 50% morning-after "Wear again?" check-ins · under 20% unprompted use at a second event · won't pay at the threshold set in M3.
+- **Kill Criteria:** Under 40% blind side-by-side wins against a plain assistant · under 50% post-event "Wear again?" check-ins · under 20% unprompted use at a second event · won't pay at the threshold set in M3.
 
 → Details: [`01-the-bet/`](01-the-bet/)
 

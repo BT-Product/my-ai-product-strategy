@@ -8,8 +8,9 @@
 **Buying triggers:**
 1. **Career inflection.** A promotion, a new leadership role, or fundraising, where founders feel they represent their company in investor rooms.
 2. **Re-entering dating,** often after a divorce, sometimes on a matchmaker's referral.
-3. **Partner pressure.** A wife or girlfriend pushes him to go, so the buyer and the user can be different people.
-4. **Time scarcity plus boredom.** Short on time, unsure what works, tired of grays and navy.
+3. **Time scarcity plus boredom.** Short on time, unsure what works, tired of grays and navy.
+
+**Buying channel: partner pressure.** A wife or girlfriend pushes him to go, so the buyer and the user can be different people. *(Reclassified in Module 2: this is how he arrives, not a moment when he needs to dress well.)*
 
 **Your Role:** Solo founder, building the product myself. I'll hire a team once testing confirms the core assumptions.
 
@@ -48,12 +49,12 @@
 - what he actually wore, verified by a pre-event mirror photo
 - what he swapped, and why
 - the event type, season and setting
-- how it went: a one-tap check-in the morning after the event
+- how it went: a one-tap check-in after the event, at a time he picks at the mirror (that evening or the next morning)
 
 **Capture design:** Data is captured at the moments when he wants help, so logging isn't a chore.
 - **"Check me":** he snaps what he has on and gets a reply about the clothes only ("You're good. Tuck the shirt.").
 - **"This isn't me":** he can tap it any time before the event, with an optional one-tap reason (Fit's off · Too formal · Too loud · Not comfortable · Just not me). He gets an instant rescue: a different outfit built from pieces he's already photographed. He can also snap what he ends up wearing, so the record shows what actually went out the door.
-- **Morning-after check-in:** "Would you wear this again to this kind of event?" 👍 / 👎. One tap labels the outcome, distinguishing the outfit he picked from the outfit that worked.
+- **Post-event check-in:** "Would you wear this again to this kind of event?" 👍 / 👎. One tap labels the outcome, distinguishing the outfit he picked from the outfit that worked.
 
 **Named attacker (from partner challenge):** Stitch Fix. They already have millions of men using the service, plus their sizes and purchases. Asking "What did you wear this to, and how did it go?" is a feature they could add.
 
@@ -94,7 +95,7 @@
 
 **Mitigation:** Reporting back is designed as the reward, not a form: the pre-event "Check me" and the instant rescue when he taps "This isn't me."
 
-**Kill rule:** Fewer than 50% of events get a check-in within 48 hours. Only the morning-after "Wear again?" tap counts as a check-in. "Check me" and "This isn't me" happen while he's anxious and motivated, so they would flatter the number. The outcome tap is the hardest to get and the one the Data Advantage depends on.
+**Kill rule:** Fewer than 50% of events get a check-in within 48 hours. Only the post-event "Wear again?" tap counts as a check-in. "Check me" and "This isn't me" happen while he's anxious and motivated, so they would flatter the number. The outcome tap is the hardest to get and the one the Data Advantage depends on.
 
 ## Confidence Level
 <!-- H / M / L — how confident are you in this bet after the diagnostic? -->

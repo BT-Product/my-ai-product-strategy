@@ -2,7 +2,7 @@
 
 ## What I Built
 <!-- One sentence: what does this prototype demonstrate? -->
-**Not built yet; live by Sun Nov 1, 2026.** A single-flow mobile web prototype that tests three things: whether one opinionated outfit from a man's own closet, plus a clothes-only check at the mirror before he leaves, beats a plain AI assistant, and whether he reports back the morning after.
+**Not built yet; live by Sun Nov 1, 2026.** A single-flow mobile web prototype that tests three things: whether one opinionated outfit from a man's own closet, plus a clothes-only check at the mirror before he leaves, beats a plain AI assistant, and whether he reports back after the event.
 
 **Prior evidence:** An earlier version, built in Lovable from July to September 2026, showed that turning closet photos into AI outfits works end to end. That proved feasibility only (n=1).
 
@@ -40,7 +40,7 @@ Each pick is reported both per comparison and per man. If the real-event picks a
    - *70% or more:* passes (not falsified).
    - *40–70%, not proven yet:* diagnose why, fix the biggest reason, and retest in the cohort. If it's still short of 70%, reposition.
    - *Under 40%:* stop or reposition.
-2. **He doesn't report back.** Fewer than 50% of events get the morning-after "Wear again?" tap within 48 hours, with at most one reminder.
+2. **He doesn't report back.** Fewer than 50% of events get the post-event "Wear again?" tap within 48 hours, with at most one reminder.
    - *50–70%:* redesign the capture (for example, ask at his next event) and retest.
 3. **He won't pay** (cohort, Nov 30–Dec 20). Fewer men commit to the paid tier at a real price than the threshold set in Module 3.
 4. **He leaves after one event** (cohort, Nov 30–Dec 20). This is the share of men who complete a first event, have another event coming up within the cohort window, and use Mercer + Taylor for it without being prompted:
