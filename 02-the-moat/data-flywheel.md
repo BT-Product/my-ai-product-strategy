@@ -10,7 +10,7 @@
 | **Correction** | Do users fix AI outputs? Is that signal captured and reused? | No capture | Automated retraining | 2 → 3/5 |
 | **Preference** | Does the product learn individual / team preferences over time? | Stateless | Deep personalization | 2 → 3/5 (4 longer term) |
 | **Domain Context** | Does usage in one area improve quality in adjacent areas? | Siloed | Cross-domain transfer | 1 → 2/5 (3 longer term) |
-| **Network** | Does each new user / team make the product better for everyone? | Isolated | Strong network effects | 1 → 2/5 (3 longer term) |
+| **Network** | Does each new user / team make the product better for everyone? | Isolated | Strong network effects | 1 → 1/5 (3 longer term) |
 
 *Scores are for the design as built for the Nov 1 prototype → target by the end of the cohort (Dec 20).*
 
@@ -32,14 +32,18 @@
 
 **How it compounds:** What he wears informs what he should buy. From his second event on, buy suggestions draw on his history ("you've passed on two outfits because the jacket fit was off"). They're tagged so we can compare them with cold suggestions. A general-purpose assistant suggesting a purchase doesn't know the gaps in his closet.
 
+**No commissions:** we suggest buys only for real gaps in his closet, and we earn nothing from them, so he never has to wonder whether we're styling him or selling to him.
+
 **Transfer across event types:** What works for him at one kind of event informs the others. For example, his fit and color choices at investor meetings shape client dinners, and work style carries into dates. This is what makes the 10-event moat milestone enough: 10 events spread across about 5 event types is only about 2 per type, so without transfer we'd know almost nothing about him at any one kind of event.
 
-### Network Loop - 1/5 at launch → 2/5 by Dec 20 (3/5 longer term)
+### Network Loop - 1/5 at launch → 1/5 by Dec 20 (3/5 longer term)
 **What you capture today:** What works by event type (outfits he'd wear again, outfits kept), with city and venue type.
 
 **How it compounds:** After the test, patterns confirmed by at least 3 men that also pass the golden set become house style rules. That improves the first recommendation for the next new man.
 
-**Total Flywheel Score: 6/20 at launch → 10/20 by Dec 20**
+**Why it stays at 1 through Dec 20:** It's a data network effect, not a true one, so pooled learning hits diminishing returns quickly. Patterns also fragment: with about 10 men spread across about 5 event types, plus city and venue, almost no combination reaches 3 men by Dec 20. A 2 would be a hoped-for score.
+
+**Total Flywheel Score: 6/20 at launch → 9/20 by Dec 20**
 **Weakest Loop:** Network. It's a data network effect with diminishing returns, and larger platforms will always have more cold-start data.
 
 **Fix for weakest loop:** Concede it, and win the cold start on **craft**:

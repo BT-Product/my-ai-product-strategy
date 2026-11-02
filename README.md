@@ -9,7 +9,7 @@
 | Component | Module | Status | Key Artifact |
 |-----------|--------|--------|-------------|
 | **The Bet** | M1 | [x] | `01-the-bet/` |
-| **The Moat** | M2 | [ ] | `02-the-moat/` |
+| **The Moat** | M2 | [x] | `02-the-moat/` |
 | **The Margin** | M3 | [ ] | `03-the-margin/` |
 | **The Contract** | M4 | [ ] | `04-the-contract/` |
 | **The Guardrails** | M5 | [ ] | `05-the-guardrails/` |
@@ -37,11 +37,11 @@
 
 **Why this won't get copied in 6 months.**
 
-- **Data Flywheel Score:** __/20
-- **Weakest Loop:**
-- **Competitive Position:** [describe axes + placement]
-- **Encroachment Defense:**
-- **Vendor Portability:** Ready / Partial / Locked
+- **Data Flywheel Score:** 6/20 at launch → 9/20 by Dec 20 (Correction 3, Preference 3, Domain Context 2, Network 1).
+- **Weakest Loop:** Network. It's a data network effect with diminishing returns, and larger platforms will always have more cold-start data. Fix: concede it and win the cold start on craft (his own closet, one opinionated pick, a house style guide we own). Pooled data only sharpens it.
+- **Competitive Position:** Axes: advice that starts from zero ↔ knows what happened last time, × a person or a box you schedule ↔ there when he's getting dressed. ChatGPT and Match.com are on demand but start from zero; Stitch Fix and human stylists know more but need a box or an appointment. We target the empty corner: on demand and knowing what happened. Today we sit next to ChatGPT; we move toward "knows what happened" from his second event, if he reports back.
+- **Encroachment Defense:** Win the first try on craft; win the moment of capture (the mirror check records what he wore before anyone asks); show him what we know, so leaving costs something; style him, don't sell to him (buy suggestions only for real gaps, no commissions). Concede pooled fit and purchase data to the larger players.
+- **Vendor Portability:** Partial today → Ready by Nov 9, when a backup provider passes our full eval, including clothes-only at 100%.
 
 → Details: [`02-the-moat/`](02-the-moat/)
 
