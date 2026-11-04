@@ -29,7 +29,7 @@
 4. **Combinations proven on him.** Which pieces worked together, at which kinds of events. Re-photographing the closet somewhere else is easy; rebuilding what works isn't.
 5. **Fit by brand.** A fit passport with alterations on file. It's moderately annoying to rebuild, and it supports the buying side of the business.
 
-**Milestone (target earned when):** 60% of users still active at 3 months have 10+ events logged with outcomes. The ideal user has about one event a week, and 10 events with outcomes is enough to personalize his stylist.
+**Milestone (target earned when):** 60% of users still active at 3 months have 10+ events logged with outcomes. The ideal user has about one event a week, and 10 events with outcomes is enough to personalize his stylist. This counts only men still active, and assumes they average at least 3.3 events a month, well above the ~2 of the average paying man in the Module 3 cost model. The Nov 30–Dec 20 cohort checks it.
 
 **Critical assumption:** He reliably reports back what he wore and how it went. Hooks 1–4 all depend on that loop. If capturing it takes effort and he stops, the moat never forms.
 

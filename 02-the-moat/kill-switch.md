@@ -143,8 +143,8 @@ The design switches providers with one setting, but nothing is proven yet: no ba
 **What's new in our defense:**
 - **Portability.** Once a backup passes our eval, price and terms are negotiable, not imposed.
 - **The eval set and the provider-neutral style guide.** They're what let us leave safely.
-- **Each request gets only what it needs, never names.** The full record of any man exists only in our system.
-- **His face is cropped or blurred before a photo is sent,** if the eval shows no quality loss. Skin tone and hair can matter for color advice, so we test it rather than assume. If the eval shows a loss, we say so and take it to Module 5.
+- **Each request gets only what it needs, never names.** The app swaps the names of people at his events for roles before any request ("Person A, investor"). The full record of any man exists only in our system.
+- **His face is cropped or blurred before a photo is sent,** if the eval shows no quality loss. Skin tone and hair can matter for color advice, so we test it rather than assume. If the eval shows a loss, we say so and take it to Module 5. The one exception is the optional quick read, which needs his face; he agrees to that first (see Module 3, Human-in-the-loop).
 
 **Do we stay?** Yes, by default, while:
 - Claude stays best on our eval;
