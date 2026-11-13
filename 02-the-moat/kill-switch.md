@@ -6,26 +6,26 @@
 |-----------|--------------|------------|---------------|
 | **Provider** | Anthropic only (Sonnet 5.5 + Haiku 5.5); never run on another provider | H today → M after the build | Pause new first events, re-run stored cases on OpenAI and Google, resume on the best one that passes |
 | **Abstraction** | One provider-neutral interface (Vercel AI SDK); prompts as data; model per task in config | M today → L after the build | Change one setting (provider and model per task); add a provider version of any prompt the stored cases show underperforming |
-| **Routing** | Model per task (Haiku 5.5: intake, event intelligence; Sonnet 5.5: recommendation, vision, mirror check); nothing automatic, so a failure shows an error | H today → L at the mirror, M overall after the build | In the moment, not 48 hours. Mirror: saved checklist shown at once; live check from Sonnet ~12s → Haiku ~8s → top-ranked backup provider; photo always saved. Rescue: pre-generated backup outfit. Recommendation: retry once, then ask him to retry |
-| **Eval** | Zero cases today; I'm the grader, by eye. Planned: 10 cases by Nov 3, about 30 by Nov 15 | H today → M by Nov 15 → L at 50+ cases and a second taste grader | Run the full set in about an hour: a script for hard rules, a judge model (never the one tested) for dress code and clothes-only, me blind for taste. New first events stay paused until it passes |
+| **Routing** | Model per task (Haiku 5.5: intake, event intelligence, wardrobe import; Sonnet 5.5: the read with web search, recommendation, vision, try-on, mirror check); Haiku backs up "Change something" (its eval not passed yet); the mirror check is Sonnet only, with no backup yet | H today → L at the mirror, M overall after the build | In the moment, not 48 hours. Mirror: saved checklist shown at once; live check on Sonnet ~12s, then Haiku ~8s once it passes the clothes-only cases at 100%, then the top-ranked backup provider; photo always saved. Change something: Sonnet, then Haiku once, then ask him to try again. Recommendation: retry once, then ask him to retry |
+| **Eval** | 13 golden rows (3 adversarial) and a 22-case eval of the read, built; I'm the taste grader | H today → M at about 30 cases → L at 50+ cases and a second taste grader | Run the full set in about an hour: a script for hard rules, a judge model (never the one tested) for dress code and clothes-only, me blind for taste. New first events stay paused until it passes |
 
 ### Provider
 **Current state:** Anthropic only.
-- **Claude Sonnet 5.5:** the recommendation, vision and the mirror check.
-- **Claude Haiku 5.5:** intake and event intelligence.
+- **Claude Sonnet 5.5:** the read of the event (medium effort, with web search), the recommendation, vision, the try-on and the mirror check.
+- **Claude Haiku 5.5:** intake, event intelligence and wardrobe import (internal accounts only).
 
 Never run on another provider.
 
 **Risk: H today → M after the build.** Vision is a commodity. What's untested is whether another model keeps one confident pick in our house style.
 
-**Prep to move H → M (during the Nov 2–15 test):** Run the 5 stored cases once on OpenAI and Google against the five checks below, and record which backup ranks first. Until that's done, risk stays H, and the 48-hour action starts with step 2, because there's no ranking yet.
+**Prep to move H → M (before the 10-man test):** Run the 5 stored cases once on OpenAI and Google against the five checks below, and record which backup ranks first. Until that's done, risk stays H, and the 48-hour action starts with step 2, because there's no ranking yet.
 
 **48-hour action:**
 1. Pause new first events, and switch to the backup that ranked first in an earlier one-time comparison (OpenAI and Google, on 5 stored test cases).
 2. Re-run the stored cases on both backups in parallel against five checks:
    - one outfit;
    - only his pieces;
-   - a reason-backed "no";
+   - a leave-out only when it's a real mistake, never forced;
    - the right dress code;
    - clothes-only at the mirror.
 3. Resume on the best one that passes, with its results tagged and reported separately. Hold only if neither passes.
@@ -42,7 +42,9 @@ The earlier Lovable build called Anthropic directly, with prompts and the model 
 - photos sent in one normalized format;
 - no Anthropic-only features in the core flow (prompt caching, if used, sits in one place and is optional).
 
-**Prep to move M → L (during the Nov 2–15 test):** Run the backup comparison from the Provider row through our own app, by changing the provider setting, not by pasting prompts into ChatGPT or Gemini. If the 5 stored cases run cleanly, every condition above is verified, and the backups' quality is tested at the same time.
+**One condition is now broken: web search.** The read uses the provider's web search, which is provider-specific. A backup provider needs an equivalent search tool; if it has none, the read runs from his description alone, without research.
+
+**Prep to move M → L (before the 10-man test):** Run the backup comparison from the Provider row through our own app, by changing the provider setting, not by pasting prompts into ChatGPT or Gemini. If the 5 stored cases run cleanly, every condition above is verified, and the backups' quality is tested at the same time.
 
 **48-hour action:** Change one setting: the provider and model for each task. No code changes. If the stored test cases show a prompt underperforms on the new model, add a provider version of that prompt (about five prompts; data edits, not code).
 
@@ -50,8 +52,8 @@ This works only if the backups are ready ahead of time. Both backup providers' p
 
 ### Routing
 **Current state:** A model per task:
-- **Claude Haiku 5.5:** intake and event intelligence.
-- **Claude Sonnet 5.5:** the recommendation, vision and the mirror check.
+- **Claude Haiku 5.5:** intake, event intelligence and wardrobe import (internal accounts only).
+- **Claude Sonnet 5.5:** the read (medium effort, with web search), the recommendation (medium effort, about 20 seconds, down from 45–50), vision, the try-on and the mirror check.
 
 Nothing is automatic: a slow or failed call shows an error.
 
@@ -60,33 +62,36 @@ Nothing is automatic: a slow or failed call shows an error.
 **In the moment** (this row works in seconds, not 48 hours):
 - **Mirror check:** he sees the mirror checklist saved with his recommendation ("Tuck the shirt; no watch with the navy suit") right away, as the loading screen, so he never stares at a spinner. The live check replaces it when it arrives:
   1. about 12 seconds on Sonnet;
-  2. then about 8 on Haiku, but only if Haiku passed the clothes-only test cases. Haiku covers a slow or overloaded Sonnet, not an Anthropic outage, because it goes down with Anthropic;
+  2. then about 8 on Haiku, only once Haiku passes the clothes-only cases at 100%. Not built yet: today the mirror check is Sonnet only, with no backup. Haiku covers a slow or overloaded Sonnet, not an Anthropic outage, because it goes down with Anthropic;
   3. then the top-ranked backup provider, once it passes the clothes-only check in the backup comparison. This covers an Anthropic outage.
 
   If none of them reply, the checklist stays. His photo is saved either way, so we never lose what he wore.
-- **Rescue ("This isn't me"):** falls back to a backup outfit generated along with the original recommendation.
-- **Recommendation:** retries once, then asks him to try again. A right answer late beats a worse one the night before, and a backup's outfit would spoil the side-by-side with the plain assistant.
-  - *Exception:* if the event starts within two hours, a backup answer is allowed. It's tagged and excluded from the side-by-side.
+- **Change something (a revised outfit):** generated live on Sonnet, then Haiku once, then he's asked to try again. Haiku's backup hasn't passed its eval yet: it passes before the test or comes out. (The pre-built backup outfit is retired.)
+- **Recommendation:** retries once, then asks him to try again. A right answer late beats a worse one the night before, and a backup provider's outfit would spoil the blind panel's pair.
+  - *Exception:* if the event starts within two hours, a backup answer is allowed. It's tagged and excluded from the panel.
 
 ### Eval
-**Current state:** Zero cases today, and the grader would be me, by eye.
+**Current state (Nov 9):**
+- **The golden set:** 13 rows, 3 of them adversarial, testing the recommendation (see Module 4).
+- **The read's eval:** 22 cases. Research ran on all 5 named public places and on none of the private ones, including 3 attack cases; asks met the rules 95% of the time (74% on the first run); wardrobe-first passed 3 of 3.
+- **Added Nov 12, not yet run: does the asks step surface the deciding piece?** Cases where one missing piece decides the outfit (like the blazer and overcoat on Nov 10), reported as "the asks found the deciding piece in X of Y cases." It tests the claim that the asks are the edge (see the craft section of the [data flywheel](data-flywheel.md)).
+- **Added Nov 12, not yet run: does intake route the read correctly?** Intake flags named public places correctly in X of Y cases. It guards the cascade in Module 3: a missed venue would send the read to Haiku without research.
+- **The taste grader** is me.
 
-**Planned:**
-- **By Nov 3:** 5 stored cases from my own closet and 5 clothes-only cases.
-- **By Nov 15:** about 30 cases: each man's real event plus 2 cases from his pieces, and every rejection at the mirror.
+**Next:** about 30 cases from the 10-man test: each man's real event and every rejection at the mirror. About 500 golden cases before production; about 300 clothes-only cases to show a failure rate under 1% (rule of three).
 
-**Risk: H today → M by Nov 15 → L** once there are 50+ cases and a second taste grader.
+**Risk: H today → M at about 30 cases → L** once there are 50+ cases and a second taste grader. *(Open: the bar for L may need to rise to match the ~300 clothes-only target.)*
 
 **48-hour action:** Run the full set in about an hour. Three graders, each for what it can judge:
-- **A script** checks the hard rules: one outfit, only his pieces, a reason-backed "no."
-- **A judge model** checks dress code and the clothes-only rule. It's never the model being tested.
+- **A script** checks the hard rules: one outfit, only his pieces.
+- **A judge model** checks dress code, the clothes-only rule, and that any leave-out is a real mistake, never forced. It's never the model being tested.
 - **I grade taste** blind, side by side against the current version.
 
 Most of the house style is written as checkable rules, so only what's left needs me.
 
 **Checking the judge:** I grade the first 10 cases myself, and the judge grades the same 10. I trust the judge only on checks where it agrees with me on at least 9 of 10. Otherwise I grade that check myself until it does. I re-check whenever the judge model changes.
 
-**Held-out cases:** The golden cases that decide the side-by-side kill criterion never feed into prompt or house-style tuning. Rejections at the mirror and stored cases can shape the house style. If the side-by-side lands at 40–70% and I "fix the biggest reason and retest," the retest uses fresh golden cases, so a pass means the craft improved, not that I memorized the test.
+**Held-out cases:** The golden cases used for the offline separation check never feed into prompt or house-style tuning. Rejections at the mirror and stored cases can shape the house style. If the blind panel lands at 40–70% and I "fix the biggest reason and retest," the retest uses fresh golden cases and fresh pairs, so a pass means the craft improved, not that I memorized the test.
 
 **Pass bar:**
 - hard rules and clothes-only: 100%;
@@ -97,35 +102,35 @@ New first events stay paused until it passes.
 
 ## Portability Score
 <!-- Ready / Partial / Locked -->
-**Partial today → Ready by Nov 9.**
+**Partial.** Ready was targeted for Nov 9 and slipped with the test: the backup comparison hasn't run yet.
 
 The design switches providers with one setting, but nothing is proven yet: no backup has been tested, the eval set doesn't exist, and the prompts have never run on another model.
 
 **The event that moves it:** All four rows wait on the same thing. A backup provider (OpenAI or Google) passes the full eval set, including the clothes-only cases at 100%.
 - **If neither passes,** we stay Partial, and we've learned that our judgment depends on one provider.
-- **Ready is re-confirmed** on about 30 cases by Nov 15.
+- **Ready is re-confirmed** on about 30 cases after the 10-man test.
 
 **What Ready also requires:**
 - **The switch is actually wired up.** Passing the eval proves the backup is good enough, but Ready also needs its keys live, its account funded with rate limits for live traffic, and Routing step 3 connected at the mirror. Otherwise we're Ready on paper and Partial at 11pm.
-- **Ready expires.** Models get updated and retired, and our prompts change. Ready is re-confirmed monthly by re-running the backup on the eval set, in the same session as the monthly side-by-side from Module 1. If the backup fails, we drop back to Partial until it passes again.
+- **Ready expires.** Models get updated and retired, and our prompts change. Ready is re-confirmed monthly by re-running the backup on the eval set, in the same session as the monthly separation check from Module 1. If the backup fails, we drop back to Partial until it passes again.
 
 ## If Anthropic doubles pricing tomorrow:
 <!-- What's your 48-hour response? -->
-**How much it hurts: pennies at our scale.** An event costs roughly 10–25 cents in model calls (estimate; Module 3 measures it), so 10 test men barely notice a doubling.
-- **At 1,000 paying men,** at about one event a week (about 4.3 a month), it adds roughly $0.43–1.08 per man per month. At a placeholder paid-tier price of $10–20 a month, that's about 2–11 margin points. Module 3 sets the real price.
-- **If the price lands above about $35 a month,** a doubling stays under 3 points, so price alone never triggers a provider switch (see below).
+**How much it hurts: pennies at our scale.** An event costs about 24–31 cents in model calls (25¢ planning number; the read, follow-up and recommendation measured Nov 8, n=1; see Module 3), so 10 test men barely notice a doubling.
+- **At 1,000 paying men,** at about one event a week (about 4.3 a month), it adds roughly $1.00–1.30 per man per month. At the paid-tier price of $11.99 a month (Module 3), that's about 8–11 margin points on a paying man alone, and about 29 points counting the free men he carries (Module 3's planning case).
+- **If the price lands above about $43 a month,** a doubling stays under 3 points, so price alone never triggers a provider switch (see below).
 - **Heavy users are the real stress case.**
 
 **Within 48 hours:** Nothing changes mid-test. After that, in this order, and each step only if it passes our eval:
 1. **Free wins first:** cache the long style guide, send smaller photos, trim output.
 2. **Lower the effort setting** on the same model.
-3. **Move the rescue** (and possibly the mirror check) to the smaller model.
+3. **Move "Change something"** to the smaller model, and the mirror check only once Haiku passes the clothes-only cases at 100%.
 
 **What never gets cheaper:** the first-event recommendation. It's where we win or lose the first try.
 
 **When we switch providers:** only if a backup passes the full eval, including clothes-only at 100%, and saves more than about 3 margin points. Otherwise, the switching cost isn't worth it.
 
-**If no backup passes** (Portability stays Partial): we absorb the increase through the cost-cutting steps above. If margin still drops by more than a threshold set in Module 3, we raise the paid tier's price.
+**If no backup passes** (Portability stays Partial): we absorb the increase through the cost-cutting steps above. If gross margin per paying man still falls below 50% (the floor set in Module 3), we tighten the free tier first, then raise the paid tier's price.
 
 ## If Anthropic ships a competing product:
 <!-- What's defensible that they can't replicate? -->

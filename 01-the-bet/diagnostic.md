@@ -42,7 +42,7 @@
 
 **Score rationale:** We have no data today. The target is 3, not higher, because the advantage is narrow (high-stakes events, one audience) and a well-resourced competitor is one feature away from collecting similar data.
 
-**Milestone (target earned when):** About 500 outcome-labeled events across 100+ men. That's the point where pooled data measurably improves a new user's first recommendation: it gets "This isn't me" **35% less often** with pooled data than with a general-LLM baseline that has no pooled data.
+**Milestone (target earned when):** About 500 outcome-labeled events across 100+ men. That's the point where pooled data measurably improves a new user's first recommendation: he changes **35% fewer pieces** of his first outfit with pooled data than with a general-LLM baseline that has no pooled data. Pieces changed, not taps: "Change something" edits one piece at a time, so a shoe swap counts 1 and a full redo counts 4–5. The first-event Great rate is reported alongside; it depends on the night as well as the outfit, so it supports the result but doesn't decide it.
 
 **The compounding signal:** Outfits labeled with outcomes for high-stakes events. Each event pairs:
 - what was recommended
@@ -53,8 +53,15 @@
 
 **Capture design:** Data is captured at the moments when he wants help, so logging isn't a chore.
 - **"Check me":** he snaps what he has on and gets a reply about the clothes only ("You're good. Tuck the shirt.").
-- **"This isn't me":** he can tap it any time before the event, with an optional one-tap reason (Fit's off · Too formal · Too loud · Not comfortable · Just not me). He gets an instant rescue: a different outfit built from pieces he's already photographed. He can also snap what he ends up wearing, so the record shows what actually went out the door.
-- **Post-event check-in:** "Would you wear this again to this kind of event?" 👍 / 👎. One tap labels the outcome, distinguishing the outfit he picked from the outfit that worked.
+- **"Change something":** he can tap it any time before the event and edit the outfit piece by piece, each edit with an optional one-tap reason (Fit's off · Too formal · Too loud · Not comfortable · Just not me · You read the event wrong). Ellis revises the outfit live from pieces he's already photographed. He can also snap what he ends up wearing, so the record shows what actually went out the door.
+- **Post-event check-in:** "How did you feel in it?" Great · Fine · Not quite right. Then Ellis shows what it learned, including the event ("Got it: the charcoal suit works for investor pitches"), with ✓ / Fix. One tap labels the outcome, and ✓ / Fix corrects the lesson. Naming the event in the lesson matters: he can feel great and still be underdressed, and Fix catches that.
+  - **His record (what Ellis reuses):** Great leads next time at that kind of event. Fine stays in rotation but never leads. Not quite right is avoided at that kind of event.
+  - **The scorecard (how Ellis is judged):** Ellis is designed to make men feel Great, so only Great is a hit. The target is **65% of answered events rated Great**. Fine and Not quite right count as misses on the scorecard without being taken out of his closet. Two rules keep the number honest:
+    - Events where his closet falls short ("the closest you have") are reported separately. Their best honest outcome is Fine, so the 65% is judged on events his closet could meet.
+    - The Great rate is always shown next to the response rate, because men who felt off are more likely to skip the question.
+
+    It's a target, not a kill rule. At 10 men it's directional; the cohort is the first real read.
+  - **Across men:** lessons he confirms with ✓ feed the pooled house style, under the existing rule: adopted only when 3+ men show the same pattern.
 
 **Named attacker (from partner challenge):** Stitch Fix. They already have millions of men using the service, plus their sizes and purchases. Asking "What did you wear this to, and how did it go?" is a feature they could add.
 
@@ -72,20 +79,20 @@
 **Score rationale:** A generic version of the hero feature already works in ChatGPT today, so we're not at 1 only because a platform is unlikely to build for this niche specifically, and a solo founder can pivot within a week. We reach 3 when the history, not the hook, is what men pick us for.
 
 **Milestone (target earned when):** Both of these hold:
-- At least 70% of men choose our recommendation over a plain assistant's in a blind side-by-side test on our golden cases.
+- A blind panel of men picks our recommendation over a plain assistant's at least 70% of the time.
 - At least 40% of second and later events get a recommendation that visibly uses his history: what he rejected at the mirror, who saw him in what, and what he felt great in.
 
 **Named attacker (from partner challenge):** OpenAI (ChatGPT). It already has vision, memory and shopping features, and it's an app he opens every day. Runner-up: Google, which owns his calendar and photos.
 
 **The week it ships:**
-1. **Day 1:** Run the blind side-by-side against the general assistant on our golden cases to measure how much of a gap is left.
-2. **If men pick us 70% of the time or more:** Lead with what they can't copy: the pre-event check and "This isn't me" at the mirror, his record of what he wore and rejected, who saw him in what, and his lookbook.
+1. **Day 1:** Run the offline separation check on our golden set against the new release to measure how much of a gap is left. A blind panel follows within the week, since raters take days to recruit.
+2. **If men pick us 70% of the time or more:** Lead with what they can't copy: the pre-event check and "Change something" at the mirror, his record of what he wore and rejected, who saw him in what, and his lookbook.
 3. **If men pick us 50% of the time or less:** Pivot. The free tier moves inside ChatGPT as a third-party app, with the same style guide and the same record. Our own app becomes the paid stylist that holds his history.
 4. **Either way:** Show every current user what we already know about him ("6 events, 2 rejections at the mirror, your best look"), so the cost of leaving is visible before anyone tries the alternative.
 
 **If men pick us between 50% and 70% of the time:** Treat it as "not proven yet," not as a pass or a fail. Spend the week finding out why men chose the plain assistant, fix the biggest reason, and test again with the same cohort.
 
-**Ongoing:** Run the blind side-by-side monthly from the first golden cases, so the gap is already known on the day a platform ships.
+**Ongoing:** Run the offline separation check monthly on the golden set, so the gap is already known on the day a platform ships.
 
 ---
 
@@ -93,10 +100,10 @@
 <!-- One line: what's the single biggest strategic risk? -->
 **Users don't report back.** Every part of the Contextual Moat, all of the Data Advantage, and our only defense against platform encroachment are built from what he tells us after each recommendation. If reporting back is a chore, the product still looks like it works, but nothing compounds.
 
-**Mitigation:** Reporting back is designed as the reward, not a form: the pre-event "Check me" and the instant rescue when he taps "This isn't me."
+**Mitigation:** Reporting back is designed as the reward, not a form: the pre-event "Check me" and the instant revision when he taps "Change something."
 
-**Kill rule:** Fewer than 50% of events get a check-in within 48 hours. Only the post-event "Wear again?" tap counts as a check-in. "Check me" and "This isn't me" happen while he's anxious and motivated, so they would flatter the number. The outcome tap is the hardest to get and the one the Data Advantage depends on.
+**Kill rule:** Fewer than 50% of events get a check-in within 48 hours, counting every event, including men who declined notifications. Only the answer to the post-event "How did you feel in it?" counts as a check-in; the ✓/Fix after it never counts on its own. "Check me" and "Change something" happen while he's anxious and motivated, so they would flatter the number. The outcome tap is the hardest to get and the one the Data Advantage depends on.
 
 ## Confidence Level
 <!-- H / M / L — how confident are you in this bet after the diagnostic? -->
-**L.** Every axis scores 1–2 today, and there's no user evidence yet. A two-week test raises it if men choose our advice over a plain assistant **and** report back, both at 70% or higher. It ends or repositions the bet if the side-by-side falls below 40% or report-back falls below 50%. Thresholds and sample design are in [prototype.md](prototype.md).
+**L.** Every axis scores 1–2 today, and there's no user evidence yet. The 10-man test (postponed; no new date yet) raises it if a blind panel picks our advice over a plain assistant's **and** men report back, both at 70% or higher. It ends or repositions the bet if panel picks fall below 40% or report-back falls below 50%. Thresholds and sample design are in [prototype.md](prototype.md).

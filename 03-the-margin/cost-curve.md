@@ -4,34 +4,41 @@
 
 | Cost Category | Per-User/Month | Notes |
 |--------------|----------------|-------|
-| Inference (primary model) | ~$0.30 average (~2 events) · ~$0.60 engaged (~4.3) · ~$1.50–2.00 heavy (~8–10) · ~$3–4 daily use | Claude Sonnet 5.5. About 13¢ an event. Estimated; measured from Nov 3. Excludes the test-only plain-assistant call |
-| Inference (cascading/triage) | ~0.3¢ average · ~1.5¢ heavy month (about 1% of Sonnet) | Claude Haiku 5.5: structures each event and reads his post-event written answers. About 0.1–0.15¢ an event. Estimated; measured from Nov 3 |
+| Inference (primary model) | ~$0.50 average (~2 events) · ~$1.08 engaged (~4.3) · ~$2.30–2.90 heavy (~8–10) · ~$7.50 daily use | Claude Sonnet 5.5 with web search. About 25¢ an event: the read, follow-up and recommendation measured on one real event (Nov 8); the mirror check and rescue estimated (not built yet). Excludes the test-only plain-assistant call |
+| Inference (cascading/triage) | ~0.3¢ average · ~1.5¢ heavy month (about 1% of Sonnet) | Claude Haiku 5.5: structures each event and reads his post-event written answers; wardrobe import (internal accounts only). Intake measured at 0.05¢ an event (Nov 8); the rest estimated |
 | Infrastructure | ~$3.06 at 10 men · ~16¢ at 1,000 men (~23¢ engaged, ~40¢ heavy) | Fixed: ~$30 a month today → ~$100 at 1,000 men. Variable: texts, ~3¢ an event. Estimated |
 | Data/storage | Under 0.1¢, even in his second year | ~9–10 photos an event at ~300 KB: ~70 MB a year average, ~150 MB engaged. Overage ~$1 a month at 1,000 men; serving stays inside included transfer. Photo tokens are counted under inference. Estimated |
 | Human-in-the-loop | $0 a month. The quick read is one-time: ~$1–2.50 per man, booked as activation | Nothing waits on a human. The quick read, from the cohort on, is approved by me: 2–5 minutes at $60 an hour. Automated after 30 reviews meet the bar |
-| **Total AI COGS** | **At 1,000 men: ≈$0.46 average · ≈$0.84 engaged · ≈$2.17 heavy** (≈$3.36 average at 10 men) | A heavy man costs about 4.7 times an average one, because AI cost grows with every event. Sonnet is the biggest line at scale; fixed infrastructure is the biggest at 10 men |
+| **Total AI COGS** | **At 1,000 men: ≈$0.66 average · ≈$1.31 engaged · ≈$2.70–3.30 heavy** (≈$3.56 average at 10 men) | Up from $0.46 / $0.84 / $2.17 with the 13¢ estimate. A heavy man costs about 4.5 times an average one, because AI cost grows with every event. Sonnet is the biggest line at scale, and the read is the biggest step in it; fixed infrastructure is the biggest at 10 men |
 
 ### Inference (primary model)
-**Claude Sonnet 5.5.** Estimated; replaced by measured numbers from Nov 3.
+**Claude Sonnet 5.5, with web search.** Partly measured: one real event on Nov 8 (n=1, the builder). The mirror check and rescue aren't built, so they're estimated.
 
-**Sonnet calls per event:**
-- one recommendation call, which also returns the mirror checklist and a backup outfit;
-- about 0.9 mirror checks;
-- about 0.25 rescues.
+**Cost per event:**
 
-That's about 2.2 Sonnet calls, or roughly **13¢ an event**. Photos are about two-thirds of the input, and thinking tokens are the biggest unknown.
+| Step | Cost | Source |
+|---|---|---|
+| Intake (Haiku) | 0.05¢ | Measured |
+| **The read** (medium effort, web search) | 13¢ on the measured event; about 9¢ with research and 3¢ without in the eval | Measured, plus the eval |
+| Follow-up | 4¢ | Measured |
+| Recommendation (medium effort; no backup outfit anymore) | 8¢ | Measured |
+| Mirror check (~0.9 per event, ~4¢ each) | 3.6¢ | Estimated |
+| Rescue (~0.25 per event, generated live; a new outfit, so priced like the 8¢ recommendation) | 2¢ | Estimated |
+| **Planning number** | **~25¢** | |
+
+**Why 25¢:** About 35% of men will name a public place, so most reads skip research. At that mix, the read averages about 6.5¢ and an event about 24¢. If every read cost the measured 13¢, an event would be about 31¢. 25¢ sits inside that 24–31¢ range. It's double the old 13¢ estimate, mostly because the read is a new step.
 
 The test-only plain-assistant call is covered under "Not in monthly COGS" below.
 
 **Per man per month:**
-- **Average paying man** (~2 events): ~$0.30
-- **Engaged** (~4.3 events): ~$0.60
-- **Heavy, in holiday season** (~8–10 events): ~$1.50–2.00. That's about 15–25¢ an event, above the usual 13¢, on the assumption that heavy men do more mirror checks and rescues per event (about 1.5 checks and 0.5 rescues, or about 18¢) while rotating outfits across back-to-back parties. The top of the range leaves room for thinking tokens, the biggest unknown. The per-task logs check it.
-- **Stress case, daily use:** ~$3–4
+- **Average paying man** (~2 events): ~$0.50
+- **Engaged** (~4.3 events): ~$1.08
+- **Heavy, in holiday season** (~8–10 events): ~$2.30–2.90. That's about 29¢ an event, on the assumption that heavy men do more mirror checks and rescues per event (about 1.5 checks and 0.5 rescues) while rotating outfits across back-to-back parties. The per-task logs check it.
+- **Stress case, daily use** (~30 events): ~$7.50
 
 **Average vs. active men:** The ~2-event average includes men drifting toward cancelling. The Module 1 moat milestone (10+ events at 3 months) counts only men still active, and assumes they average at least 3.3 events a month, about the "engaged" segment above. That's an assumption, not a measurement; the Nov 30–Dec 20 cohort checks it.
 
-**Measured from Nov 3:** every model call logs its tokens and cost, tagged by task (recommendation, plain assistant, mirror check, rescue, intake).
+**Measured:** every model call logs its tokens and cost, tagged by task (intake, the read, follow-up, recommendation, plain assistant, mirror check, rescue). The first real event was logged on Nov 8.
 
 ### Inference (cascading/triage)
 **Claude Haiku 5.5.** Estimated; measured from Nov 3.
@@ -101,35 +108,92 @@ Storage grows with his history, but slowly: under a cent a month even in his sec
 - the optional follow-up call.
 
 ### Not in monthly COGS
-- **The plain-assistant comparison is a test cost.** Each man's first event gets one plain-assistant call for the blind side-by-side (about 5–6¢, taking that event to about 18¢). It runs during the prototype test, and in the cohort if H1 needs a retest, and is removed once H1 is proven.
+- **The plain-assistant comparison is a test cost.** Each man's first event gets one plain-assistant call for the blind panel. It was measured at 4¢ without search; it now runs with web search, so it's estimated at about 4–10¢ (a search adds about 6¢, from the read's eval: ~9¢ with research vs ~3¢ without). That takes the first event to about 29–35¢. Measured again on the first real pair. It's never shown to him. It runs during the prototype test, and in the cohort if H1 needs a retest, and is removed once H1 is proven.
 - **The optional quick read is the only one-time cost in the product,** booked as activation: a few cents of model cost plus my review time (~$1–2.50 per man; see Human-in-the-loop). My time is the real cost until it's automated.
 - **The monthly gap check is a small fixed cost, not a per-man one:** our model vs. a plain assistant on stored cases, run offline. So are eval runs and the judge.
 
 ## Cascading Strategy
 <!-- Cheap model → frontier model routing logic -->
 
-**Triage model:**
-**Frontier model:**
-**Routing rule:**
+**Triage model:** Claude Haiku 5.5, one-twentieth of Sonnet's price per token ($0.10 / $0.50 per million input / output tokens, vs $2 / $10).
+- **Today:** intake (reading his description and removing names), turning a pasted wardrobe list into pieces, and the backup when "Change something" fails on Sonnet (one try, then he's asked to try again). That backup hasn't passed its eval yet: it passes before the test or comes out.
+- **Candidate:** the read when he names no public place (about 65% of reads, our assumption). It moves only after Haiku matches Sonnet on the read's eval, especially on asking for the right pieces, which decides the first try.
+- **Not moving:** naming pieces from his photos (Haiku called denim chambray), and the mirror check and try-on (clothes-only at 100%). The mirror check is Sonnet only, with no backup yet; Haiku waits on the clothes-only cases.
+
+**Frontier model:** Claude Sonnet 5.5 at medium effort, for every step that decides the first try: the recommendation, the read when it researches a named place, the follow-up question (it has to see the photos), and the mirror check and try-on.
+- **Opus is a candidate for the first-event recommendation only.** Claude Opus 5.5 costs twice Sonnet per token ($4 / $20), so at the same length the first recommendation would go from about 8¢ to about 16¢, once per man. It's adopted only if it wins a blind comparison against Sonnet.
+- **The plain assistant in the panel always runs on the same model as Ellis,** so a win reflects our craft, not a bigger model.
+
+**Routing rule:** Intake runs before the read and already records whether he named a venue. If he named a public place, the read runs on Sonnet with web search; if not, on Haiku (once Haiku passes the eval). Every recommendation, mirror check and try-on stays on Sonnet regardless. Two exceptions keep the first try safe:
+- **His first event's read stays on Sonnet.** The asks are the edge, and the first try never gets cheaper. Only later reads move. The saving barely changes, because the first event is one of many.
+- **When in doubt, Sonnet.** Haiku runs intake, so Haiku decides the route. If intake isn't sure he named a public place, the read goes to Sonnet, so a missed venue never silently loses its research. The read's eval checks the router: intake flags named public places correctly in X of Y cases.
+
 **Expected cascade ratio:**
+- **By calls:** about 28% on Haiku if the read moves (intake on every event, plus about 65% of reads), up from about 17% today.
+- **By cost:** small. The no-search read drops from about 3–4¢ to about 0.2¢, saving about 2–2.5¢ of about 25¢ an event (~10%). Most of the cost is the recommendation, which by design never moves down.
+- **If Opus wins its comparison,** a first event costs more. That's a deliberate trade for the first try.
 
 ## Pricing Model
 
-**Current pricing:**
-**Proposed AI pricing:**
-**Model:** seat-based / usage-based / outcome-based / hybrid
+**Current pricing:** None. The prototype is free and pre-launch.
+**Proposed AI pricing:** **$11.99 a month**, the one price the cohort tests. Priced against the general assistant he already pays for, about $20 a month, which helps him in many areas. The closer Ellis gets to $20, the more it has to beat an assistant that does far more than dress him.
+- **Why the top of the $9.99–11.99 range:** paying men also carry the free men. In the planning case below, an engaged paying man costs about $5.76 a month (his own ~$1.31, card fees ~$0.65, and ~$3.80 for the free men he carries): a gross margin of about 52% at $11.99, against about 43% at $9.99. A commitment at $11.99 is also stronger evidence than one at $9.99.
+- **What the free tier needs: two unknowns, not one.** Free men cost margin, so the share of men who pay has to clear a bar, and that bar depends on how often free men actually use their free event:
+
+  | A free man uses his free event… | His cost a month | Paying share to stay above the 50% floor | Paying share to break even |
+  |---|---|---|---|
+  | Every month (worst case) | ~41¢ | ~9% | ~4% |
+  | **Every other month (planning case)** | **~20¢** | **~5%** | **~2%** |
+  | One month in three | ~14¢ | ~3.5% | ~1.5% |
+
+  Freemium products commonly convert something like 2–5% of free users. If every free man uses his event monthly, the free tier as designed doesn't work. If free men are as occasional as their events, a typical 3–5% works. **The planning case:** free men use their event every other month and 5% of men pay (about 19 free men per paying man), for a margin of about 52%. The cohort measures both unknowns: the founding-member payment gives a first, friendly read on the paying share, and logging free and paid events separately shows how often free men come back.
+- **$20 isn't a hard ceiling.** Men pay for single-purpose apps alongside general ones when one job done well is worth it. The follow-up call asks two price questions to show whether $11.99 sits near the floor or the ceiling (see Module 1, criterion 3).
+- **Exposure to a model price change:** an Anthropic doubling would cost about 8–11 margin points on a paying man alone at $11.99 (Module 2, kill switch), and about 29 points counting the free men he carries in the planning case.
+- **The floor: 50% gross margin per paying man,** counting the free men he carries. If margin falls below it for any reason (a model price change, heavier use, more free men per paying man), we act in this order:
+  1. the kill switch's cost cuts (caching, smaller photos, effort, moving "Change something" to Haiku);
+  2. tighten the free tier's allowance, never its quality (for example, the first event free, then one a quarter instead of one a month), so paying men don't pay more to support free men;
+  3. raise the price.
+  - **How close it is:** the planning case's ~52% is an estimate resting on both unknowns above, only 2 points above the floor. In the worst case (every free man uses his event monthly, 5% paying) margin is about 19%, well below it. The floor is checked once the cohort measures both unknowns. **The free tier, not the paying men, is the biggest margin risk.**
+**Model:** Hybrid, on top of a free tier.
+- **Free: one event a month,** with the full flow the blind panel tests (the read, the asks, the outfit, the mirror check, the check-in) and his history kept. A man with one event a month never feels he's overpaying, and every free man still reports back, which the moat and the report-back kill rule both need.
+  - **What that implies:** men pay for frequency. If most men have one event a month or fewer, few will convert. The all-men reading of criterion 4 (Module 1) measures exactly this, so it also tests the pricing.
+- **Paid: a monthly subscription with a fair-use cap of about 20 events a month.** At the cap, his cost is about half his subscription, so a normal man never sees it. Above it, a second, higher tier with a higher cap, for the man who needs more events, not more features. **He's never stopped before an event:** the event that crosses the cap goes through, and the upgrade is offered afterward.
+- **Heavy users pay through the higher tier and add-ons, not a charge per event.** Paying per event would work against coming back unprompted (Module 1, criterion 4). Candidates: the full wardrobe and the try-on days ahead, each its own sub-bet. Which add-ons heavy users value is unknown, so they're designed after the cohort shows who's heavy and what they use.
+- **Never add-ons:** the mirror check, the check-in, "Change something" and his history. They build the record the moat depends on.
+- **The cohort tests one subscription price.**
+- **Ruled out: outcome-based pricing.** Charging only when he felt Great would corrupt the "How did you feel in it?" answer.
 
 ## Stress Tests
 
 | Scenario | Impact on Margin | Response |
 |----------|-----------------|----------|
-| Inference costs 3x | | |
-| Heaviest segment doubles | | |
-| Model provider raises prices 50% | | |
+| Inference costs 3x | ~52% → about −6% (losing money). Paying men alone: ~84% → ~66% | The order of moves: cost cuts that don't change what he gets, then lower effort or Haiku where the eval shows no loss, then the free tier's allowance (never its quality), then price, last |
+| Heaviest segment doubles (a heavy man goes from ~10 to ~20 events a month) | That man: ~35% → ~9%. Paying men alone: ~67% → ~40% | Still not a loss. The fair-use cap (~20 events) holds his cost to about half his subscription; above it, a higher tier. A thin margin on a few heavy men is acceptable: they build the record fastest |
+| Model provider raises prices 50% | ~52% → ~38%, under the floor. Paying men alone: ~84% → ~79% | It crosses the size line for switching providers, but not the quality line: no backup has passed the eval. Absorb it with row 1's moves, and running the backup ranking becomes the priority |
+
+**Assumptions:** the planning case (an engaged paying man at $11.99 carrying about 19 free men who use their event every other month). In the worst case (free men use their event every month), every row starts from about 19% instead of 52%. The pattern holds either way: paying men stay above the floor in every row except the doubled heavy man; the free men are where each shock multiplies.
+
+**Inference costs 3x: the order of moves.** The free tier's size isn't cut first.
+1. **Levers that don't change what he gets:** cache the style guide, send smaller photos, shorten output. (The plain-assistant call ends once H1 is proven, but it's a test cost and already outside these numbers.)
+2. **Lower effort or Haiku on a step,** only where the eval and a blind taste check show no loss. Our own runs show both can cost quality: low effort broke the answer's format, and Haiku misread a piece's cloth and an event's type. So some steps won't qualify, and the first-event recommendation never does.
+3. **The free tier's allowance, never its quality:** for example, the first event free, then one a quarter instead of one a month. The first-event recommendation never gets cheaper; it's the hook.
+4. **Price, last.** It's what the cohort tests, so it doesn't move mid-test.
+
+Nine free men all active every month is the worst case; a free man who doesn't use his event costs almost nothing.
+
+**Heaviest segment doubles: not a loss.** A paying man's own costs pass his $11.99 only past about 35 events a month, more than one a day (about 24 counting the free men he carries in the planning case). The fair-use cap sits around 20, where his cost is about half his subscription, so a normal man never sees it. Above the cap, a higher tier with a higher cap. Heavy men build the record fastest, which is the moat, so a thin margin on a few of them in December is acceptable. Per-man cost is logged, so we'd see it coming.
+
+**Provider raises prices 50%: absorb it, and make the switch real.** It crosses the size line for switching (about 14 points on the full mix and about 5 on paying men alone, against the kill switch's ~3-point rule) but not the quality line: no backup has passed the full eval, including clothes-only at 100%, and the ranking run against OpenAI and Google hasn't happened. So we absorb it with row 1's moves, and running the backup ranking becomes the priority, so the switch exists before it's needed.
+
+**What the table teaches:** the exposure is the free tier, not paying men. That's why the free tier's allowance is a lever, and why the first free event has to win: every free man who never converts is pure cost.
 
 ## Board One-Pager
 <!-- Before/After: Old SaaS revenue vs. AI usage revenue for your product -->
 
-**Before (traditional SaaS):**
-**After (AI-enabled):**
-**Net margin shift:**
+**Before (traditional SaaS):** A style app built on rules, with no AI. Gross margin around 80–85%, as software is commonly described, with almost no cost per use. But it can't do the job: it can't see his closet, read the event, or check him at the mirror. He'd still fill in everything himself.
+
+**After (AI-enabled):** Ellis at $11.99 a month. Every event costs about 25¢ in model calls, so cost grows with use.
+- **Paying men alone:** about 84% gross margin, on par with software.
+- **Counting the free men they carry:** about 52% in the planning case (5% of men pay; free men use their event every other month), and about 19% in the worst case.
+
+**Net margin shift:** about 30 points lower than software (from ~80–85% to ~52%), and almost all of it comes from the free tier, not the paying men. AI didn't cost us margin on the men who pay; it made giving the product away expensive. The shift is worth it because AI does a job software couldn't, at about one-hundredth of a stylist's price ($11.99 a month against $100–500 an hour), and it scales without hiring. The board's number to watch is the share of men who pay, with how often free men use their event next to it.
