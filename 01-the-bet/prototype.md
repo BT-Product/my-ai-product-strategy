@@ -45,10 +45,14 @@ All of these were set before any data came in. They're tested in the **10-man pr
   - **What the plain assistant gets:** what his own assistant would have had: his event description, his own pick if he named one, and his wardrobe only if his assistant already holds it. It runs at the same effort setting, with web search, like the ChatGPT he'd actually use.
   - **What it doesn't get:** the pieces Ellis asked for. On my own n=1, given the same pieces, both picked the same outfit, so asking for the right pieces is where Ellis's edge is. Handing those pieces over would test only the styling.
   - **Fallback:** if he names no pick and his assistant doesn't hold his wardrobe, the plain assistant would have no pieces at all and would lose too easily. Then it gets the same pieces Ellis collected. That's the cautious case, because it makes Ellis's job harder. Those pairs are reported separately, so an easy win can't inflate the result.
+  - **Keeping fallback pairs rare:** few men keep their closet in an assistant, so without a pick most pairs would be fallback pairs, which test only styling, the part the Nov 10 n=1 says is thin. That risks a false "not proven."
+    - "Do you know what you want to wear?" is built before the test. For most men, their own pick is the realistic plain-assistant input, so every man who names one gives a standard pair.
+    - The wardrobe import is offered only to men who already keep their closet in an assistant, never created for the test, and only after it passes messy real pastes (a long memory dump, a paste with names, an instruction buried in the middle).
+    - Results report the split, standard vs fallback pairs. If fallback pairs dominate, the result says so: "H1 tested styling only."
 - **Raters:** men in the target group, never rating their own case. At least 3 raters per pair, about 5 pairs each, in the same plain format.
-- **Sample:** about 10 pairs × 3 raters, about 30 picks, reported per pair and per rater.
+- **Sample:** about 10 pairs × 3 raters. **A pair goes to whichever answer most of its raters pick,** and the 70% / 40% thresholds apply to pairs. Per-rater picks are reported as support, since picks on one pair aren't independent: about 10 data points, not 30.
 - **Behavioral check:** the follow-up call asks, "Did you also ask another assistant for this event? Which did you go with?"
-- **Offline:** a separation check on the golden set (built; not yet run, because 11 closet photos are missing).
+- **Offline:** a separation check on the golden set (built; not yet run, because 11 closet photos are missing). It runs from the event description, like the panel, so it tests the asks as well as the styling.
 - **Trade-off accepted:** the panel compares advice, not whole experiences, and a rater doesn't own the closet. H2 (did he wear it) stays the behavioral half.
 
 At this sample size, every result is **directional**: 70% or more means *not falsified*, not *proven*.
@@ -60,6 +64,7 @@ At this sample size, every result is **directional**: 70% or more means *not fal
 2. **He doesn't report back.** Fewer than 50% of events get an answer to the post-event "How did you feel in it?" within 48 hours, with at most one reminder.
    - *What counts:* only that answer. The ✓/Fix on what Ellis learned comes right after it, so it never counts on its own.
    - *Which events:* all of them, including men who declined notifications. Declining is what this rule exists to catch.
+   - *Reported by channel:* every message records how it reached him (notification, email, or a text I send by hand when both miss), so a delivery gap isn't read as Ellis failing. The threshold doesn't change.
    - *50–70%:* redesign the capture (for example, ask at his next event) and retest.
 3. **He won't pay** (cohort, Nov 30–Dec 20). Out of about 10 cohort men asked at the end of the cohort, how many commit to the paid tier at $11.99 a month:
    - *7 or more:* passes (not falsified).

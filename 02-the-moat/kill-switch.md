@@ -74,7 +74,7 @@ Nothing is automatic: a slow or failed call shows an error.
 **Current state (Nov 9):**
 - **The golden set:** 13 rows, 3 of them adversarial, testing the recommendation (see Module 4).
 - **The read's eval:** 22 cases. Research ran on all 5 named public places and on none of the private ones, including 3 attack cases; asks met the rules 95% of the time (74% on the first run); wardrobe-first passed 3 of 3.
-- **Added Nov 12, not yet run: does the asks step surface the deciding piece?** Cases where one missing piece decides the outfit (like the blazer and overcoat on Nov 10), reported as "the asks found the deciding piece in X of Y cases." It tests the claim that the asks are the edge (see the craft section of the [data flywheel](data-flywheel.md)).
+- **Added Nov 12: does the asks step surface the deciding piece?** First run: 8 of 8, on small wardrobes; the target is 90%+ on full wardrobes. Cases where one missing piece decides the outfit (like the blazer and overcoat on Nov 10), reported as "the asks found the deciding piece in X of Y cases." It tests the claim that the asks are the edge (see the craft section of the [data flywheel](data-flywheel.md)).
 - **Added Nov 12, not yet run: does intake route the read correctly?** Intake flags named public places correctly in X of Y cases. It guards the cascade in Module 3: a missed venue would send the read to Haiku without research.
 - **The taste grader** is me.
 

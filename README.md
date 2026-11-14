@@ -11,7 +11,7 @@
 | **The Bet** | M1 | [x] | `01-the-bet/` |
 | **The Moat** | M2 | [x] | `02-the-moat/` |
 | **The Margin** | M3 | [x] | `03-the-margin/` |
-| **The Contract** | M4 | [ ] | `04-the-contract/` |
+| **The Contract** | M4 | [x] | `04-the-contract/` |
 | **The Guardrails** | M5 | [ ] | `05-the-guardrails/` |
 | **The Pitch** | M6 | [ ] | `06-the-pitch/` |
 
@@ -65,11 +65,11 @@
 
 **Why users will trust a probabilistic system.**
 
-- **Reliability Target:**
-- **Golden Dataset:** __ rows, __ adversarial
-- **Confidence UX:** [approach]
-- **HITL Architecture:**
-- **Failure Mode Coverage:**
+- **Reliability Target:** Hard rules and clothes-only at 100% on the eval (one outfit, only his pieces, never his body); any failure blocks the change. Supporting: 65% of answered events rated Great, blind panel picks at 70%, the asks finding the deciding piece 90%+ of the time (8 of 8 so far), and under 3 minutes from describing the event to the outfit.
+- **Golden Dataset:** 13 rows, 3 adversarial (plus 2 edge cases). About 500 before production; about 300 clothes-only cases to show failures under 1%.
+- **Confidence UX:** Tiered, and uncertainty is handled by asking, not hedging. Ellis asks when he can settle it, states its estimate once on the read screen when nobody can, and keeps the outfit screen clean ("The closest you have" is the only heading). One question budget however unsure Ellis is. The 90% / 70% bands (the share of outfits kept with no "Change something") are targets to calibrate.
+- **HITL Architecture:** Nothing waits on a human; the eval gates every change instead. During the test I read every outfit within a day; after it, a judge scans every answer within the hour. A zero-tolerance failure pauses only the broken step, he's always told, and his case becomes a golden row before it's unpaused.
+- **Failure Mode Coverage:** Zero tolerance for a comment about his body, a piece he didn't send, or a venue fact presented as found (rows 9, 12, 13, script and judge). Gaps: no history rows yet, and no rows for his own pick or a wrinkled piece. Red-team lesson: my tests kept measuring what any assistant already does well, so each one moved to the asks.
 
 → Details: [`04-the-contract/`](04-the-contract/)
 

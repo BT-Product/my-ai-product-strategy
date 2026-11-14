@@ -20,11 +20,13 @@
 - **What men see:** Ellis's read of the event (including its web research), the questions it asks, the asks for pieces, the outfit, the try-on check, the mirror check and the revised outfit ("Change something"). The last two aren't built yet.
 - **Behind the scenes:** reading his event description (and removing names before anything is stored), naming his wardrobe pieces, reading a wardrobe list he pastes in from his own assistant, and the plain-assistant answer made for the blind comparison (never shown to him).
 - **How we check it:** the judge model in the eval, and any house-style rule learned from pooled outcomes.
-- **The data:** his event descriptions (names removed), clothing photos, mirror photos (which show his face), his wardrobe, and his outcome record (what he wore, what he changed and why, how he felt in it, and the lessons he confirmed).
+- **The data:** his event descriptions (names removed), clothing photos, mirror photos (which show his face), his wardrobe, and his outcome record (what he wore, what he changed and why, how he felt in it, and the lessons he confirmed). His phone number is kept only for a text I send by hand, never in a model call, a log or a message body.
 - **Who else receives it:**
   - **Anthropic:** every description and photo sent to the model.
   - **The web search provider:** the venue and event details in each search.
-  - **Supabase and the texting provider:** storage, and the event-day texts.
+  - **Supabase:** storage.
+  - **The notification service** (Apple's or Google's): delivers the message text to his phone.
+  - **The email sender** (Resend): his email address and the message text.
   - **Panel raters:** other men in the study see his event description (names removed) and clothing photos, never a photo of him. There's no AI involved, but it's his data, so it's covered by his consent.
   - **My build tools** (Claude Code, the build chat, the LinkedIn chat): *to confirm:* in scope if any of them can reach the production database; out of scope only if they never see real user data.
 

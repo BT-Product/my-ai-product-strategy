@@ -34,25 +34,107 @@
 
 ## Confidence UX Design
 
-**Approach:** show uncertainty / tiered confidence / human-in-loop trigger
+**Approach:** Tiered, and uncertainty is handled by **asking, not hedging**. Asking the right question is Ellis's craft, so when Ellis is unsure and he can settle it, it asks first. When nobody can settle it, Ellis decides and states its estimate once, where he can correct it. The outfit screen stays clean: one outfit, no caveats.
 
-**High confidence (>90%):**
-**Medium confidence (70-90%):**
-**Low confidence (<70%):**
+**The signals Ellis reads:**
+- the dress code is stated, or Ellis estimated it;
+- research found the place, or didn't;
+- two sources conflict (the invitation vs a coworker);
+- he answered "Not sure";
+- he answered "Don't have one" for an essential piece;
+- the photo of the trousers or shoes is unclear;
+- his pieces sit below the event's level.
+
+**High confidence (>90%):** Nothing to settle: the dress code is stated or found, sources agree, the photos are clear, and his pieces reach the event. Ellis goes straight to one outfit, with no caveats.
+**Medium confidence (70-90%):** Something nobody can settle (a client dinner has no dress code to look up). Ellis decides and states its estimate once, on the read screen ("No dress code given; I'm reading it as smart casual"), where he can correct it before any photos. The outfit screen stays clean.
+**Low confidence (<70%):** Something he can settle: an invitation exists, two sources conflict, or the photo of the trousers or shoes is unclear. Ellis asks first, each question only if the answer would change the outfit.
+- **One question budget, however unsure Ellis is:** every question at the read, whether for a piece or a fact, comes out of the same 3–4 asks, plus one in the follow-up. Ellis spends them on what would change the outfit most and estimates the rest. A man in a hurry who meets a questionnaire goes back to ChatGPT. If his pieces can't reach the event, the outfit gets one heading, "The closest you have," and nothing else changes.
 
 **User control surface:**
+- correcting Ellis's estimate on the read screen, before any photos;
+- "Change something," piece by piece, with one-tap reasons, including "You read the event wrong";
+- the mirror check, the safety net before he leaves.
+
+**Honest status:** a band is calculated after the outfit from four of these signals and saved for calibration: does "Change something" rise from the high band to the low? It changes nothing yet, the read's signals aren't in it, and the 90% and 70% cut-offs are targets, not measurements.
+- **What the percentages measure:** the share of a band's outfits that go out the door with no "Change something." High means 90% or more are kept unchanged; low means under 70%.
+- **When they can be read:** the cohort gives a first look; the cut-offs stay directional until each band has enough events.
 
 ## Reliability Contract
 
 | Metric | Target | Measurement | Alert Threshold |
 |--------|--------|-------------|-----------------|
-| Accuracy | | | |
-| Hallucination rate | | | |
-| Latency (p95) | | | |
-| Drift velocity | | | |
+| Accuracy | **Promise:** hard rules and clothes-only at 100% on the eval (one outfit, only his pieces, never his body). **Supporting:** 65% of answered events rated Great; panel picks 70%; the asks find the deciding piece 90%+ of the time | The eval before every change and monthly (script and judge). The Great rate from check-ins. The panel during the test, then the monthly gap check | Any hard-rule or clothes-only failure blocks the change |
+| Hallucination rate | **Zero:** a comment about his body; an outfit built from a piece he didn't send; a venue fact the research didn't find, presented as found. **Target only:** an unclear photo flagged, not guessed, 95%+ | Script (only his pieces), judge (the rest), and spot-checks of stored reads | Any single zero-tolerance case |
+| Latency (p95) | **Ceiling for now:** the read ≤16 s with research (~5 s without), recommendation ≤25 s, mirror check ≤15 s with the saved checklist shown at once. **After the speed work:** the read 10–15 s | Every call's logged latency. At 10 men, the slowest per step, not a p95 | A recommendation over 60 s or failing; a mirror check reaching its 20-second fallback |
+| Drift velocity | The eval holds its pass bar, the gap to a plain assistant holds, the confidence bands stay in order, and the Great rate holds | The monthly eval re-run and after every model update; the monthly gap check; "Change something" by band; the Great rate | The eval falls below its pass bar (nothing ships until fixed); the share of golden rows that separate us from a plain assistant falls 10 points below its first measured baseline (drift is a change, not a level); "Change something" in the high band matches or beats the low band (recalibrate); the Great rate drops 10 points in a month, once there are 20+ answered events a month |
+
+**Notes:**
+- **The deciding-piece rate:** 8 of 8 so far, on small wardrobes; the target is 90%+ on full wardrobes.
+- **The gap check runs from the event description, not the collected pieces,** like the blind panel: Ellis gets the event and his wardrobe and runs its asks; the plain assistant gets what his own assistant would have. Handed the same pieces, the two matched on Nov 10, so a gap check on collected pieces would test only the styling.
+- **The number that matters most for speed:** the total time from describing the event to seeing the outfit, **under 3 minutes**, counting his time finding and photographing pieces, measured in the phone test. Most of it is his time, not Ellis's, so the asks are what move it. A man in a hurry compares it with typing one question into ChatGPT. If the phone test misses it, that's a finding, not a failure.
+- **At 10 men, alerts are my weekly review of the logs,** not automated.
 
 ## HITL Architecture
 <!-- When does a human step in? What's the escalation path? -->
 
+**What waits on a human: nothing.** Every outfit goes straight to him. The one step that needed approval, the quick read of his face and build, is out of the test. A gate would add hours to a 20-second answer, so the zero-tolerance checks run before release instead: the eval must pass before any change ships.
+
+**Reviewed afterward:**
+- **During the test:** I read every recommendation within a day of sending (about 2 minutes an event), review the logs weekly against the reliability contract, and grade taste blind before every change.
+- **Beyond the test:** a sample, starting with the low confidence band, every "Not quite right" and every "Change something."
+
+**Escalation, for the zero-tolerance cases** (a comment about his body, a piece he didn't send, a venue fact the research didn't find, presented as found):
+- **After the test, an automated scan:** once I stop reading every outfit, a judge model checks every sent answer for the three zero-tolerance cases within the hour, so a failure doesn't depend on an embarrassed man reporting it. The judge is never the model being checked; it costs about a cent an event, and it feeds the same escalation path below.
+- **Who sees it:** whichever comes first: my daily read (or, after the test, the automated scan); his report (a "Change something" note, a "Not quite right" reason, or the contact link); or an eval failure that blocks a change. Target: seen within a day.
+- **What pauses: only the broken step,** falling back to what already works. One switch per step is built before the test.
+
+  | Failure | What turns off | What still works |
+  |---|---|---|
+  | A comment about his body | The mirror check's live answer | The saved mirror checklist |
+  | An outfit with a piece he didn't send | New first events | Men already mid-event |
+  | A venue fact presented as found | Research in the read | The read, from his words alone |
+
+  The same failure twice pauses new first events.
+- **What he's told: always something.** I contact him within a day with what went wrong, an apology, and a corrected outfit if his event hasn't happened yet. The case is marked in the results so it doesn't skew them.
+- **What brings it back:**
+  1. the cause is found;
+  2. the fix ships (bug fixes are allowed during the prompt freeze);
+  3. his case becomes a golden row, with his consent and anonymized;
+  4. the full eval passes, including that row;
+  5. a check on one of my own events;
+  6. it's unpaused and logged.
+
+**Reaching a person:** today there's no way in the app. Proposed: "Something off? Tell a person" on the outfit and mirror screens, opening an email to the study's address, answered within a day.
+
 ## Red-Team Findings
 *What failure mode did your partner find that you missed?*
+
+**Red teams:** my class partner (Nov 4), an outside critique (ChatGPT asked to find weaknesses, Nov 11) and my own event rerun (n=1, Nov 11).
+
+### The one I'd lead with (from my partner): my golden set couldn't tell Ellis from ChatGPT
+- **What I missed:** the first draft's rows tested only the dress-code level, which any plain assistant gets right. Ellis could score 100% and the set would prove nothing about the bet, which is that Ellis beats a plain assistant.
+- **What changed (Nov 4):**
+  - Every row now includes his pieces, with the right ones and the traps in the same closet (a suit for a neighborhood dinner, brown shoes at a funeral).
+  - Two "you don't have it" rows: black tie with no tuxedo, cocktail attire with no dress shoes.
+  - Two attack rows: his date in the mirror photo, and "money's no object, send links" when his closet already covers the event.
+  - A separation check: the plain assistant's answer must fail at least one property on at least half the rows. Since Nov 13, it runs from the event description, not collected pieces, and drift is judged against its first measured baseline (see the Reliability Contract).
+- **Today:** the separation check hasn't run yet; 11 closet photos are missing.
+- **Still open:** my partner also flagged that no row tests his history (what he changed, what he felt great in), the one thing a plain assistant can't copy. Every eval case still has an empty history. History rows are on the eval's to-do list, starting with repeat events from my own.
+
+### The same blind spot came back twice this week
+My tests kept measuring what any assistant already does well.
+
+**My own event rerun (n=1, the builder).** On Nov 10 a plain assistant beat Ellis on my stage-talk event. Rerun with the same pieces, both chose the same outfit with the same reasons. The loss came from missing inputs, not weaker styling: Ellis's asks left my blazer and overcoat out. The plain assistant also caught a wrinkled shirt Ellis missed.
+- **What changed:**
+  - **The craft was rewritten around the asks:** asking for the pieces and facts a man wouldn't think to mention, and catching what's missing before he leaves. His closet became table stakes.
+  - **The blind panel's plain assistant now gets only what his own assistant would have:** his event description, his pick if he named one, and his wardrobe only if his assistant already holds it. It never gets the pieces Ellis asked for; handing those over would test only the styling, where the two converge. With none of those, it falls back to Ellis's pieces, and those pairs are reported separately. Decided Nov 12; not built yet.
+  - **A deciding-piece check in the eval:** do Ellis's asks find the piece that decides the outfit? Today 8 of 8 on small wardrobes; the target is 90% or more on full-size ones.
+  - **A new rule:** Ellis says when a piece looks creased, stained or worn.
+
+**The outside critique.** It said a plain assistant "already does most of the first event," and found three things I'd missed:
+- **"Wear it again?" asked him to label data for us.** It became "How did you feel in it? Great · Fine · Not quite right," which is what he actually knows the morning after.
+- **The flow risked feeling like a questionnaire.** There's now one question budget: every question at the read, for a piece or a fact, comes out of the same 3–4 asks, plus one in the follow-up, each only if the answer changes the outfit.
+- **A man with no second event was counted as not coming back.** "Comes back" is now reported two ways: for all men, and for men who had another event within 14 days.
+
+### What it taught me
+Each red team found the same thing from a different angle: I was testing the part that's easy to copy. The response each time was to move the test to where the edge actually is, the asks, and to keep the one thing a plain assistant can't copy, his history, on the list until it has rows.

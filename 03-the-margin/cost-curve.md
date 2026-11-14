@@ -6,10 +6,10 @@
 |--------------|----------------|-------|
 | Inference (primary model) | ~$0.50 average (~2 events) · ~$1.08 engaged (~4.3) · ~$2.30–2.90 heavy (~8–10) · ~$7.50 daily use | Claude Sonnet 5.5 with web search. About 25¢ an event: the read, follow-up and recommendation measured on one real event (Nov 8); the mirror check and rescue estimated (not built yet). Excludes the test-only plain-assistant call |
 | Inference (cascading/triage) | ~0.3¢ average · ~1.5¢ heavy month (about 1% of Sonnet) | Claude Haiku 5.5: structures each event and reads his post-event written answers; wardrobe import (internal accounts only). Intake measured at 0.05¢ an event (Nov 8); the rest estimated |
-| Infrastructure | ~$3.06 at 10 men · ~16¢ at 1,000 men (~23¢ engaged, ~40¢ heavy) | Fixed: ~$30 a month today → ~$100 at 1,000 men. Variable: texts, ~3¢ an event. Estimated |
+| Infrastructure | ~$2.50 at 10 men · ~10¢ at 1,000 men, for every segment | Fixed: ~$25 a month today → ~$100 at 1,000 men. Variable: about zero in the test (notifications are free; email at this volume costs next to nothing). Hand-sent texts only when both miss. Estimated |
 | Data/storage | Under 0.1¢, even in his second year | ~9–10 photos an event at ~300 KB: ~70 MB a year average, ~150 MB engaged. Overage ~$1 a month at 1,000 men; serving stays inside included transfer. Photo tokens are counted under inference. Estimated |
 | Human-in-the-loop | $0 a month. The quick read is one-time: ~$1–2.50 per man, booked as activation | Nothing waits on a human. The quick read, from the cohort on, is approved by me: 2–5 minutes at $60 an hour. Automated after 30 reviews meet the bar |
-| **Total AI COGS** | **At 1,000 men: ≈$0.66 average · ≈$1.31 engaged · ≈$2.70–3.30 heavy** (≈$3.56 average at 10 men) | Up from $0.46 / $0.84 / $2.17 with the 13¢ estimate. A heavy man costs about 4.5 times an average one, because AI cost grows with every event. Sonnet is the biggest line at scale, and the read is the biggest step in it; fixed infrastructure is the biggest at 10 men |
+| **Total AI COGS** | **At 1,000 men: ≈$0.60 average · ≈$1.18 engaged · ≈$2.40–3.00 heavy** (≈$3.00 average at 10 men) | Up from $0.46 / $0.84 / $2.17 with the 13¢ estimate, and down slightly since texts were replaced by notifications and email (Nov 10). A heavy man costs about 4.5 times an average one, because AI cost grows with every event. Sonnet is the biggest line at scale, and the read is the biggest step in it; fixed infrastructure is the biggest at 10 men |
 
 ### Inference (primary model)
 **Claude Sonnet 5.5, with web search.** Partly measured: one real event on Nov 8 (n=1, the builder). The mirror check and rescue aren't built, so they're estimated.
@@ -53,18 +53,21 @@ The test-only plain-assistant call is covered under "Not in monthly COGS" below.
 Estimated.
 
 **Fixed:**
-- **Today:** about $30 a month: Supabase Pro ($25) and texting registration (~$3 a month after ~$20 one-time). Hosting is free during the test.
-- **At ~1,000 men:** about $100 a month: database compute, hosting and standard texting registration.
+- **Today:** about $25 a month: Supabase Pro. Hosting is free during the test.
+- **At ~1,000 men:** about $100 a month: database compute, hosting and the email sender (its price to be confirmed).
 
-**Variable: texts.** About 2.4 texts per event (the pre-event mirror prompt, the post-event question, and a reminder when needed) at ~1.2–1.3¢ each: **about 3¢ per event**, 20–30 times the cheap model's cost.
+**Variable: about zero.** The event-day messages (the mirror prompt about an hour before, the morning-after check-in, and a reminder when needed) arrive as **a notification from the home-screen app, with email as the backup** (decided Nov 10, reversing the Oct 30 choice of texts). **Setup asks for neither.** Right after his first outfit, Ellis asks once for the home-screen icon and notifications together, framed by what they do: "Want a reminder to check at the mirror before you head out, and a quick 'how did it go' after?" Email stays the backup, so saying no costs him nothing (decided Nov 11; not built yet). Notifications are free, and email at this volume costs next to nothing. If both miss, I text him by hand from the separate Mercer + Taylor number.
 
 **Per man per month:**
-- **At 10 men:** ~$3.06
-- **At 1,000 men:** ~16¢ on average, ~23¢ engaged, ~40¢ heavy
+- **At 10 men:** ~$2.50
+- **At 1,000 men:** ~10¢, for every segment
 
-At scale, the texts cost about as much as the servers. They stay, because the post-event text is the critical path for reporting back.
+**Why notifications replaced texts:**
+- Business texts in the US need carrier registration, with an unknown wait, which would have held up the test.
+- The 10 men are recruited personally, so asking them to add the icon is reasonable.
+- Since Nov 9, sign-in works inside the home-screen app (an emailed code), and email already works because sign-in uses it.
 
-**Push is a later saving, tested first.** On a mobile web app, push works on iPhone only if he adds the app to his home screen, so texts will carry nearly every post-event question through the test and cohort. Push replaces texts only after a comparison shows it holds the report-back rate. Saving about 2¢ an event isn't worth triggering our own report-back kill rule.
+**The saving of about 3¢ an event happens now, not later, and the risk is measured instead of avoided.** A man who skips both the icon and email never gets the morning-after question, which would lower the report-back rate for reasons that aren't Ellis. So every message records its channel (notification, email or a hand-sent text), and **the report-back rate is reported by channel.** That's the comparison this section once wanted before switching, run the other way round. Texts become the option to test if notifications and email underperform.
 
 ### Data/storage
 Estimated.
@@ -104,7 +107,7 @@ Storage grows with his history, but slowly: under a cent a month even in his sec
 
 **Not counted here (test costs):**
 - reading each recommendation after he's seen it;
-- sending the event-day texts by hand until texting registration is approved;
+- texting by hand, only when a man's notification and email both miss;
 - the optional follow-up call.
 
 ### Not in monthly COGS
@@ -146,7 +149,7 @@ Storage grows with his history, but slowly: under a cent a month even in his sec
   | **Every other month (planning case)** | **~20¢** | **~5%** | **~2%** |
   | One month in three | ~14¢ | ~3.5% | ~1.5% |
 
-  Freemium products commonly convert something like 2–5% of free users. If every free man uses his event monthly, the free tier as designed doesn't work. If free men are as occasional as their events, a typical 3–5% works. **The planning case:** free men use their event every other month and 5% of men pay (about 19 free men per paying man), for a margin of about 52%. The cohort measures both unknowns: the founding-member payment gives a first, friendly read on the paying share, and logging free and paid events separately shows how often free men come back.
+  Freemium products commonly convert something like 2–5% of free users. If every free man uses his event monthly, the free tier as designed doesn't work. If free men are as occasional as their events, a typical 3–5% works. **The planning case:** free men use their event every other month and 5% of men pay (about 19 free men per paying man), for a margin of about 52%. These pricing and stress-test margins were computed with texts at about 3¢ an event; since texts were replaced by notifications and email, they run about 2–3 points better, so the figures here are slightly conservative. The cohort measures both unknowns: the founding-member payment gives a first, friendly read on the paying share, and logging free and paid events separately shows how often free men come back.
 - **$20 isn't a hard ceiling.** Men pay for single-purpose apps alongside general ones when one job done well is worth it. The follow-up call asks two price questions to show whether $11.99 sits near the floor or the ceiling (see Module 1, criterion 3).
 - **Exposure to a model price change:** an Anthropic doubling would cost about 8–11 margin points on a paying man alone at $11.99 (Module 2, kill switch), and about 29 points counting the free men he carries in the planning case.
 - **The floor: 50% gross margin per paying man,** counting the free men he carries. If margin falls below it for any reason (a model price change, heavier use, more free men per paying man), we act in this order:
