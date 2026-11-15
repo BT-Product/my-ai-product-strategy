@@ -135,7 +135,7 @@ The design switches providers with one setting, but nothing is proven yet: no ba
 ## If Anthropic ships a competing product:
 <!-- What's defensible that they can't replicate? -->
 **What's defensible is the same as against OpenAI** (see the [data flywheel](data-flywheel.md) and its 90-day plan):
-- who has seen him in what;
+- who has seen him in what (Horizon 3, roles only);
 - the rules learned from his rejections;
 - his lookbook;
 - owning the moment he reports.

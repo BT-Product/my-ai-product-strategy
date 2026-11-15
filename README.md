@@ -13,7 +13,7 @@
 | **The Margin** | M3 | [x] | `03-the-margin/` |
 | **The Contract** | M4 | [x] | `04-the-contract/` |
 | **The Guardrails** | M5 | [x] | `05-the-guardrails/` |
-| **The Pitch** | M6 | [ ] | `06-the-pitch/` |
+| **The Pitch** | M6 | [x] | `06-the-pitch/` |
 
 ---
 
@@ -25,9 +25,9 @@
 - **AI Value Archetype:** Copilot, moving toward Orchestrator at Horizon 2.
 - **Vulnerability Scores** (today → target; 1 = pain, 5 = strong): Moat 1 → 4 · Data 1 → 3 · Platform 2 → 3
 - **Top Risk:** Users don't report back. The product still looks like it works, but nothing compounds.
-- **Confidence:** L. No user evidence yet; set by the 10-man test (postponed; no new date yet).
+- **Confidence:** L. No user evidence yet; set by the 10-man test (about Dec 7–20; the cohort starts on a gate, Jan 4 at the earliest, readout late January or early February). The Nov 16 capstone contains no test data.
 - **Prototype:** built and shipped Nov 8, 2026, redesigned as "Ellis takes charge" after the builder's own n=1 (link pending).
-- **Kill Criteria:** Under 40% blind panel picks against a plain assistant · under 50% of events answered "Was it right for the room?" within 48 hours · under 20% unprompted use by men who had another event within 14 days · under 4 of ~10 cohort men making a refundable founding-member payment at $11.99.
+- **Kill Criteria:** Under 40% blind panel picks against a plain assistant · under 50% of events answered "Was it right for the room?" within 48 hours · under 20% unprompted use by men who had another event within 14 days · 30% or fewer of ~20 cohort men making a refundable founding-member payment at $11.99.
 
 → Details: [`01-the-bet/`](01-the-bet/)
 
@@ -37,7 +37,7 @@
 
 **Why this won't get copied in 6 months.**
 
-- **Data Flywheel Score:** 6/20 at launch → 9/20 by Dec 20 (Correction 3, Preference 3, Domain Context 2, Network 1).
+- **Data Flywheel Score:** 6/20 at launch → 9/20 by the end of the cohort (late January) (Correction 3, Preference 3, Domain Context 2, Network 1).
 - **Weakest Loop:** Network. It's a data network effect with diminishing returns, and larger platforms will always have more cold-start data. Fix: concede it and win the cold start on craft: the read and the asks (the edge: asking for the pieces he wouldn't think to mention), the follow-up and mirror check, and a house style guide as the floor. His closet is an input, not an edge. Craft wins the first try; what he tells us afterward wins the second.
 - **Competitive Position:** Axes: advice that starts from zero ↔ knows what happened last time, × a person or a box you schedule ↔ there when he's getting dressed. ChatGPT and Match.com are on demand but start from zero; Stitch Fix and human stylists know more but need a box or an appointment. We target the empty corner: on demand and knowing what happened. Today we sit next to ChatGPT; we move toward "knows what happened" from his second event, if he reports back.
 - **Encroachment Defense:** Win the first try on craft; win the moment of capture (the mirror check records what he wore before anyone asks); show him what we know, so leaving costs something; style him, don't sell to him (buy suggestions only for real gaps, no commissions). Concede pooled fit and purchase data to the larger players.
@@ -93,10 +93,10 @@
 
 **How you get this funded, shipped, and adopted.**
 
-- **Horizon 1 (Now):**
-- **Horizon 2 (Next):**
-- **Horizon 3 (Bet):**
-- **Board Narrative:** [1-sentence thesis]
-- **Key Metric:**
+- **Horizon 1 (Now):** Finish the build the test needs (by about Dec 4); run the 10-man test (about Dec 7–20: panel picks ≥70% of pairs, report-back ≥70%); run the ~20-man cohort with the $11.99 offer, starting on a gate from Jan 4 at the earliest (70% take the paid first month; 40% come back unprompted).
+- **Horizon 2 (Next):** Ellis prepares him without being asked (outreach before flagged events, then opt-in calendar), the move from Copilot to Orchestrator; proposing from his wardrobe when it covers the event; a backup provider that passes the eval (Portability → Ready).
+- **Horizon 3 (Bet):** His record becomes his style history (the moat); Ellis plans his wardrobe for the season, not just the outfit (the upside); pooled house style at 100+ men (scale).
+- **Board Narrative:** I believe busy professional men will follow an AI stylist that asks the right questions, learns what works, and improves their wardrobe over time, all for $11.99 a month versus hundreds for a human stylist.
+- **Key Metric:** Report-back: the share of events with the morning-after "Was it right for the room?" answer within 48 hours (target 70%; under 50%, the kill rule fires). The moat is built from it.
 
 → Details: [`06-the-pitch/`](06-the-pitch/)

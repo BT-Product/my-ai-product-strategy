@@ -36,7 +36,7 @@ The test-only plain-assistant call is covered under "Not in monthly COGS" below.
 - **Heavy, in holiday season** (~8–10 events): ~$2.30–2.90. That's about 29¢ an event, on the assumption that heavy men do more mirror checks and rescues per event (about 1.5 checks and 0.5 rescues) while rotating outfits across back-to-back parties. The per-task logs check it.
 - **Stress case, daily use** (~30 events): ~$7.50
 
-**Average vs. active men:** The ~2-event average includes men drifting toward cancelling. The Module 1 moat milestone (10+ events at 3 months) counts only men still active, and assumes they average at least 3.3 events a month, about the "engaged" segment above. That's an assumption, not a measurement; the Nov 30–Dec 20 cohort checks it.
+**Average vs. active men:** The ~2-event average includes men drifting toward cancelling. The Module 1 moat milestone (10+ events at 3 months) counts only men still active, and assumes they average at least 3.3 events a month, about the "engaged" segment above. That's an assumption, not a measurement; the January cohort (from Jan 4 at the earliest) checks it.
 
 **Measured:** every model call logs its tokens and cost, tagged by task (intake, the read, follow-up, recommendation, plain assistant, mirror check, rescue). The first real event was logged on Nov 8.
 
@@ -45,7 +45,7 @@ The test-only plain-assistant call is covered under "Not in monthly COGS" below.
 
 **What it does: it parses.** At each event's intake, it structures the event (type, setting, time, who'll be there). After the event, it reads his written answers. Intake runs every event, not once.
 
-**Names, once:** the intake model (Haiku) reads his raw words once, names included, and replaces names with roles ("Person A, investor"). Nothing stored and no later model call contains a name, and the call log stores token counts and costs, never text. Other people's names are never stored, so "who saw him in what" could only track roles; whether it survives at all is pending (A2).
+**Names, once:** the intake model (Haiku) reads his raw words once, names included, and replaces names with roles ("Person A, investor"). Nothing stored and no later model call contains a name, and the call log stores token counts and costs, never text. Other people's names are never stored, so "who saw him in what" tracks roles only, and it's Horizon 3 (decided Nov 15).
 
 **Cost:** about 0.1–0.15¢ per event, so roughly **0.3¢ per man per month on average and 1.5¢ in a heavy month**, about 1% of the Sonnet cost.
 

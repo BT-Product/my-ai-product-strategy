@@ -38,7 +38,7 @@ An AI personal stylist that tells busy professional men who've never hired a sty
 
 ## Kill Criteria
 <!-- When would you stop? What evidence would kill this bet? -->
-All of these were set before any data came in. They're tested in the **10-man prototype test**, postponed from Nov 2–15; no new date yet.
+All of these were set before any data came in. They're tested in the **10-man prototype test**, postponed from Nov 2–15 to **about Dec 7–20** (decided Nov 15), after the build finishes about Dec 4, with a midpoint review about Dec 13–14. The cohort (~20 men: test men who want to continue, plus referrals) starts on a gate, not a date: Jan 4 at the earliest, Jan 11 if the test turns up problems. Holiday-party season gives real events but skews them to one type, so results are reported by event type.
 
 **How H1 is measured: a blind panel, not a comparison inside his flow.**
 - **Pairs:** on each man's first event, a plain assistant's answer is generated, stored, and never shown to him. He only ever sees Ellis.
@@ -68,20 +68,22 @@ At this sample size, every result is **directional**: 70% or more means *not fal
    - *Which events:* all of them, including men who declined notifications. Declining is what this rule exists to catch.
    - *Reported by channel:* every message records how it reached him (notification, email, or a text I send by hand when both miss), so a delivery gap isn't read as Ellis failing. The threshold doesn't change.
    - *50–70%:* redesign the capture (for example, ask at his next event) and retest.
-3. **He won't pay** (cohort, Nov 30–Dec 20). Out of about 10 cohort men asked at the end of the cohort, how many commit to the paid tier at $11.99 a month:
-   - *7 or more:* passes (not falsified).
-   - *4–6:* not proven.
-   - *3 or fewer:* stop or reposition.
+3. **He won't pay** (cohort, ~20 men, from Jan 4 at the earliest). The share of cohort men, asked at the end of the cohort, who commit to the paid tier at $11.99 a month (restated Nov 15 as shares, since the bars were first written for about 10 men):
+   - *70% or more (about 14 of 20):* passes (not falsified).
+   - *40–60% (about 8–12):* not proven.
+   - *30% or less (about 6 or fewer):* stop or reposition.
    - **What counts as committing: a founding-member payment.** At the end of the cohort, each man gets a one-time payment link for $11.99, his first paid month, starting when the polished version launches. No auto-renew and no card stored. Full refund on request any time before launch, and a refund takes his commitment off the count. "I'd pay for this" on the call doesn't count; men are polite to the person who built it.
-   - **What a pass means:** cohort men likely come from my network and are friendlier than the market, so 7 of 10 means "worth building," not "the market will pay."
+   - **What a pass means:** cohort men likely come from my network and are friendlier than the market, and many are test men who chose to continue, so a 70% pass means "worth building," not "the market will pay."
    - *Price questions at the follow-up call:* "At what monthly price would this feel like a bargain?" and "At what price would you stop considering it?" Ten answers won't set the price, but they show whether $11.99 sits near the floor or the ceiling.
-4. **He leaves after one event** (cohort, Nov 30–Dec 20). Of the men who completed a first event **and had another event to dress for within 14 days**, the share who used Mercer + Taylor for it without being prompted:
+4. **He leaves after one event** (cohort, from Jan 4 at the earliest). Of the men who completed a first event **and had another event to dress for within 14 days**, the share who used Mercer + Taylor for it without being prompted:
    - *40% or more:* passes.
    - *20–40%:* not proven.
    - *Under 20%:* the risk that he leaves after one event is confirmed, and calendar-driven prep moves up the roadmap.
 
-   **Why this base:** a man with nothing to dress for isn't a lost customer, so counting him would mix "didn't need us" with "didn't want us." Whether he had another event is asked at the follow-up call, held 14 days after his first event, so every man gets the full 14 days. If that falls after Dec 20, he keeps access until the call. The call asks "Did you have anything to dress for in the past two weeks?" before any question about Ellis, so a man who didn't come back has no reason to say he had nothing to dress for. The base still includes men who went quiet or cancelled, as long as they had an event, to avoid survivorship bias.
+   **Outreach doesn't count (decided Nov 15).** In the cohort, Ellis reaches out first only for the events he listed at recruitment (sub-bet S6). "Comes back" counts only second events he starts himself, outside that list; outreach-started events are reported separately, against outreach's own target. _Why:_ outreach only reaches events Ellis knows about, so an unprompted return is the test of whether Ellis is his default stylist rather than his own assistant; returns that come only after a nudge are fragile; and without the split there's no telling whether outreach added events or only got there first. Directional at about 20 men.
+
+   **Why this base:** a man with nothing to dress for isn't a lost customer, so counting him would mix "didn't need us" with "didn't want us." Whether he had another event is asked at the follow-up call, held 14 days after his first event, so every man gets the full 14 days. If that falls after the cohort ends, he keeps access until the call. The call asks "Did you have anything to dress for in the past two weeks?" before any question about Ellis, so a man who didn't come back has no reason to say he had nothing to dress for. The base still includes men who went quiet or cancelled, as long as they had an event, to avoid survivorship bias.
 
    **Reported alongside, never deciding:** the same share across every man who completed a first event. That's how often men come back at all, the event frequency that the moat milestone (3.3 events a month) and Module 3 pricing depend on.
 
-   **The bars are looser than they look.** 20% and 40% were first set on every man. On a base of men who all had a reason to come back, the same bars are easier to clear. They're kept, set before any data. At about 10 men, this base may be 3–6 men, so the result is directional only.
+   **The bars are looser than they look.** 20% and 40% were first set on every man. On a base of men who all had a reason to come back, the same bars are easier to clear. They're kept, set before any data. At about 20 cohort men in a quiet January, this base may be under 10 men, so the result is directional only.

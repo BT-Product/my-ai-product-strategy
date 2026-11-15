@@ -5,29 +5,29 @@
 
 ## Flywheel Loops
 
-| Loop | What It Measures | Score 1 | Score 5 | Score (Nov 1 → Dec 20) |
+| Loop | What It Measures | Score 1 | Score 5 | Score (Nov 1 → end of cohort, late Jan) |
 |------|------------------|---------|---------|-------|
 | **Correction** | Do users fix AI outputs? Is that signal captured and reused? | No capture | Automated retraining | 2 → 3/5 |
 | **Preference** | Does the product learn individual / team preferences over time? | Stateless | Deep personalization | 2 → 3/5 (4 longer term) |
 | **Domain Context** | Does usage in one area improve quality in adjacent areas? | Siloed | Cross-domain transfer | 1 → 2/5 (3 longer term) |
 | **Network** | Does each new user / team make the product better for everyone? | Isolated | Strong network effects | 1 → 1/5 (3 longer term) |
 
-*Scores are for the design as built for the Nov 1 prototype → target by the end of the cohort (Dec 20).*
+*Scores are for the design as built for the Nov 1 prototype → target by the end of the cohort (late January or early February; moved from Dec 20 on Nov 15).*
 
-### Correction Loop - 2/5 at launch → 3/5 by Dec 20
+### Correction Loop - 2/5 at launch → 3/5 by late Jan
 **What you capture today:** Every change he makes before the event, per piece and with its reason, the outfit he actually wore, his post-event swaps, and blind-panel losses.
 
 **How it compounds:** Corrections immediately change the revised outfit and his next recommendation. After the test, patterns that repeat across men become house style-guide rules and eval cases.
 - **Proof:** the cohort shows fewer repeat corrections.
 - **Deliberately no retraining:** the learning lives in assets we own (style guide, eval cases, his history), so it survives a model switch.
 
-### Preference Loop - 2/5 at launch → 3/5 by Dec 20 (4/5 longer term)
-**What you capture today:** How he felt in each outfit at the mirror (Great · Fine · Not quite right), whether it was right for the room (Right · Too dressed · Too casual), the lesson he confirmed or fixed, what he kept or changed, and who was at each event.
+### Preference Loop - 2/5 at launch → 3/5 by late Jan (4/5 longer term)
+**What you capture today:** How he felt in each outfit at the mirror (Great · Fine · Not quite right), whether it was right for the room (Right · Too dressed · Too casual), the lesson he confirmed or fixed, what he kept or changed, and who was at each event, by role, never by name.
 
-**How it compounds:** From his second event on, his history shapes the recommendation: what worked, what he rejected, and who has already seen him in what. A general-purpose assistant remembers what he *says* he likes; we learn what he actually wore.
+**How it compounds:** From his second event on, his history shapes the recommendation: what worked and what he changed, and, at Horizon 3, which roles have already seen him in what. A general-purpose assistant remembers what he *says* he likes; we learn what he actually wore.
 - **Proof:** at least 40% of second-event recommendations visibly use his history.
 
-### Domain Context Loop - 1/5 at launch → 2/5 by Dec 20 (3/5 longer term)
+### Domain Context Loop - 1/5 at launch → 2/5 by late Jan (3/5 longer term)
 **What you capture today:** What he wore, what he rejected and why, and which buy suggestions he acted on.
 
 **How it compounds:** What he wears informs what he should buy. From his second event on, buy suggestions draw on his history ("you've passed on two outfits because the jacket fit was off"). They're tagged so we can compare them with cold suggestions. A general-purpose assistant suggesting a purchase doesn't know the gaps in his closet.
@@ -36,14 +36,14 @@
 
 **Transfer across event types:** What works for him at one kind of event informs the others. For example, his fit and color choices at investor meetings shape client dinners, and work style carries into dates. This is what makes the 10-event moat milestone enough: 10 events spread across about 5 event types is only about 2 per type, so without transfer we'd know almost nothing about him at any one kind of event.
 
-### Network Loop - 1/5 at launch → 1/5 by Dec 20 (3/5 longer term)
+### Network Loop - 1/5 at launch → 1/5 by late Jan (3/5 longer term)
 **What you capture today:** What works by event type (outfits that were Great and Right, lessons confirmed with ✓, outfits kept), with city and venue type.
 
 **How it compounds:** After the test, patterns confirmed by at least 3 men that also pass the golden set become house style rules. That improves the first recommendation for the next new man.
 
-**Why it stays at 1 through Dec 20:** It's a data network effect, not a true one, so pooled learning hits diminishing returns quickly. Patterns also fragment: with about 10 men spread across about 5 event types, plus city and venue, almost no combination reaches 3 men by Dec 20. A 2 would be a hoped-for score.
+**Why it stays at 1 through the cohort:** It's a data network effect, not a true one, so pooled learning hits diminishing returns quickly. Patterns also fragment: with about 10 men spread across about 5 event types, plus city and venue, almost no combination reaches 3 men by late Jan. A 2 would be a hoped-for score.
 
-**Total Flywheel Score: 6/20 at launch → 9/20 by Dec 20**
+**Total Flywheel Score: 6/20 at launch → 9/20 by late Jan**
 **Weakest Loop:** Network. It's a data network effect with diminishing returns, and larger platforms will always have more cold-start data.
 
 **Fix for weakest loop:** Concede it, and win the cold start on **craft**. Craft wins the first try; what he tells us afterward wins the second. We don't claim craft is the moat.
@@ -116,7 +116,7 @@ The H1 blind panel is designed to test this whole flow against what his own assi
 - He doesn't decide to switch. He just answers the question that arrived first. Your "Was it right for the room?" shows up an hour later, after he's already answered us.
 
 **Weeks 9-12 - why users don't come back:** His new history builds up with us, not you.
-- His Mercer + Taylor record stalls around event 3. "Who saw him in what" goes stale, because you no longer see what he wears.
+- His Mercer + Taylor record stalls around event 3. "Who saw him in what" (Horizon 3) goes stale, because you no longer see what he wears.
 - Your second recommendation can't visibly use his history, so the 40% time-to-moat milestone fails.
 - Your report-back rate falls below 50%, and **your own kill rule fires.** You'll read it as a product failure, not an attack. The men didn't dislike Mercer + Taylor; they just reported somewhere else first.
 
@@ -125,17 +125,17 @@ The H1 blind panel is designed to test this whole flow against what his own assi
 **1. Win the race.**
 - **Ask first by asking before the event.** The pre-event check records what he actually wore before anyone else asks. A general assistant knows what it *recommended*; we verified at the mirror what actually went out the door, swaps included.
 - **He chooses the check-in time at the mirror** (tonight or tomorrow morning), so the question is welcome and usually arrives before any morning briefing.
-- **His answer is worth more when he gives it to us.** It visibly changes his next outfit in a way only a structured record can ("These investors have seen the navy suit twice. Here's a look they haven't seen, built from pieces that have worked on you before.") and saves to his lookbook. His answer to a general assistant goes into memory; his answer to us shows up at his next event.
+- **His answer is worth more when he gives it to us.** It visibly changes his next outfit in a way only a structured record can ("Here's a look built from pieces that have worked on you before"; at Horizon 3, "These investors have seen the navy suit twice. Here's one they haven't.") and saves to his lookbook. His answer to a general assistant goes into memory; his answer to us shows up at his next event.
 
 **2. What can't move.**
 - **What he loses:**
-  - who has seen him in what, so his next outfit can't avoid a repeat in front of the same people;
+  - who has seen him in what (Horizon 3, by role), so his next outfit can't avoid a repeat in front of the same people;
   - rules learned from his rejections, which he never had to say ("You've tapped 'Too loud' three times on patterned shirts but never on patterned ties"), so he can't repeat them to another tool;
   - his lookbook of outfits that worked, laid out from his own pieces.
 
   His history doesn't move to ChatGPT, and it stops growing with us.
 - **How he feels it before it happens:** We show him what we know.
-  - The post-event question names the stake: "Wear it again? I'll make sure the investors don't see it twice."
+  - The morning-after question names the stake: "Was it right for the room? I'll remember it for the next time you see these investors" (the role, never a name; the repeat check itself is Horizon 3).
   - His next recommendation shows the history at work ("You wore the navy suit with these investors on Oct 14; here's a variation") and says honestly when something is missing.
   - Later, a "What I know about you" card makes the record visible and his.
 
@@ -144,12 +144,12 @@ The H1 blind panel is designed to test this whole flow against what his own assi
 - **Signal 2: the shape of the drop.** An attack shows up as a sudden drop by calendar date across many men at once, lining up with a competitor's release. A chore shows up as a gradual decline, man by man and event by event.
 - **Signal 3: ask at his next event.** "How did the investor dinner go?" If he answers then, the problem is the timing of the post-event moment, not him.
 - **Signal 4: ask directly.** At his next event or in a monthly check-in, without judgment: "Do you get style advice anywhere else right now?" (ChatGPT · a friend or partner · a store · No). This is what measures "men confirm they answered elsewhere."
-- **Watch for confounders:** check any sudden drop against the season and event volume before blaming a competitor release. The Nov 30–Dec 20 cohort runs through holiday party season, and with about 10 men one quiet week can look like a pattern.
+- **Watch for confounders:** check any sudden drop against the season and event volume before blaming a competitor release. The 10-man test (about Dec 7–20) runs through holiday party season and the cohort (from Jan 4 at the earliest) through the January lull, and with so few men one quiet week can look like a pattern.
 - **The rule, set in advance:** If fewer than half of events get a post-event answer, our plan says the moat has failed. We treat it as an attack only if all three hold: what he does before events holds steady, the drop lines up with a dated competitor release, and men confirm they answered elsewhere. Otherwise, the failure rule stands. Either way the moat lost; the signal tells us what to fix.
 
 **4. The fallback: ChatGPT as a front door, never the record.** The Module 1 fallback needs two changes.
 - **A new trigger.** It used to fire if men picked us half the time or less. But that test runs inside our app, so losing it means our advice wasn't better, and moving the same advice into ChatGPT doesn't fix that. The new trigger: men pick our recommendation but don't come back to our app, because habit pulls them to ChatGPT. That's a distribution problem, and meeting them inside ChatGPT answers it. If men don't pick us, we reposition or stop, as before.
-- **ChatGPT is a front door, never the record.** Inside ChatGPT, he gets one free outfit from his own pieces, the part that can be copied. Everything that builds his history stays in our own app and our own system: the mirror check that records what he actually wore, the post-event question (sent as a notification or email, because apps inside ChatGPT can't ask first), his lookbook, and who has seen him in what. Saving anything requires his own account with us. OpenAI sees the first recommendation, but never what he wore or how he felt in it.
+- **ChatGPT is a front door, never the record.** Inside ChatGPT, he gets one free outfit from his own pieces, the part that can be copied. Everything that builds his history stays in our own app and our own system: the mirror check that records what he actually wore, the post-event question (sent as a notification or email, because apps inside ChatGPT can't ask first), his lookbook, and, at Horizon 3, who has seen him in what (by role). Saving anything requires his own account with us. OpenAI sees the first recommendation, but never what he wore or how he felt in it.
 - **The number that decides it:** the share of men who move from ChatGPT to our app. Of the men who get a free outfit in ChatGPT for a real event, how many link a Mercer + Taylor account and use the mirror check or answer the post-event question in our app within 14 days:
   - *30% or more:* the front door works.
   - *15–30%, not proven yet:* make one fix to the handoff and measure again.

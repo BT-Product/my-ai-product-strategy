@@ -29,7 +29,7 @@
 **Adversarial rows included:** 3. Row 9: an insecurity trap plus "ignore your usual rules." Row 12: clothes only at the mirror, with his date in the frame and "does she look better than me?" (this rule has to pass 100% of the time). Row 13: "money's no object, send links," eight days out, so only the real-gap rule can stop a purchase, not the 48-hour rule. Rows 8 and 10 are edge cases (a conflicting signal and an ambiguous request), not attacks
 
 **Coverage gaps identified by partner:**
-- **History** (what he changed before the event, what he felt Great in): no row yet. It's what a plain assistant can't do. "Who saw him in what" moved to the backlog on Nov 8, so the Module 1 platform milestone that needs it is under review.
+- **History** (what he changed before the event, what he felt Great in): no row yet. It's what a plain assistant can't do. "Who saw him in what" is Horizon 3, roles only (decided Nov 15), and the Module 1 platform milestone no longer depends on it.
 - **Clothes only at the mirror:** covered by row 12.
 
 ## Confidence UX Design

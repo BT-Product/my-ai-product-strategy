@@ -25,11 +25,11 @@
 
 1. **Event outcomes.** For each event: what was recommended, what he chose, what he actually wore, what he changed and why, and how it went. This record doesn't exist anywhere else.
 2. **Revealed taste vs. stated taste.** He always swaps the loafers for boots, never wears the pink shirt, and follows color advice but not fit advice. This is learned only from the gap between what was recommended and what he wore, so he can't type it into ChatGPT.
-3. **Who saw him in what.** "You wore the navy suit to the last two meetings with this client." "She's seen the green jacket twice." A good human stylist tracks this. An assistant with no history can't, and it's worth the most at the high-stakes events our audience cares about.
+3. **Who saw him in what (Horizon 3, roles only).** "You wore the navy suit to the last two meetings with this client." "Her parents have seen the green jacket twice." A good human stylist tracks this. An assistant with no history can't, and it's worth the most at the high-stakes events our audience cares about. Ellis tracks roles, never names (Module 5), and it's built at Horizon 3, since it needs several events of history per man first; until then, the moat rests on hooks 1, 2 and 4 (decided Nov 15).
 4. **Combinations proven on him.** Which pieces worked together, at which kinds of events. Re-photographing the closet somewhere else is easy; rebuilding what works isn't.
 5. **Fit by brand.** A fit passport with alterations on file. It's moderately annoying to rebuild, and it supports the buying side of the business.
 
-**Milestone (target earned when):** 60% of users still active at 3 months have 10+ events logged with outcomes. The ideal user has about one event a week, and 10 events with outcomes is enough to personalize his stylist. This counts only men still active, and assumes they average at least 3.3 events a month, well above the ~2 of the average paying man in the Module 3 cost model. The Nov 30–Dec 20 cohort checks it.
+**Milestone (target earned when):** 60% of users still active at 3 months have 10+ events logged with outcomes. The ideal user has about one event a week, and 10 events with outcomes is enough to personalize his stylist. This counts only men still active, and assumes they average at least 3.3 events a month, well above the ~2 of the average paying man in the Module 3 cost model. The January cohort (from Jan 4 at the earliest) checks it.
 
 **Critical assumption:** He reliably reports back what he wore and how it went. Hooks 1–4 all depend on that loop. If capturing it takes effort and he stops, the moat never forms.
 
@@ -84,13 +84,13 @@
 
 **Milestone (target earned when):** Both of these hold:
 - A blind panel of men picks our recommendation over a plain assistant's at least 70% of the time.
-- At least 40% of second and later events get a recommendation that visibly uses his history: what he rejected at the mirror, who saw him in what, and what he felt great in.
+- At least 40% of second and later events get a recommendation that visibly uses his history: what he changed before the event, what was Great and Right for the room, and lessons he confirmed with ✓. Who saw him in what joins once it's built (Horizon 3).
 
 **Named attacker (from partner challenge):** OpenAI (ChatGPT). It already has vision, memory and shopping features, and it's an app he opens every day. Runner-up: Google, which owns his calendar and photos.
 
 **The week it ships:**
 1. **Day 1:** Run the offline separation check on our golden set against the new release to measure how much of a gap is left. A blind panel follows within the week, since raters take days to recruit.
-2. **If men pick us 70% of the time or more:** Lead with what they can't copy: the pre-event check and "Change something" at the mirror, his record of what he wore and rejected, who saw him in what, and his lookbook.
+2. **If men pick us 70% of the time or more:** Lead with what they can't copy: the pre-event check and "Change something" at the mirror, his record of what he wore and changed, who saw him in what (Horizon 3), and his lookbook.
 3. **If men pick us 50% of the time or less:** Pivot. The free tier moves inside ChatGPT as a third-party app, with the same style guide and the same record. Our own app becomes the paid stylist that holds his history.
 4. **Either way:** Show every current user what we already know about him ("6 events, 2 rejections at the mirror, your best look"), so the cost of leaving is visible before anyone tries the alternative.
 
@@ -110,4 +110,4 @@
 
 ## Confidence Level
 <!-- H / M / L — how confident are you in this bet after the diagnostic? -->
-**L.** Every axis scores 1–2 today, and there's no user evidence yet. The 10-man test (postponed; no new date yet) raises it if a blind panel picks our advice over a plain assistant's **and** men report back, both at 70% or higher. It ends or repositions the bet if panel picks fall below 40% or report-back falls below 50%. Thresholds and sample design are in [prototype.md](prototype.md).
+**L.** Every axis scores 1–2 today, and there's no user evidence yet. The 10-man test (about Dec 7–20) raises it if a blind panel picks our advice over a plain assistant's **and** men report back, both at 70% or higher. It ends or repositions the bet if panel picks fall below 40% or report-back falls below 50%. Thresholds and sample design are in [prototype.md](prototype.md).
