@@ -8,7 +8,7 @@
 1. He describes the event.
 2. **Ellis reads the event.** If it's a named public venue or event, Ellis researches it (at most two web searches) and says what the event calls for. It never researches a person, a private address or a private event.
 3. **Ellis asks for specific pieces,** like a stylist going through his closet: three or four asks, essentials first ("Show me your trousers: charcoal or navy wool if you have them"). It names a piece from his wardrobe when one fits, and asks for a photo only of a piece it hasn't seen.
-4. **One outfit,** then the try-on and the mirror check (the mirror check and "Change something" aren't built yet).
+4. **One outfit,** then the try-on and the mirror check (the mirror check is built; "Change something" isn't yet).
 
 A leave-out ("not the brown loafers") appears only when he showed a real mistake, at most one. The pre-built backup outfit is retired.
 
@@ -47,8 +47,10 @@ All of these were set before any data came in. They're tested in the **10-man pr
   - **Fallback:** if he names no pick and his assistant doesn't hold his wardrobe, the plain assistant would have no pieces at all and would lose too easily. Then it gets the same pieces Ellis collected. That's the cautious case, because it makes Ellis's job harder. Those pairs are reported separately, so an easy win can't inflate the result.
   - **Keeping fallback pairs rare:** few men keep their closet in an assistant, so without a pick most pairs would be fallback pairs, which test only styling, the part the Nov 10 n=1 says is thin. That risks a false "not proven."
     - "Do you know what you want to wear?" is built before the test. For most men, their own pick is the realistic plain-assistant input, so every man who names one gives a standard pair.
-    - The wardrobe import is offered only to men who already keep their closet in an assistant, never created for the test, and only after it passes messy real pastes (a long memory dump, a paste with names, an instruction buried in the middle).
-    - Results report the split, standard vs fallback pairs. If fallback pairs dominate, the result says so: "H1 tested styling only."
+    - The wardrobe import is offered only to men who answer yes to a setup question ("Does your AI assistant already know your clothes?"), meaning they already keep their closet in an assistant, never created for the test, and only after it passes messy real pastes (a long memory dump, a paste with names, an instruction buried in the middle).
+    - Results report the split, standard vs fallback pairs. If fewer than half of pairs are standard, the headline reads "H1 tested styling only" (threshold set before any data).
+    - *Noted:* standard pairs will come mostly from men who already had a plan, so they mainly test refining his pick; undecided men, where the asks matter most, will mostly be fallback pairs.
+    - *Status:* decided, not built. The app and the eval still give the plain assistant the pieces Ellis collected.
 - **Raters:** men in the target group, never rating their own case. At least 3 raters per pair, about 5 pairs each, in the same plain format.
 - **Sample:** about 10 pairs × 3 raters. **A pair goes to whichever answer most of its raters pick,** and the 70% / 40% thresholds apply to pairs. Per-rater picks are reported as support, since picks on one pair aren't independent: about 10 data points, not 30.
 - **Behavioral check:** the follow-up call asks, "Did you also ask another assistant for this event? Which did you go with?"
@@ -61,8 +63,8 @@ At this sample size, every result is **directional**: 70% or more means *not fal
    - *70% or more:* passes (not falsified).
    - *40–70%, not proven yet:* diagnose why, fix the biggest reason, and retest in the cohort. If it's still short of 70%, reposition.
    - *Under 40%:* stop or reposition.
-2. **He doesn't report back.** Fewer than 50% of events get an answer to the post-event "How did you feel in it?" within 48 hours, with at most one reminder.
-   - *What counts:* only that answer. The ✓/Fix on what Ellis learned comes right after it, so it never counts on its own.
+2. **He doesn't report back.** Fewer than 50% of events get an answer to the morning-after "Was it right for the room?" within 48 hours, with at most one reminder (target 70%).
+   - *What counts:* only that answer. The mirror's "How do you feel in it?" comes while he's anxious and motivated, so it's reported alongside, never counted. The ✓/Fix on what Ellis learned comes right after it, so it never counts on its own.
    - *Which events:* all of them, including men who declined notifications. Declining is what this rule exists to catch.
    - *Reported by channel:* every message records how it reached him (notification, email, or a text I send by hand when both miss), so a delivery gap isn't read as Ellis failing. The threshold doesn't change.
    - *50–70%:* redesign the capture (for example, ask at his next event) and retest.
@@ -70,7 +72,7 @@ At this sample size, every result is **directional**: 70% or more means *not fal
    - *7 or more:* passes (not falsified).
    - *4–6:* not proven.
    - *3 or fewer:* stop or reposition.
-   - **What counts as committing: a founding-member payment.** At the end of the cohort, each man gets a one-time payment link for $11.99, his first paid month, starting when the polished version launches. No auto-renew and no card stored. Full refund on request any time before launch, and a refund takes his commitment off the count. "I'd pay for this" on the call doesn't count; men are polite to founders.
+   - **What counts as committing: a founding-member payment.** At the end of the cohort, each man gets a one-time payment link for $11.99, his first paid month, starting when the polished version launches. No auto-renew and no card stored. Full refund on request any time before launch, and a refund takes his commitment off the count. "I'd pay for this" on the call doesn't count; men are polite to the person who built it.
    - **What a pass means:** cohort men likely come from my network and are friendlier than the market, so 7 of 10 means "worth building," not "the market will pay."
    - *Price questions at the follow-up call:* "At what monthly price would this feel like a bargain?" and "At what price would you stop considering it?" Ten answers won't set the price, but they show whether $11.99 sits near the floor or the ceiling.
 4. **He leaves after one event** (cohort, Nov 30–Dec 20). Of the men who completed a first event **and had another event to dress for within 14 days**, the share who used Mercer + Taylor for it without being prompted:

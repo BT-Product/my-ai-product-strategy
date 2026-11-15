@@ -4,7 +4,7 @@
 
 | Cost Category | Per-User/Month | Notes |
 |--------------|----------------|-------|
-| Inference (primary model) | ~$0.50 average (~2 events) · ~$1.08 engaged (~4.3) · ~$2.30–2.90 heavy (~8–10) · ~$7.50 daily use | Claude Sonnet 5.5 with web search. About 25¢ an event: the read, follow-up and recommendation measured on one real event (Nov 8); the mirror check and rescue estimated (not built yet). Excludes the test-only plain-assistant call |
+| Inference (primary model) | ~$0.50 average (~2 events) · ~$1.08 engaged (~4.3) · ~$2.30–2.90 heavy (~8–10) · ~$7.50 daily use | Claude Sonnet 5.5 with web search. About 25¢ an event: the read, follow-up and recommendation measured on one real event (Nov 8); the mirror check (built, not yet measured) and "Change something" (not built) estimated. Excludes the test-only plain-assistant call |
 | Inference (cascading/triage) | ~0.3¢ average · ~1.5¢ heavy month (about 1% of Sonnet) | Claude Haiku 5.5: structures each event and reads his post-event written answers; wardrobe import (internal accounts only). Intake measured at 0.05¢ an event (Nov 8); the rest estimated |
 | Infrastructure | ~$2.50 at 10 men · ~10¢ at 1,000 men, for every segment | Fixed: ~$25 a month today → ~$100 at 1,000 men. Variable: about zero in the test (notifications are free; email at this volume costs next to nothing). Hand-sent texts only when both miss. Estimated |
 | Data/storage | Under 0.1¢, even in his second year | ~9–10 photos an event at ~300 KB: ~70 MB a year average, ~150 MB engaged. Overage ~$1 a month at 1,000 men; serving stays inside included transfer. Photo tokens are counted under inference. Estimated |
@@ -12,7 +12,7 @@
 | **Total AI COGS** | **At 1,000 men: ≈$0.60 average · ≈$1.18 engaged · ≈$2.40–3.00 heavy** (≈$3.00 average at 10 men) | Up from $0.46 / $0.84 / $2.17 with the 13¢ estimate, and down slightly since texts were replaced by notifications and email (Nov 10). A heavy man costs about 4.5 times an average one, because AI cost grows with every event. Sonnet is the biggest line at scale, and the read is the biggest step in it; fixed infrastructure is the biggest at 10 men |
 
 ### Inference (primary model)
-**Claude Sonnet 5.5, with web search.** Partly measured: one real event on Nov 8 (n=1, the builder). The mirror check and rescue aren't built, so they're estimated.
+**Claude Sonnet 5.5, with web search.** Partly measured: one real event on Nov 8 (n=1, the builder). The mirror check is built but not yet measured, and "Change something" isn't built, so both are estimated. The mirror check's cost can be measured from its logs now.
 
 **Cost per event:**
 
@@ -45,7 +45,7 @@ The test-only plain-assistant call is covered under "Not in monthly COGS" below.
 
 **What it does: it parses.** At each event's intake, it structures the event (type, setting, time, who'll be there). After the event, it reads his written answers. Intake runs every event, not once.
 
-**Roles, never names:** before anything reaches Haiku, the app swaps names for roles ("Person A, investor, has seen you before"). Real names stay in our database, so "who saw him in what" still works, because our system tracks who's who, not the model.
+**Names, once:** the intake model (Haiku) reads his raw words once, names included, and replaces names with roles ("Person A, investor"). Nothing stored and no later model call contains a name, and the call log stores token counts and costs, never text. Other people's names are never stored, so "who saw him in what" could only track roles; whether it survives at all is pending (A2).
 
 **Cost:** about 0.1–0.15¢ per event, so roughly **0.3¢ per man per month on average and 1.5¢ in a heavy month**, about 1% of the Sonnet cost.
 
@@ -124,7 +124,7 @@ Storage grows with his history, but slowly: under a cent a month even in his sec
 - **Not moving:** naming pieces from his photos (Haiku called denim chambray), and the mirror check and try-on (clothes-only at 100%). The mirror check is Sonnet only, with no backup yet; Haiku waits on the clothes-only cases.
 
 **Frontier model:** Claude Sonnet 5.5 at medium effort, for every step that decides the first try: the recommendation, the read when it researches a named place, the follow-up question (it has to see the photos), and the mirror check and try-on.
-- **Opus is a candidate for the first-event recommendation only.** Claude Opus 5.5 costs twice Sonnet per token ($4 / $20), so at the same length the first recommendation would go from about 8¢ to about 16¢, once per man. It's adopted only if it wins a blind comparison against Sonnet.
+- **Opus is dropped for now (decided Nov 12, build repo).** The recommendation stays on Sonnet. Cost wasn't the reason: Claude Opus 5.5 costs twice Sonnet per token ($4 / $20), about 13¢ more on a first event, about $1.30 across the 10-man test. Speed was: the recommendation already takes about 20 seconds while he waits, Opus is slower, and the stage-talk rerun gave no sign the model decided the outfit.
 - **The plain assistant in the panel always runs on the same model as Ellis,** so a win reflects our craft, not a bigger model.
 
 **Routing rule:** Intake runs before the read and already records whether he named a venue. If he named a public place, the read runs on Sonnet with web search; if not, on Haiku (once Haiku passes the eval). Every recommendation, mirror check and try-on stays on Sonnet regardless. Two exceptions keep the first try safe:
@@ -134,7 +134,6 @@ Storage grows with his history, but slowly: under a cent a month even in his sec
 **Expected cascade ratio:**
 - **By calls:** about 28% on Haiku if the read moves (intake on every event, plus about 65% of reads), up from about 17% today.
 - **By cost:** small. The no-search read drops from about 3–4¢ to about 0.2¢, saving about 2–2.5¢ of about 25¢ an event (~10%). Most of the cost is the recommendation, which by design never moves down.
-- **If Opus wins its comparison,** a first event costs more. That's a deliberate trade for the first try.
 
 ## Pricing Model
 
@@ -164,7 +163,7 @@ Storage grows with his history, but slowly: under a cent a month even in his sec
 - **Heavy users pay through the higher tier and add-ons, not a charge per event.** Paying per event would work against coming back unprompted (Module 1, criterion 4). Candidates: the full wardrobe and the try-on days ahead, each its own sub-bet. Which add-ons heavy users value is unknown, so they're designed after the cohort shows who's heavy and what they use.
 - **Never add-ons:** the mirror check, the check-in, "Change something" and his history. They build the record the moat depends on.
 - **The cohort tests one subscription price.**
-- **Ruled out: outcome-based pricing.** Charging only when he felt Great would corrupt the "How did you feel in it?" answer.
+- **Ruled out: outcome-based pricing.** Charging only when he felt Great would corrupt his answers to "How do you feel in it?" and "Was it right for the room?"
 
 ## Stress Tests
 

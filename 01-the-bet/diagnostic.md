@@ -12,7 +12,7 @@
 
 **Buying channel: partner pressure.** A wife or girlfriend pushes him to go, so the buyer and the user can be different people. *(Reclassified in Module 2: this is how he arrives, not a moment when he needs to dress well.)*
 
-**Your Role:** Solo founder, building the product myself. I'll hire a team once testing confirms the core assumptions.
+**Your Role:** Solo product lead, building the product myself. I'll hire a team once testing confirms the core assumptions.
 
 ---
 
@@ -42,7 +42,7 @@
 
 **Score rationale:** We have no data today. The target is 3, not higher, because the advantage is narrow (high-stakes events, one audience) and a well-resourced competitor is one feature away from collecting similar data.
 
-**Milestone (target earned when):** About 500 outcome-labeled events across 100+ men. That's the point where pooled data measurably improves a new user's first recommendation: he changes **35% fewer pieces** of his first outfit with pooled data than with a general-LLM baseline that has no pooled data. Pieces changed, not taps: "Change something" edits one piece at a time, so a shoe swap counts 1 and a full redo counts 4–5. The first-event Great rate is reported alongside; it depends on the night as well as the outfit, so it supports the result but doesn't decide it.
+**Milestone (target earned when):** About 500 outcome-labeled events across 100+ men. That's the point where pooled data measurably improves a new user's first recommendation: he changes **35% fewer pieces** of his first outfit with pooled data than with a general-LLM baseline that has no pooled data. Pieces changed, not taps: "Change something" edits one piece at a time, so a shoe swap counts 1 and a full redo counts 4–5. The first-event hit rate (Great at the mirror and Right for the room) is reported alongside; it depends on the night as well as the outfit, so it supports the result but doesn't decide it.
 
 **The compounding signal:** Outfits labeled with outcomes for high-stakes events. Each event pairs:
 - what was recommended
@@ -54,11 +54,15 @@
 **Capture design:** Data is captured at the moments when he wants help, so logging isn't a chore.
 - **"Check me":** he snaps what he has on and gets a reply about the clothes only ("You're good. Tuck the shirt.").
 - **"Change something":** he can tap it any time before the event and edit the outfit piece by piece, each edit with an optional one-tap reason (Fit's off · Too formal · Too loud · Not comfortable · Just not me · You read the event wrong). Ellis revises the outfit live from pieces he's already photographed. He can also snap what he ends up wearing, so the record shows what actually went out the door.
-- **Post-event check-in:** "How did you feel in it?" Great · Fine · Not quite right. Then Ellis shows what it learned, including the event ("Got it: the charcoal suit works for investor pitches"), with ✓ / Fix. One tap labels the outcome, and ✓ / Fix corrects the lesson. Naming the event in the lesson matters: he can feel great and still be underdressed, and Fix catches that.
-  - **His record (what Ellis reuses):** Great leads next time at that kind of event. Fine stays in rotation but never leads. Not quite right is avoided at that kind of event.
-  - **The scorecard (how Ellis is judged):** Ellis is designed to make men feel Great, so only Great is a hit. The target is **65% of answered events rated Great**. Fine and Not quite right count as misses on the scorecard without being taken out of his closet. Two rules keep the number honest:
-    - Events where his closet falls short ("the closest you have") are reported separately. Their best honest outcome is Fine, so the 65% is judged on events his closet could meet.
-    - The Great rate is always shown next to the response rate, because men who felt off are more likely to skip the question.
+- **Two check-ins, each asked when he knows the answer** (adopted Nov 14 from my client showing, n=1; not built yet):
+  - **At the mirror: "How do you feel in it?"** Great · Fine · Not quite right, asked when he snaps the photo and before Ellis replies, so Ellis can't sway it. One skippable tap, and Ellis's reply starts at the same moment, so answering never adds wait. Recorded as its own signal.
+  - **The morning after: "Was it right for the room?"** Right · Too dressed · Too casual, what only the event can tell him, plus the feeling question if he skipped the mirror. It brings back the half the feeling question can't answer (he can feel great and be underdressed), and it grades the read's dress-code estimate directly: a read of smart casual, then "Too dressed," is a measured miss on the edge.
+  - Then Ellis shows what it learned, including the event ("Got it: the charcoal suit works for investor pitches"), with ✓ / Fix.
+  - **His record (what Ellis reuses):** Great and Right leads next time at that kind of event. Great but Too dressed or Too casual is an event lesson ("same outfit, but that room wants a jacket"), not a winner. Fine stays in rotation but never leads. Not quite right is avoided at that kind of event.
+  - **The scorecard (how Ellis is judged):** Ellis is designed to make men feel Great in an outfit that's right, so **a hit is Great at the mirror and Right for the room.** The target is **65% of events with both answers**. Everything else is a miss on the scorecard without being taken out of his closet. Two rules keep the number honest:
+    - If he skipped the mirror and answers the feeling question the morning after, Great + Right still counts as a hit; otherwise men who skip the mirror could never score one. Each hit records which moment the feeling came from, and the two are reported separately, because a morning-after feeling is colored by how the night went.
+    - Events where his closet falls short ("the closest you have") are left out of the 65% and shown as their own count, with their own hit rate. They rarely reach a hit, so the 65% is judged on events his closet could meet.
+    - The hit rate is always shown next to the response rate, because men who felt off are more likely to skip a question.
 
     It's a target, not a kill rule. At 10 men it's directional; the cohort is the first real read.
   - **Across men:** lessons he confirms with ✓ feed the pooled house style, under the existing rule: adopted only when 3+ men show the same pattern.
@@ -76,7 +80,7 @@
 
 **Hook vs. moat:** The hero feature is the hook, and it's deliberately the part that can be copied. It only has to win the first try. Defensibility comes from the history it starts. The metric that matters is **time-to-moat**: we aim for his second recommendation to visibly use his history.
 
-**Score rationale:** A generic version of the hero feature already works in ChatGPT today, so we're not at 1 only because a platform is unlikely to build for this niche specifically, and a solo founder can pivot within a week. We reach 3 when the history, not the hook, is what men pick us for.
+**Score rationale:** A generic version of the hero feature already works in ChatGPT today, so we're not at 1 only because a platform is unlikely to build for this niche specifically, and a solo product lead can pivot within a week. We reach 3 when the history, not the hook, is what men pick us for.
 
 **Milestone (target earned when):** Both of these hold:
 - A blind panel of men picks our recommendation over a plain assistant's at least 70% of the time.
@@ -102,7 +106,7 @@
 
 **Mitigation:** Reporting back is designed as the reward, not a form: the pre-event "Check me" and the instant revision when he taps "Change something."
 
-**Kill rule:** Fewer than 50% of events get a check-in within 48 hours, counting every event, including men who declined notifications. Only the answer to the post-event "How did you feel in it?" counts as a check-in; the ✓/Fix after it never counts on its own. "Check me" and "Change something" happen while he's anxious and motivated, so they would flatter the number. The outcome tap is the hardest to get and the one the Data Advantage depends on.
+**Kill rule:** Fewer than 50% of events get a check-in within 48 hours, counting every event, including men who declined notifications. Only the answer to the morning-after "Was it right for the room?" counts as a check-in; the ✓/Fix after it never counts on its own. The mirror's "How do you feel in it?", "Check me" and "Change something" happen while he's anxious and motivated, so they would flatter the number; the mirror's answer is reported alongside, never counted. The outcome tap is the hardest to get and the one the Data Advantage depends on.
 
 ## Confidence Level
 <!-- H / M / L — how confident are you in this bet after the diagnostic? -->

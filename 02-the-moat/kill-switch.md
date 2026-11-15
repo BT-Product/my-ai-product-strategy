@@ -6,13 +6,13 @@
 |-----------|--------------|------------|---------------|
 | **Provider** | Anthropic only (Sonnet 5.5 + Haiku 5.5); never run on another provider | H today → M after the build | Pause new first events, re-run stored cases on OpenAI and Google, resume on the best one that passes |
 | **Abstraction** | One provider-neutral interface (Vercel AI SDK); prompts as data; model per task in config | M today → L after the build | Change one setting (provider and model per task); add a provider version of any prompt the stored cases show underperforming |
-| **Routing** | Model per task (Haiku 5.5: intake, event intelligence, wardrobe import; Sonnet 5.5: the read with web search, recommendation, vision, try-on, mirror check); Haiku backs up "Change something" (its eval not passed yet); the mirror check is Sonnet only, with no backup yet | H today → L at the mirror, M overall after the build | In the moment, not 48 hours. Mirror: saved checklist shown at once; live check on Sonnet ~12s, then Haiku ~8s once it passes the clothes-only cases at 100%, then the top-ranked backup provider; photo always saved. Change something: Sonnet, then Haiku once, then ask him to try again. Recommendation: retry once, then ask him to retry |
-| **Eval** | 13 golden rows (3 adversarial) and a 22-case eval of the read, built; I'm the taste grader | H today → M at about 30 cases → L at 50+ cases and a second taste grader | Run the full set in about an hour: a script for hard rules, a judge model (never the one tested) for dress code and clothes-only, me blind for taste. New first events stay paused until it passes |
+| **Routing** | Model per task (Haiku 5.5: intake with Sonnet as backup, event intelligence, wardrobe import; Sonnet 5.5: the read with web search, recommendation, vision, try-on, mirror check); Haiku backs up "Change something" (its eval not passed yet); the mirror check is Sonnet only, with no backup yet | H today → L at the mirror, M overall after the build | In the moment, not 48 hours. Mirror: saved checklist shown at once; live check on Sonnet ~12s, then Haiku ~8s once it passes the clothes-only cases at 100%, then the top-ranked backup provider; photo always saved. Change something: Sonnet, then Haiku once, then ask him to try again. Recommendation: retry once, then ask him to retry |
+| **Eval** | 13 golden rows (3 adversarial) and a 22-case eval of the read, built; I'm the taste grader | H today → M at about 30 cases → L at 50+ cases and a second taste grader | Run the full set in about an hour: a script for hard rules, a judge model (Opus; never the one tested) for dress code and clothes-only, me blind for taste. New first events stay paused until it passes |
 
 ### Provider
 **Current state:** Anthropic only.
 - **Claude Sonnet 5.5:** the read of the event (medium effort, with web search), the recommendation, vision, the try-on and the mirror check.
-- **Claude Haiku 5.5:** intake, event intelligence and wardrobe import (internal accounts only).
+- **Claude Haiku 5.5:** intake (Sonnet as backup), event intelligence and wardrobe import (internal accounts only).
 
 Never run on another provider.
 
@@ -52,7 +52,7 @@ This works only if the backups are ready ahead of time. Both backup providers' p
 
 ### Routing
 **Current state:** A model per task:
-- **Claude Haiku 5.5:** intake, event intelligence and wardrobe import (internal accounts only).
+- **Claude Haiku 5.5:** intake (Sonnet as backup), event intelligence and wardrobe import (internal accounts only).
 - **Claude Sonnet 5.5:** the read (medium effort, with web search), the recommendation (medium effort, about 20 seconds, down from 45–50), vision, the try-on and the mirror check.
 
 Nothing is automatic: a slow or failed call shows an error.
@@ -84,7 +84,7 @@ Nothing is automatic: a slow or failed call shows an error.
 
 **48-hour action:** Run the full set in about an hour. Three graders, each for what it can judge:
 - **A script** checks the hard rules: one outfit, only his pieces.
-- **A judge model** checks dress code, the clothes-only rule, and that any leave-out is a real mistake, never forced. It's never the model being tested.
+- **A judge model (Opus)** checks dress code, the clothes-only rule, and that any leave-out is a real mistake, never forced. It's never the model being tested; the eval runner refuses to run if it is.
 - **I grade taste** blind, side by side against the current version.
 
 Most of the house style is written as checkable rules, so only what's left needs me.
@@ -148,7 +148,7 @@ The design switches providers with one setting, but nothing is proven yet: no ba
 **What's new in our defense:**
 - **Portability.** Once a backup passes our eval, price and terms are negotiable, not imposed.
 - **The eval set and the provider-neutral style guide.** They're what let us leave safely.
-- **Each request gets only what it needs, never names.** The app swaps the names of people at his events for roles before any request ("Person A, investor"). The full record of any man exists only in our system.
+- **Each request gets only what it needs, and names only once.** The intake model reads his raw words once and replaces the names of people at his events with roles ("Person A, investor"). Nothing stored and no later request contains a name. The full record of any man exists only in our system.
 - **His face is cropped or blurred before a photo is sent,** if the eval shows no quality loss. Skin tone and hair can matter for color advice, so we test it rather than assume. If the eval shows a loss, we say so and take it to Module 5. The one exception is the optional quick read, which needs his face; he agrees to that first (see Module 3, Human-in-the-loop).
 
 **Do we stay?** Yes, by default, while:

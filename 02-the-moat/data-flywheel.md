@@ -22,7 +22,7 @@
 - **Deliberately no retraining:** the learning lives in assets we own (style guide, eval cases, his history), so it survives a model switch.
 
 ### Preference Loop - 2/5 at launch → 3/5 by Dec 20 (4/5 longer term)
-**What you capture today:** How he felt in each outfit (Great · Fine · Not quite right), the lesson he confirmed or fixed, what he kept or changed, and who was at each event.
+**What you capture today:** How he felt in each outfit at the mirror (Great · Fine · Not quite right), whether it was right for the room (Right · Too dressed · Too casual), the lesson he confirmed or fixed, what he kept or changed, and who was at each event.
 
 **How it compounds:** From his second event on, his history shapes the recommendation: what worked, what he rejected, and who has already seen him in what. A general-purpose assistant remembers what he *says* he likes; we learn what he actually wore.
 - **Proof:** at least 40% of second-event recommendations visibly use his history.
@@ -37,7 +37,7 @@
 **Transfer across event types:** What works for him at one kind of event informs the others. For example, his fit and color choices at investor meetings shape client dinners, and work style carries into dates. This is what makes the 10-event moat milestone enough: 10 events spread across about 5 event types is only about 2 per type, so without transfer we'd know almost nothing about him at any one kind of event.
 
 ### Network Loop - 1/5 at launch → 1/5 by Dec 20 (3/5 longer term)
-**What you capture today:** What works by event type (outfits rated Great, lessons confirmed with ✓, outfits kept), with city and venue type.
+**What you capture today:** What works by event type (outfits that were Great and Right, lessons confirmed with ✓, outfits kept), with city and venue type.
 
 **How it compounds:** After the test, patterns confirmed by at least 3 men that also pass the golden set become house style rules. That improves the first recommendation for the next new man.
 
@@ -53,14 +53,14 @@
    - **The asks:** the pieces that set the outfit come first (trousers and shoes), and it names pieces from his wardrobe before asking generically.
    - **The limit:** every ask must make this decision better or the next one easier; if neither, it doesn't ask. That keeps the asks from turning into a questionnaire.
    - *Evidence (n=1, Nov 10, my own event, my judgment, not blind):* the missing blazer and overcoat decided the result. With them supplied, Ellis's outfit and a plain assistant's matched. The read's eval now checks this across cases: whether the asks surface the deciding piece (see the kill switch's Eval): 8 of 8 on small wardrobes so far.
-2. **The follow-up and the mirror check: catching what's missing or wrong before he leaves.** The follow-up spotted the missing overcoat, and the mirror check looks at him dressed. The panel judges outfits, not him dressed, so the mirror check's value has to show up in the check-in (the Great rate), not in the panel.
+2. **The follow-up and the mirror check: catching what's missing or wrong before he leaves.** The follow-up spotted the missing overcoat, and the mirror check looks at him dressed. The panel judges outfits, not him dressed, so the mirror check's value has to show up in the check-ins (the hit rate: Great at the mirror and Right for the room), not in the panel.
 3. **The house style guide: the floor.** It holds for every man: one outfit, only his pieces, no hedging, never a comment on his body, name a shortfall instead of pretending, and no purchase unless there's a real gap and time to get it. The eval checks most of it automatically. It didn't separate Ellis from a plain assistant on n=1; its value shows across many men.
 
 **What isn't craft:**
 - **His closet is an input, not an edge.** His own assistant had his closet too, and won with it on my first real event. The edge is knowing which pieces to ask for.
 - **"One opinionated pick" is cut.** Given the same pieces, the plain assistant also gave one outfit, with the same reasons.
 
-The H1 blind panel tests this whole flow against what his own assistant would have had (see Module 1). Pooled data only sharpens it. Craft can be copied, so it only has to win the first try. His history keeps him after that (the Correction and Preference loops).
+The H1 blind panel is designed to test this whole flow against what his own assistant would have had (see Module 1; decided Nov 12, not built yet). Pooled data only sharpens it. Craft can be copied, so it only has to win the first try. His history keeps him after that (the Correction and Preference loops).
 
 ---
 
@@ -113,7 +113,7 @@ The H1 blind panel tests this whole flow against what his own assistant would ha
 **Weeks 5-8 - how they poach users:** Close the outcome loop in the app he already opens every morning.
 - The morning after the event, a card in his daily briefing asks: "How did the investor dinner go? Wear the navy suit again?" One tap, and memory files it.
 - We target the men most likely to be yours: heavy daily ChatGPT users in tech and finance, with calendars full of high-stakes events.
-- He doesn't decide to switch. He just answers the question that arrived first. Your "How did you feel in it?" shows up an hour later, after he's already answered us.
+- He doesn't decide to switch. He just answers the question that arrived first. Your "Was it right for the room?" shows up an hour later, after he's already answered us.
 
 **Weeks 9-12 - why users don't come back:** His new history builds up with us, not you.
 - His Mercer + Taylor record stalls around event 3. "Who saw him in what" goes stale, because you no longer see what he wears.
