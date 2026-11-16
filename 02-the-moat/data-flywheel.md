@@ -136,7 +136,7 @@ The H1 blind panel is designed to test this whole flow against what his own assi
   His history doesn't move to ChatGPT, and it stops growing with us.
 - **How he feels it before it happens:** We show him what we know.
   - The morning-after question names the stake: "Was it right for the room? I'll remember it for the next time you see these investors" (the role, never a name; the repeat check itself is Horizon 3).
-  - His next recommendation shows the history at work ("You wore the navy suit with these investors on Oct 14; here's a variation") and says honestly when something is missing.
+  - His next recommendation shows the history at work (at Horizon 3, "You wore the navy suit with these investors on Oct 14; here's a variation") and says honestly when something is missing.
   - Later, a "What I know about you" card makes the record visible and his.
 
 **3. Detect it early: attack or failure?**

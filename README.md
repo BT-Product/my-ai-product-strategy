@@ -37,7 +37,7 @@
 
 **Why this won't get copied in 6 months.**
 
-- **Data Flywheel Score:** 6/20 at launch → 9/20 by the end of the cohort (late January) (Correction 3, Preference 3, Domain Context 2, Network 1).
+- **Data Flywheel Score:** 6/20 at launch → 9/20 by the end of the cohort (late January or early February) (Correction 3, Preference 3, Domain Context 2, Network 1).
 - **Weakest Loop:** Network. It's a data network effect with diminishing returns, and larger platforms will always have more cold-start data. Fix: concede it and win the cold start on craft: the read and the asks (the edge: asking for the pieces he wouldn't think to mention), the follow-up and mirror check, and a house style guide as the floor. His closet is an input, not an edge. Craft wins the first try; what he tells us afterward wins the second.
 - **Competitive Position:** Axes: advice that starts from zero ↔ knows what happened last time, × a person or a box you schedule ↔ there when he's getting dressed. ChatGPT and Match.com are on demand but start from zero; Stitch Fix and human stylists know more but need a box or an appointment. We target the empty corner: on demand and knowing what happened. Today we sit next to ChatGPT; we move toward "knows what happened" from his second event, if he reports back.
 - **Encroachment Defense:** Win the first try on craft; win the moment of capture (the mirror check records what he wore before anyone asks); show him what we know, so leaving costs something; style him, don't sell to him (buy suggestions only for real gaps, no commissions). Concede pooled fit and purchase data to the larger players.
@@ -51,11 +51,11 @@
 
 **Will this make money or bleed it?**
 
-- **Gross Margin (current):** Pre-revenue: the prototype is free. An event costs about 25¢ in model calls (measured on one real event, Nov 8, n=1).
+- **Gross Margin (current):** Pre-revenue: the prototype is free. An event costs about 25¢ in model calls (mostly measured on one real event, Nov 8, n=1).
 - **Gross Margin (AI-adjusted):** About 84% on paying men alone at $11.99, on par with software. About 52% counting the free men they carry (planning case: 5% of men pay, free men use their event every other month), and about 19% in the worst case. The free tier, not the paying men, is the biggest margin risk. Floor: 50%, defended by cost cuts first, then the free tier's allowance, then price.
-- **Pricing Model:** Hybrid on a free tier. Free: one event a month, with the full flow. Paid: $11.99 a month, with a fair-use cap around 20 events and a higher tier above it (never stopped before an event). The mirror check, the check-in, "Change something" and his history are never add-ons; outcome-based pricing is ruled out because it would corrupt his check-in answers.
+- **Pricing Model:** Hybrid on a free tier. Free: one event a month, with the full flow. Paid: $11.99 a month, with a fair-use cap around 20 events and a higher tier above it (never stopped before an event). The mirror check, the two check-ins, "Change something" and his history are never add-ons; outcome-based pricing is ruled out because it would corrupt his check-in answers.
 - **Cascading Strategy:** Haiku for intake and, once it passes the eval, later reads with no public place to research; Sonnet for everything that decides the first try; when in doubt, Sonnet. Opus was dropped for now: the recommendation is already ~20 seconds, and Opus is slower. About 28% of calls move to Haiku but only about 10% of cost, because the recommendation never moves down.
-- **Break-even at:** About 2% of men paying covers model and hosting costs in the planning case (about 4% in the worst case); about 5% holds the 50% floor. Today's fixed costs (~$30 a month) are covered by about 5 paying men.
+- **Break-even at:** About 2% of men paying covers model and hosting costs in the planning case (about 4% in the worst case); about 5% holds the 50% floor. Today's fixed costs (~$25 a month) are covered by about 4 paying men.
 
 → Details: [`03-the-margin/`](03-the-margin/)
 

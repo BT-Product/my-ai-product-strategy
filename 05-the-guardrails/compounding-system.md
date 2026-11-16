@@ -181,9 +181,7 @@ AI that touches Mercer + Taylor's work or data outside the product's governed st
 **His own assistant, during the import: L, not ours to govern.** Our prompt asks for clothing only, and the pasted text is treated as data.
 
 **Status:** 10 tools found, 10 triaged: 6 to govern, 2 to keep, 1 to retire, 1 not ours.
-| | | H / M / L | keep / govern / kill |
-| | | H / M / L | keep / govern / kill |
 
-**Total tools found:**
-**Tools after triage:**
-**Estimated hidden spend:**
+**Total tools found:** 10
+**Tools after triage:** 9 (Lovable retired)
+**Estimated hidden spend:** About $20 a month, my Claude plan (Claude Code). No other AI tool is paid, so nothing is hidden.

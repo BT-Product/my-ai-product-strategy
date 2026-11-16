@@ -49,7 +49,7 @@
 - what he actually wore, verified by a pre-event mirror photo
 - what he swapped, and why
 - the event type, season and setting
-- how it went: a one-tap check-in after the event, at a time he picks at the mirror (that evening or the next morning)
+- how it went: the two check-ins, how he felt at the mirror and whether it was right for the room the morning after
 
 **Capture design:** Data is captured at the moments when he wants help, so logging isn't a chore.
 - **"Check me":** he snaps what he has on and gets a reply about the clothes only ("You're good. Tuck the shirt.").
@@ -91,10 +91,11 @@
 **The week it ships:**
 1. **Day 1:** Run the offline separation check on our golden set against the new release to measure how much of a gap is left. A blind panel follows within the week, since raters take days to recruit.
 2. **If men pick us 70% of the time or more:** Lead with what they can't copy: the pre-event check and "Change something" at the mirror, his record of what he wore and changed, who saw him in what (Horizon 3), and his lookbook.
-3. **If men pick us 50% of the time or less:** Pivot. The free tier moves inside ChatGPT as a third-party app, with the same style guide and the same record. Our own app becomes the paid stylist that holds his history.
-4. **Either way:** Show every current user what we already know about him ("6 events, 2 rejections at the mirror, your best look"), so the cost of leaving is visible before anyone tries the alternative.
+3. **If men pick us but don't come back to our app,** because habit pulls them to ChatGPT: the free tier moves inside ChatGPT as a front door, never the record. Everything that builds his history stays in our own app (trigger and threshold revised in Module 2's 90-day plan).
+4. **If men pick us under 40% of the time:** reposition or stop, as the kill criteria say. Moving the same advice into ChatGPT wouldn't fix advice that isn't better.
+5. **Either way:** Show every current user what we already know about him ("6 events, 2 changes before the event, your best look"), so the cost of leaving is visible before anyone tries the alternative.
 
-**If men pick us between 50% and 70% of the time:** Treat it as "not proven yet," not as a pass or a fail. Spend the week finding out why men chose the plain assistant, fix the biggest reason, and test again with the same cohort.
+**If men pick us between 40% and 70% of the time:** Treat it as "not proven yet," not as a pass or a fail. Spend the week finding out why men chose the plain assistant, fix the biggest reason, and test again with the same cohort.
 
 **Ongoing:** Run the offline separation check monthly on the golden set, so the gap is already known on the day a platform ships.
 
@@ -104,7 +105,7 @@
 <!-- One line: what's the single biggest strategic risk? -->
 **Users don't report back.** Every part of the Contextual Moat, all of the Data Advantage, and our only defense against platform encroachment are built from what he tells us after each recommendation. If reporting back is a chore, the product still looks like it works, but nothing compounds.
 
-**Mitigation:** Reporting back is designed as the reward, not a form: the pre-event "Check me" and the instant revision when he taps "Change something."
+**Mitigation:** Reporting back is designed as the reward, not a form: the pre-event "Check me," the instant revision when he taps "Change something," and the record caught when he cares (how he feels at the mirror, whether it was right for the room), with what Ellis learned shown back to him.
 
 **Kill rule:** Fewer than 50% of events get a check-in within 48 hours, counting every event, including men who declined notifications. Only the answer to the morning-after "Was it right for the room?" counts as a check-in; the ✓/Fix after it never counts on its own. The mirror's "How do you feel in it?", "Check me" and "Change something" happen while he's anxious and motivated, so they would flatter the number; the mirror's answer is reported alongside, never counted. The outcome tap is the hardest to get and the one the Data Advantage depends on.
 

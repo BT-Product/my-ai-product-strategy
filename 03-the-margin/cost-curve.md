@@ -8,7 +8,7 @@
 | Inference (cascading/triage) | ~0.3¢ average · ~1.5¢ heavy month (about 1% of Sonnet) | Claude Haiku 5.5: structures each event and reads his post-event written answers; wardrobe import (internal accounts only). Intake measured at 0.05¢ an event (Nov 8); the rest estimated |
 | Infrastructure | ~$2.50 at 10 men · ~10¢ at 1,000 men, for every segment | Fixed: ~$25 a month today → ~$100 at 1,000 men. Variable: about zero in the test (notifications are free; email at this volume costs next to nothing). Hand-sent texts only when both miss. Estimated |
 | Data/storage | Under 0.1¢, even in his second year | ~9–10 photos an event at ~300 KB: ~70 MB a year average, ~150 MB engaged. Overage ~$1 a month at 1,000 men; serving stays inside included transfer. Photo tokens are counted under inference. Estimated |
-| Human-in-the-loop | $0 a month. The quick read is one-time: ~$1–2.50 per man, booked as activation | Nothing waits on a human. The quick read, from the cohort on, is approved by me: 2–5 minutes at $60 an hour. Automated after 30 reviews meet the bar |
+| Human-in-the-loop | $0 a month. The quick read is one-time: ~$1–2.50 per man, booked as activation | Nothing waits on a human. The quick read, once bias checks exist, is approved by me: 2–5 minutes at $60 an hour. Automated after 30 reviews meet the bar |
 | **Total AI COGS** | **At 1,000 men: ≈$0.60 average · ≈$1.18 engaged · ≈$2.40–3.00 heavy** (≈$3.00 average at 10 men) | Up from $0.46 / $0.84 / $2.17 with the 13¢ estimate, and down slightly since texts were replaced by notifications and email (Nov 10). A heavy man costs about 4.5 times an average one, because AI cost grows with every event. Sonnet is the biggest line at scale, and the read is the biggest step in it; fixed infrastructure is the biggest at 10 men |
 
 ### Inference (primary model)
@@ -23,7 +23,7 @@
 | Follow-up | 4¢ | Measured |
 | Recommendation (medium effort; no backup outfit anymore) | 8¢ | Measured |
 | Mirror check (~0.9 per event, ~4¢ each) | 3.6¢ | Estimated |
-| Rescue (~0.25 per event, generated live; a new outfit, so priced like the 8¢ recommendation) | 2¢ | Estimated |
+| "Change something" (~0.25 per event, generated live; a revised outfit, so priced like the 8¢ recommendation) | 2¢ | Estimated |
 | **Planning number** | **~25¢** | |
 
 **Why 25¢:** About 35% of men will name a public place, so most reads skip research. At that mix, the read averages about 6.5¢ and an event about 24¢. If every read cost the measured 13¢, an event would be about 31¢. 25¢ sits inside that 24–31¢ range. It's double the old 13¢ estimate, mostly because the read is a new step.
@@ -72,7 +72,7 @@ Estimated.
 ### Data/storage
 Estimated.
 
-**What he uploads:** He photographs the pieces he's considering at each event; there's no closet setup. That's about 9–10 photos per event, resized on the phone to ~300 KB: **~70 MB a year for an average man, ~150 MB engaged.**
+**What he uploads:** He photographs the pieces he's considering at each event; there's no closet setup (the wardrobe import from his own assistant is internal-only for now). That's about 9–10 photos per event, resized on the phone to ~300 KB: **~70 MB a year for an average man, ~150 MB engaged.**
 
 **Storage:** 1,000 men pass Supabase Pro's included 100 GB in about a year. The overage is ~$1 a month, under 0.1¢ per man.
 
@@ -92,7 +92,7 @@ Storage grows with his history, but slowly: under a cent a month even in his sec
 - **Why:** the bet is that men act on AI advice. Reviewing every outfit would turn the test into a human stylist with AI drafts, and it would hold up an outfit he needs before his event.
 - **How quality is protected instead:** before any man sees the product, it has to pass an eval and a readiness bar.
 
-**The one planned human step is the quick read.** He sends an optional photo of himself, and Ellis drafts which colors and cuts suit him. Because that judges his appearance, a person approves each read before he sees it, until the trust and guardrail rules exist. It's out of the 10-man test (whether men would share the photo is asked in the follow-up call instead) and arrives with the cohort.
+**The one planned human step is the quick read.** He sends an optional photo of himself, and Ellis drafts which colors and cuts suit him. Because that judges his appearance, a person approves each read before he sees it, until the trust and guardrail rules exist. It's out of the 10-man test and the cohort (whether men would share the photo is asked in the follow-up call instead) and waits on bias checks (Module 5; not a Horizon 2 or 3 bet).
 
 **The quick read is a deliberate exception to two rules, so it has its own:**
 - **Its own line instead of clothes-only:** Ellis says what suits him, never what's wrong with him. Colors and cuts that work, and nothing about weight, hairline or age.
@@ -157,11 +157,11 @@ Storage grows with his history, but slowly: under a cent a month even in his sec
   3. raise the price.
   - **How close it is:** the planning case's ~52% is an estimate resting on both unknowns above, only 2 points above the floor. In the worst case (every free man uses his event monthly, 5% paying) margin is about 19%, well below it. The floor is checked once the cohort measures both unknowns. **The free tier, not the paying men, is the biggest margin risk.**
 **Model:** Hybrid, on top of a free tier.
-- **Free: one event a month,** with the full flow the blind panel tests (the read, the asks, the outfit, the mirror check, the check-in) and his history kept. A man with one event a month never feels he's overpaying, and every free man still reports back, which the moat and the report-back kill rule both need.
+- **Free: one event a month,** with the full flow the blind panel tests (the read, the asks, the outfit, the mirror check, the two check-ins) and his history kept. A man with one event a month never feels he's overpaying, and every free man still reports back, which the moat and the report-back kill rule both need.
   - **What that implies:** men pay for frequency. If most men have one event a month or fewer, few will convert. The all-men reading of criterion 4 (Module 1) measures exactly this, so it also tests the pricing.
 - **Paid: a monthly subscription with a fair-use cap of about 20 events a month.** At the cap, his cost is about half his subscription, so a normal man never sees it. Above it, a second, higher tier with a higher cap, for the man who needs more events, not more features. **He's never stopped before an event:** the event that crosses the cap goes through, and the upgrade is offered afterward.
 - **Heavy users pay through the higher tier and add-ons, not a charge per event.** Paying per event would work against coming back unprompted (Module 1, criterion 4). Candidates: the full wardrobe and the try-on days ahead, each its own sub-bet. Which add-ons heavy users value is unknown, so they're designed after the cohort shows who's heavy and what they use.
-- **Never add-ons:** the mirror check, the check-in, "Change something" and his history. They build the record the moat depends on.
+- **Never add-ons:** the mirror check, the two check-ins, "Change something" and his history. They build the record the moat depends on.
 - **The cohort tests one subscription price.**
 - **Ruled out: outcome-based pricing.** Charging only when he felt Great would corrupt his answers to "How do you feel in it?" and "Was it right for the room?"
 
@@ -181,7 +181,7 @@ Storage grows with his history, but slowly: under a cent a month even in his sec
 3. **The free tier's allowance, never its quality:** for example, the first event free, then one a quarter instead of one a month. The first-event recommendation never gets cheaper; it's the hook.
 4. **Price, last.** It's what the cohort tests, so it doesn't move mid-test.
 
-Nine free men all active every month is the worst case; a free man who doesn't use his event costs almost nothing.
+Every free man active every month is the worst case; a free man who doesn't use his event costs almost nothing.
 
 **Heaviest segment doubles: not a loss.** A paying man's own costs pass his $11.99 only past about 35 events a month, more than one a day (about 24 counting the free men he carries in the planning case). The fair-use cap sits around 20, where his cost is about half his subscription, so a normal man never sees it. Above the cap, a higher tier with a higher cap. Heavy men build the record fastest, which is the moat, so a thin margin on a few of them in December is acceptable. Per-man cost is logged, so we'd see it coming.
 

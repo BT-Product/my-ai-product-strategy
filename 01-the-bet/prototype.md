@@ -2,7 +2,7 @@
 
 ## What I Built
 <!-- One sentence: what does this prototype demonstrate? -->
-**Built; shipped and checked on my phone Nov 8, 2026.** A single-flow mobile web prototype that tests whether one opinionated outfit from a man's own closet, plus a clothes-only check at the mirror before he leaves, beats a plain AI assistant, and whether he reports back after the event.
+**Built; shipped and checked on my phone Nov 8, 2026.** A single-flow mobile web prototype that tests whether Ellis's flow (asking for the right pieces, one outfit from his own closet, and a clothes-only check at the mirror before he leaves) beats what his own AI assistant would give him, and whether he reports back after the event.
 
 **The first-event flow ("Ellis takes charge"):**
 1. He describes the event.
@@ -24,7 +24,7 @@ The earlier feasibility version was built in **Lovable**.
 
 ## Prototype Link
 <!-- Paste the shareable URL -->
-Pending: live by Sun Nov 1, 2026.
+Built and shipped Nov 8, 2026 (checked on my phone). Link pending.
 
 ## AI Value Archetype
 <!-- Automator / Copilot / Oracle / Creator / Orchestrator -->

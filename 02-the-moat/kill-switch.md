@@ -104,7 +104,7 @@ New first events stay paused until it passes.
 <!-- Ready / Partial / Locked -->
 **Partial.** Ready was targeted for Nov 9 and slipped with the test: the backup comparison hasn't run yet.
 
-The design switches providers with one setting, but nothing is proven yet: no backup has been tested, the eval set doesn't exist, and the prompts have never run on another model.
+The design switches providers with one setting, but nothing is proven yet: no backup has been tested, the eval set is still small (13 golden rows and a 22-case eval of the read), and the prompts have never run on another model.
 
 **The event that moves it:** All four rows wait on the same thing. A backup provider (OpenAI or Google) passes the full eval set, including the clothes-only cases at 100%.
 - **If neither passes,** we stay Partial, and we've learned that our judgment depends on one provider.
