@@ -26,6 +26,7 @@
 
 **How it compounds:** From his second event on, his history shapes the recommendation: what worked and what he changed, and, at Horizon 3, which roles have already seen him in what. A general-purpose assistant remembers what he *says* he likes; we learn what he actually wore.
 - **Proof:** at least 40% of second-event recommendations visibly use his history.
+- **Proof that it helps (added Nov 16):** in the cohort, a blind panel prefers his later outfit made with his history over the same outfit made without it on 60%+ of pairs (Module 1, prototype.md, test 5). Under 60%, history is stored but not yet earning the moat.
 
 ### Domain Context Loop - 1/5 at launch → 2/5 by late Jan (3/5 longer term)
 **What you capture today:** What he wore, what he rejected and why, and which buy suggestions he acted on.

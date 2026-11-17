@@ -82,9 +82,10 @@
 
 **Score rationale:** A generic version of the hero feature already works in ChatGPT today, so we're not at 1 only because a platform is unlikely to build for this niche specifically, and a solo product lead can pivot within a week. We reach 3 when the history, not the hook, is what men pick us for.
 
-**Milestone (target earned when):** Both of these hold:
+**Milestone (target earned when):** All three hold:
 - A blind panel of men picks our recommendation over a plain assistant's at least 70% of the time.
 - At least 40% of second and later events get a recommendation that visibly uses his history: what he changed before the event, what was Great and Right for the room, and lessons he confirmed with ✓. Who saw him in what joins once it's built (Horizon 3).
+- A blind panel prefers his later outfit made with his history over the same outfit made without it on at least 60% of pairs (added Nov 16; the direct test that history, not the hook, is what he comes back for).
 
 **Named attacker (from partner challenge):** OpenAI (ChatGPT). It already has vision, memory and shopping features, and it's an app he opens every day. Runner-up: Google, which owns his calendar and photos.
 
@@ -95,7 +96,9 @@
 4. **If men pick us under 40% of the time:** reposition or stop, as the kill criteria say. Moving the same advice into ChatGPT wouldn't fix advice that isn't better.
 5. **Either way:** Show every current user what we already know about him ("6 events, 2 changes before the event, your best look"), so the cost of leaving is visible before anyone tries the alternative.
 
-**If men pick us between 40% and 70% of the time:** Treat it as "not proven yet," not as a pass or a fail. Spend the week finding out why men chose the plain assistant, fix the biggest reason, and test again with the same cohort.
+**If men pick us between 50% and 70% of the time:** Treat it as "not proven yet," not as a pass or a fail. Spend the week finding out why men chose the plain assistant, fix the biggest reason, and test again with the same cohort.
+
+**If men pick us 40–49% of the time:** Ellis lost: a coin flip would do about as well. Redesign before retesting, and don't ask anyone to pay until a retest reaches 50% (revised Nov 16; bands in [prototype.md](prototype.md)).
 
 **Ongoing:** Run the offline separation check monthly on the golden set, so the gap is already known on the day a platform ships.
 
@@ -111,4 +114,4 @@
 
 ## Confidence Level
 <!-- H / M / L — how confident are you in this bet after the diagnostic? -->
-**L.** Every axis scores 1–2 today, and there's no user evidence yet. The 10-man test (about Dec 7–20) raises it if a blind panel picks our advice over a plain assistant's **and** men report back, both at 70% or higher. It ends or repositions the bet if panel picks fall below 40% or report-back falls below 50%. Thresholds and sample design are in [prototype.md](prototype.md).
+**L.** Every axis scores 1–2 today, and there's no user evidence yet. The 10-man test (about Dec 7–20) raises it if a blind panel picks our advice over a plain assistant's **and** men report back, both at 70% or higher. Panel picks under 50% mean Ellis lost and is redesigned before any price offer. It ends or repositions the bet if panel picks fall below 40% or report-back falls below 50%. Thresholds and sample design are in [prototype.md](prototype.md).

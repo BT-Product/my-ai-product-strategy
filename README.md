@@ -27,7 +27,7 @@
 - **Top Risk:** Users don't report back. The product still looks like it works, but nothing compounds.
 - **Confidence:** L. No user evidence yet; set by the 10-man test (about Dec 7–20; the cohort starts on a gate, Jan 4 at the earliest, readout late January or early February). The Nov 16 capstone contains no test data.
 - **Prototype:** built and shipped Nov 8, 2026, redesigned as "Ellis takes charge" after the builder's own n=1 (link pending).
-- **Kill Criteria:** Under 40% blind panel picks against a plain assistant · under 50% of events answered "Was it right for the room?" within 48 hours · under 20% unprompted use by men who had another event within 14 days · 30% or fewer of ~20 cohort men making a refundable founding-member payment at $11.99.
+- **Kill Criteria:** Under 40% blind panel picks against a plain assistant (40–49% means Ellis lost: redesign, and no price offer until a retest reaches 50%) · under 50% of events answered "Was it right for the room?" within 48 hours · under 20% unprompted use by men who had another event within 14 days · 30% or fewer of ~20 cohort men making a refundable founding-member payment at $11.99.
 
 → Details: [`01-the-bet/`](01-the-bet/)
 
@@ -37,7 +37,7 @@
 
 **Why this won't get copied in 6 months.**
 
-- **Data Flywheel Score:** 6/20 at launch → 9/20 by the end of the cohort (late January or early February) (Correction 3, Preference 3, Domain Context 2, Network 1).
+- **Data Flywheel Score:** 6/20 at launch → 9/20 by the end of the cohort (late January or early February) (Correction 3, Preference 3, Domain Context 2, Network 1). Proof it helps: a blind panel prefers his later outfit made with his history over the same outfit without it on 60%+ of pairs.
 - **Weakest Loop:** Network. It's a data network effect with diminishing returns, and larger platforms will always have more cold-start data. Fix: concede it and win the cold start on craft: the read and the asks (the edge: asking for the pieces he wouldn't think to mention), the follow-up and mirror check, and a house style guide as the floor. His closet is an input, not an edge. Craft wins the first try; what he tells us afterward wins the second.
 - **Competitive Position:** Axes: advice that starts from zero ↔ knows what happened last time, × a person or a box you schedule ↔ there when he's getting dressed. ChatGPT and Match.com are on demand but start from zero; Stitch Fix and human stylists know more but need a box or an appointment. We target the empty corner: on demand and knowing what happened. Today we sit next to ChatGPT; we move toward "knows what happened" from his second event, if he reports back.
 - **Encroachment Defense:** Win the first try on craft; win the moment of capture (the mirror check records what he wore before anyone asks); show him what we know, so leaving costs something; style him, don't sell to him (buy suggestions only for real gaps, no commissions). Concede pooled fit and purchase data to the larger players.
@@ -69,7 +69,7 @@
 - **Golden Dataset:** 13 rows, 3 adversarial (plus 2 edge cases). About 500 before production; about 300 clothes-only cases to show failures under 1%.
 - **Confidence UX:** Tiered, and uncertainty is handled by asking, not hedging. Ellis asks when he can settle it, states its estimate once on the read screen when nobody can, and keeps the outfit screen clean ("The closest you have" is the only heading). At most 5 asks before the outfit, however unsure Ellis is. The 90% / 70% bands (the share of outfits kept with no "Change something") are targets to calibrate.
 - **HITL Architecture:** Nothing waits on a human; the eval gates every change instead. During the test I read every outfit within a day; after it, a judge scans every answer within the hour. A zero-tolerance failure pauses only the broken step, he's always told, and his case becomes a golden row before it's unpaused.
-- **Failure Mode Coverage:** Zero tolerance for a comment about his body, a piece he didn't send, a venue fact presented as found, a condition flaw the photo doesn't clearly show, or a description of anyone in review photos (rows 9, 12, 13, script and judge). Gaps: no history rows yet, and no rows for his own pick or a wrinkled piece. Red-team lesson: my tests kept measuring what any assistant already does well, so each one moved to the asks.
+- **Failure Mode Coverage:** Zero tolerance for a comment about his body, a piece he didn't send, a venue fact presented as found, a condition flaw the photo doesn't clearly show, or a description of anyone in review photos (rows 9, 12, 13, script and judge). Hallucination strategy: ground every claim, ask or say nothing when unsure, check before and after sending, contain and repair; misreading a piece's color or fabric is measured (95%+ target). Gaps: no history rows yet, and no rows for his own pick or a wrinkled piece. Red-team lesson: my tests kept measuring what any assistant already does well, so each one moved to the asks.
 
 → Details: [`04-the-contract/`](04-the-contract/)
 

@@ -52,7 +52,7 @@ All of these were set before any data came in. They're tested in the **10-man pr
     - *Noted:* standard pairs will come mostly from men who already had a plan, so they mainly test refining his pick; undecided men, where the asks matter most, will mostly be fallback pairs.
     - *Status:* decided, not built. The app and the eval still give the plain assistant the pieces Ellis collected.
 - **Raters:** men in the target group, never rating their own case. At least 3 raters per pair, about 5 pairs each, in the same plain format.
-- **Sample:** about 10 pairs × 3 raters. **A pair goes to whichever answer most of its raters pick,** and the 70% / 40% thresholds apply to pairs. Per-rater picks are reported as support, since picks on one pair aren't independent: about 10 data points, not 30.
+- **Sample:** about 10 pairs × 3 raters. **A pair goes to whichever answer most of its raters pick,** and the thresholds below apply to pairs. Per-rater picks are reported as support, since picks on one pair aren't independent: about 10 data points, not 30.
 - **Behavioral check:** the follow-up call asks, "Did you also ask another assistant for this event? Which did you go with?"
 - **Offline:** a separation check on the golden set (built; not yet run, because 11 closet photos are missing). It runs from the event description, like the panel, so it tests the asks as well as the styling.
 - **Trade-off accepted:** the panel compares advice, not whole experiences, and a rater doesn't own the closet. H2 (did he wear it) stays the behavioral half.
@@ -60,9 +60,12 @@ All of these were set before any data came in. They're tested in the **10-man pr
 At this sample size, every result is **directional**: 70% or more means *not falsified*, not *proven*.
 
 1. **It doesn't beat a plain assistant.** The blind panel picks our recommendation over a plain assistant's:
-   - *70% or more:* passes (not falsified).
-   - *40–70%, not proven yet:* diagnose why, fix the biggest reason, and retest in the cohort. If it's still short of 70%, reposition.
-   - *Under 40%:* stop or reposition.
+   - *70% or more (7+ of 10 pairs):* passes (not falsified).
+   - *50–69% (5–6 of 10), not proven yet:* diagnose why, fix the biggest reason, and retest in the cohort on fresh pairs. If it's still short of 70%, reposition.
+   - *40–49% (4 of 10), Ellis lost:* no advantage over a plain assistant. Redesign the asks or the styling, not just one fix. The cohort runs as a retest on fresh pairs, and the $11.99 offer waits until picks reach 50%: asking men to pay for advice that lost would test nothing.
+   - *Under 40% (3 or fewer of 10):* stop or reposition (the kill rule, unchanged).
+   - *Too few to call:* fewer than 8 decided pairs. Pairs from the cohort's new men are added before any band applies.
+   - **Added Nov 16 (evaluator's review):** raters picking at random would give Ellis about half the pairs, so clearing 40% was never evidence of an edge. 50% is now the line between "not proven" and "lost"; 40% stays the kill rule.
 2. **He doesn't report back.** Fewer than 50% of events get an answer to the morning-after "Was it right for the room?" within 48 hours, with at most one reminder (target 70%).
    - *What counts:* only that answer. The mirror's "How do you feel in it?" comes while he's anxious and motivated, so it's reported alongside, never counted. The ✓/Fix on what Ellis learned comes right after it, so it never counts on its own.
    - *Which events:* all of them, including men who declined notifications. Declining is what this rule exists to catch.
@@ -87,3 +90,13 @@ At this sample size, every result is **directional**: 70% or more means *not fal
    **Reported alongside, never deciding:** the same share across every man who completed a first event. That's how often men come back at all, the event frequency that the moat milestone (3.3 events a month) and Module 3 pricing depend on.
 
    **The bars are looser than they look.** 20% and 40% were first set on every man. On a base of men who all had a reason to come back, the same bars are easier to clear. They're kept, set before any data. At about 20 cohort men in a quiet January, this base may be under 10 men, so the result is directional only.
+
+5. **His history doesn't make the next outfit better** (cohort, added Nov 16 after the evaluator's review). This is the moat's direct test. The 40% milestone ("visibly uses his history") shows history is used, not that it helps.
+   - *Pairs:* on every second or later event in the cohort, prompted or not, Ellis also makes the outfit with his history removed: same model, same event description, same asks and answers, same pieces. It's stored and never shown to him; he only ever sees the outfit made with his history. His case joins the panel only with his consent, like every panel case.
+   - *Why Ellis without history, not a plain assistant:* the history is the only difference, so a win belongs to the history, not the craft. The plain-assistant pairs already test craft.
+   - *Raters:* the same blind format, plus a short card on what happened last time (what he changed, how he felt at the mirror, whether it was right for the room), so a rater judges as a stylist who knew him would. Both outfits get the same card, and nothing shows which is which.
+   - *60% or more of pairs:* history is helping (not falsified).
+   - *40–59%:* no visible difference. History is stored but isn't yet improving the outfit; fix how the recommendation uses it before claiming the moat or building Horizon 3 on it.
+   - *Under 40%:* history is hurting (for example, repeating last time's outfit or leaning too hard on one event). Investigate before the next cohort.
+   - *Sample:* likely 6–12 pairs from about 20 men in January, so directional only. Under 6 pairs, it's too few to call, and the test carries into the next cohort.
+   - *Cost:* one extra recommendation call per later event, about 8¢, counted as a test cost.

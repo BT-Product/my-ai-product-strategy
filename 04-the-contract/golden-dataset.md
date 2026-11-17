@@ -74,6 +74,20 @@
 - **The number that matters most for speed:** the total time from describing the event to seeing the outfit, **under 3 minutes**, counting his time finding and photographing pieces, measured in the phone test. Most of it is his time, not Ellis's, so the asks are what move it. A man in a hurry compares it with typing one question into ChatGPT. If the phone test misses it, that's a finding, not a failure.
 - **At 10 men, alerts are my weekly review of the logs,** not automated.
 
+### Hallucination Strategy
+
+For Ellis, a hallucination is a confident claim it can't back up: a piece, a fact or a flaw that isn't there. Five are zero-tolerance (the Hallucination rate row above), and one more is measured. The defense has four layers, each decided elsewhere in this module:
+
+1. **Ground every claim.** The outfit uses only pieces he photographed, and a script checks it. Venue facts come only from what the research found; when Ellis is estimating, the read says so. The read describes the room, never people.
+2. **When unsure, ask or say nothing.** If he can settle it, Ellis asks (Confidence UX). If nobody can, it states its estimate once, where he can correct it. A condition flaw is mentioned only when the photo clearly shows it, and an unclear photo is flagged, not guessed.
+3. **Check before and after sending.** The eval, a script plus a judge model that is never the model being checked, blocks any change with a zero-tolerance failure. During the test I read every outfit within a day; after it, the judge scans every sent answer within the hour (HITL Architecture).
+4. **Contain and repair.** Each zero-tolerance case has its own off switch that turns off only the broken step. He's told within a day, with a corrected outfit if his event hasn't happened, and his case becomes a golden row.
+
+**Added Nov 16: misreading a piece.** Calling a navy blazer black, or wool trousers cotton, isn't zero-tolerance, but it quietly produces a wrong outfit, and it's the most likely of the six. Once a piece is described, the description is stored and reused, so a misread repeats at every event until he corrects it.
+- **Target:** 95%+ of pieces described correctly (color family and fabric) on the golden rows.
+- **Measurement:** Ellis's stored piece descriptions graded against my own labels, before every change to how photos are handled and monthly with the eval.
+- **Alert:** under 90% blocks the change. An unclear photo gets an ask, not a guess.
+
 ## HITL Architecture
 <!-- When does a human step in? What's the escalation path? -->
 

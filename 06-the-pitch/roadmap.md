@@ -9,7 +9,7 @@
 |-----------|--------|-----------|
 | **Finish the build the test needs** (Nov 16–about Dec 4): the pick question, the two check-ins with ✓ / Fix, the timing fix, the plain assistant's new inputs, the off switches, the service key out of local development | One full event on my phone, start to check-in, every record written; the eval passing on every new step; under 3 minutes from describing the event to the outfit (not yet measured end to end) | H on the build · M on speed |
 | **Run the 10-man test** (about Dec 7–20, midpoint review about Dec 13–14) | Panel picks ≥70% of pairs (standard pairs reported separately; "styling only" if fewer than half are standard); report-back ≥70% of events with the room answer within 48 hours (under 50%, the kill rule fires); hit rate 65%, supporting | L–M on panel picks (one loss, one win, both mine, not blind) · M on report-back |
-| **Run the cohort with the price offer** (~20 men: the test men who want to continue, plus referrals; from Jan 4 at the earliest, for three weeks) | 70% take the paid first month (about 14 of 20); 40% bring a second event unprompted within 14 days | L (willingness to pay is the weakest link) |
+| **Run the cohort with the price offer** (~20 men: the test men who want to continue, plus referrals; from Jan 4 at the earliest, for three weeks) | 70% take the paid first month (about 14 of 20); 40% bring a second event unprompted within 14 days; a blind panel prefers later outfits made with his history over the same outfit without it on 60%+ of pairs | L (willingness to pay is the weakest link) |
 
 **Dates (decided Nov 15):**
 - **Build:** Nov 16 to about Dec 4.
@@ -18,7 +18,8 @@
 
 **Problems are sorted before any data:**
 - **Bugs and screens** are fixed during the test.
-- **Prompt and taste problems** go into one new prompt version for the cohort (the "diagnose, make one fix, retest" path for panel picks between 40% and 70%).
+- **Prompt and taste problems** go into one new prompt version for the cohort (the "diagnose, make one fix, retest" path for panel picks between 50% and 70%).
+- **Panel picks of 40–49%** mean Ellis lost: a redesign, not one fix, and the cohort runs as a retest without the $11.99 offer until picks reach 50% (added Nov 16).
 - **A kill rule firing** (panel picks under 40%, report-back under 50%) means the cohort doesn't run as planned until the bet is redesigned or rethought.
 
 The capstone versions of Nov 16 and about Nov 23 contain no test data, and say so.
