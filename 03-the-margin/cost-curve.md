@@ -112,7 +112,7 @@ Storage grows with his history, but slowly: under a cent a month even in his sec
 
 ### Not in monthly COGS
 - **The plain-assistant comparison is a test cost.** Each man's first event gets one plain-assistant call for the blind panel. It was measured at 4¢ without search; it now runs with web search, so it's estimated at about 4–10¢ (a search adds about 6¢, from the read's eval: ~9¢ with research vs ~3¢ without). That takes the first event to about 29–35¢. Measured again on the first real pair. It's never shown to him. It runs during the prototype test, and in the cohort if H1 needs a retest, and is removed once H1 is proven.
-- **The optional quick read is the only one-time cost in the product,** booked as activation: a few cents of model cost plus my review time (~$1–2.50 per man; see Human-in-the-loop). My time is the real cost until it's automated.
+- **The optional quick read is the only one-time cost in the product,** booked as activation: a few cents of model cost plus the reviewer's time (~$1–2.50 per man; see Human-in-the-loop). The reviewer's time is the real cost until it's automated.
 - **The monthly gap check is a small fixed cost, not a per-man one:** our model vs. a plain assistant on stored cases, run offline. So are eval runs and the judge.
 
 ## Cascading Strategy
@@ -199,3 +199,8 @@ Every free man active every month is the worst case; a free man who doesn't use 
 - **Counting the free men they carry:** about 52% in the planning case (5% of men pay; free men use their event every other month), and about 19% in the worst case.
 
 **Net margin shift:** about 30 points lower than software (from ~80–85% to ~52%), and almost all of it comes from the free tier, not the paying men. AI didn't cost us margin on the men who pay; it made giving the product away expensive. The shift is worth it because AI does a job software couldn't, at about one-hundredth of a stylist's price ($11.99 a month against $100–500 an hour), and it scales without hiring. The board's number to watch is the share of men who pay, with how often free men use their event next to it.
+
+**Covering the team:** gross margin covers model, hosting and card costs, not people, and Mercer + Taylor's team is the bigger cost. Phase 1 is about $150K for a quarter (two engineers on loan and a part-time stylist); a three-engineer team runs about $60K a month.
+- **Planning case:** each paying man leaves about $6.23 a month after his own costs and the free men he carries ($11.99 − $5.76). Covering $60K a month takes roughly 9,600 paying men, about 190,000 men in all at 5% paying.
+- **Worst case** (about 19% margin, roughly $2.30 a paying man): about 26,000 paying men.
+- **What it means:** the first year buys evidence, not revenue, and the free tier's allowance is the first lever, because it moves the number of men needed more than anything else.

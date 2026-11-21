@@ -27,26 +27,26 @@ The loop also breaks if the morning-after ask never reaches him, if his answer d
 ## Context Connectivity
 <!-- How does knowledge flow across teams and domains? Where does it silo? -->
 
-**Is there one source of truth? Not yet.** Each decision lives where it was made, and hypotheses and thresholds live in two places (the build repo's strategy summary and this repo), which drift. It cost us this week:
+**Is there one source of truth? Not yet.** Strategy and engineering each keep their own record, and hypotheses and thresholds live in two places (the engineering repo's strategy summary and this repo), which drift. It cost us in November, before the team grew:
 - texts were replaced on Nov 10, and this repo learned on Nov 14;
 - per-pair panel scoring was decided Nov 9, and A5 stayed open here until Nov 14;
-- the plain-assistant decision of Nov 12 was contradicted in the build chat on Nov 14, because it hadn't pulled this repo first.
+- the plain-assistant decision of Nov 12 was contradicted in engineering on Nov 14, because this repo wasn't read first.
 
 **The flows that matter most:**
-1. **Between the two chats:** everything is designed in one and built in the other.
+1. **Between strategy and engineering:** everything is designed in one and built in the other. From Dec 1, with two engineers and a stylist, it also runs between people.
 2. **Inside Ellis, event to event:** his lessons reaching his next outfit. This is the moat.
 3. **Inside Ellis, step to step:** the room answer grading the read's dress-code estimate.
 
 **The worst silo:**
-- **Today: between the chats.** It's the only one that has already cost something, and it's fully in our control.
+- **Inside the company: between strategy and engineering.** It's the only one that has already cost something, it's fully in our control, and it gets harder with every person who joins.
 - **For the product: his own assistant.** What he tells it never reaches Ellis. That can only be out-competed, by importing what it holds and by Ellis reaching out first (Module 6).
 
-**The fix: one home per kind of decision, read by the other chat before acting.**
-- **Strategy decisions** (hypotheses, thresholds, the capstone) live in this repo. The build repo's summary records them with date and source.
-- **Build decisions and evidence** (what's built, measured results, field findings) live in the build repo's change log and build plan. This chat reads them before relying on build facts.
-- **A decision counts as made only once it's written in its home repo.** Pasted briefs carry a decision; they don't hold it.
-- **Each session starts by pulling the other repo** and checking what changed since the last one.
-- **Measured by:** how long a decision takes to reach the other repo. This week it was 2–5 days; the target is the next working session.
+**The fix: one home per kind of decision, read before acting.**
+- **Strategy decisions** (hypotheses, thresholds, the ask) live in this repo, owned by the product lead. The engineering repo's summary records them with date and source.
+- **Engineering decisions and evidence** (what's built, measured results, field findings) live in the engineering repo's change log and build plan, owned by the engineers. Strategy reads them before relying on build facts.
+- **A decision counts as made only once it's written in its home repo.** A message or a meeting carries a decision; it doesn't hold it.
+- **Everyone, person or AI assistant, starts work by reading the other repo's latest changes,** and a short weekly decision review (product lead, engineers, stylist) catches what slipped.
+- **Measured by:** how long a decision takes to reach the other repo. In November it was 2–5 days; the target is the next working day.
 
 **Inside Ellis, status:**
 - **Step to step:** the read's signals feeding the confidence band, and the room answer stored next to the read's estimate, are decided, not built.
@@ -68,13 +68,13 @@ The loop also breaks if the morning-after ask never reaches him, if his answer d
   - **The notification service** (Apple's or Google's): delivers the message text to his phone.
   - **The email sender** (Resend): his email address and the message text.
   - **Panel raters:** other men in the study see his event description (names removed) and clothing photos, never a photo of him. There's no AI involved, but it's his data, so it's covered by his consent.
-  - **My build tools:** Claude Code **can** reach the production database today (the local environment holds the service key, which bypasses row-level security; today that's only my own data), so it's in scope until that's fixed before the first man: the key lives only in hosting, or development runs against a separate project. The LinkedIn chat reads one file and holds no keys, and the strategy chat works in its own repo; both are out of scope.
+  - **Build tools:** Claude Code **can** reach the production database today (the local environment holds the service key, which bypasses row-level security; today that's only my own data), so it's in scope until that's fixed before the first man: the key lives only in hosting, or development runs against a separate project. The LinkedIn chat reads one file and holds no keys, and the strategy chat works in its own repo; both are out of scope.
 
 **Out of scope by design** (the product doesn't do these, so any sign of them is a failure, not a gray area): comments on his body, face or skin; a read of his coloring or build (held back until bias checks exist); buying on his behalf, brands or links, commissions, or suggesting a buy that isn't a real gap (a labeled suggestion for a real gap is in scope); storing other people's names; acting without him (no calendar access today, nothing sent on his behalf).
 
 **Autonomy boundaries:** **Ellis may prepare; only he may act.** Inside the app Ellis decides freely; anything that leaves the app, touches money or involves other people needs his tap.
 - **On its own:** reads the event and says what it calls for (he can correct it with one tap); researches a named public place; chooses which pieces to ask for; picks one outfit; gives finishing touches; learns from his answers, always shown back with ✓ / Fix, his corrections winning.
-- **Never changes its own rules:** his lessons shape his own outfits, but house-style rules change only by me, after the eval passes (pooled patterns need 3+ men first; Module 2).
+- **Never changes its own rules:** his lessons shape his own outfits, but house-style rules change only with my approval, after the eval passes (pooled patterns need 3+ men first; Module 2).
 - **Only with his tap:** a buy suggestion (real gaps only; no brands, links or commissions); importing his wardrobe from his own assistant; his cases used in the blind panel or the eval (consent); later, reading his calendar (opt-in, only events he flags, read-only).
 - **Never, even if asked:** buying, sending, booking or accepting anything for him; editing his calendar or contacting anyone; a comment on his body; researching a person, a private address or a private event; storing other people's names; claiming to be human.
 - **The first unprompted action, for the cohort:** Ellis reaches out first before an event he's flagged as important, so there's time to fix a gap. It stays inside the line: Ellis prepares, he decides, and it never buys or books. (More in Module 6.)
@@ -88,12 +88,26 @@ The loop also breaks if the morning-after ask never reaches him, if his answer d
 **Audit cadence:**
 - **Daily during the test:** I read every recommendation (about 2 minutes an event).
 - **Weekly:** the log review against the reliability contract.
-- **Before every change:** the eval (script and judge), plus my blind taste check against the current version.
+- **Before every change:** the eval (script and judge), plus the blind taste check against the current version (me and the stylist).
 - **Monthly, and after any model update:** the eval re-run, the gap check against a plain assistant, the backup re-run.
 - **After the test:** the judge scan of stored answers.
 - **Before the first man, then quarterly:** who and what can reach production data.
 
-**Regulatory exposure (EU AI Act / other):** candidates to name, not legal advice; **to confirm with a lawyer before anything beyond the study.**
+**Data register (proposals until the privacy review confirms them):** what Ellis keeps about him, why, and for how long. The moat is his labels, not his photos, so photos of him are kept only as long as they're needed.
+
+| Data | Why it's kept | How long | Who can see it |
+|------|---------------|----------|----------------|
+| Event descriptions (names removed) | His outfit and his record | While his account is open | The product; the team, names already removed |
+| Clothing photos and piece descriptions | Describe each piece once, reuse it | While the piece is in his wardrobe | The product; panel raters, with his consent |
+| Mirror photos (they show his face) | The mirror check | **Deleted 30 days after the event**, unless he agrees to it becoming a test case (cropped collar to shoes) | The product; the judge, cropped |
+| Quick-read photo | The read | Deleted once the read is approved | The reviewer |
+| His outcome record (what he wore, Great / Right, his lessons) | The moat | While his account is open; he can see and correct it | The product; the team |
+| Phone number and email | Messages only | While his account is open; never in a model call, a log or a message body | Me; the notification and email services |
+
+- **Deletion:** he can delete everything from the app at any time; it's gone within 30 days, test cases included unless he agreed to keep them.
+- **Access by role:** only the engineer on call can reach production data, build tools never hold the production key, and the stylist sees eval cases with names removed, never his contact details.
+
+**Regulatory exposure (EU AI Act / other):** candidates to name, not legal advice; **to confirm in the company's privacy review (in the Phase 1 budget): consent and the data register before the first man, the rest before anything beyond the study.**
 - **US state privacy law** for his photos, events and wardrobe; California's is the usual starting point.
 - **Biometric rules:** mirror photos show his face, but no facial features are extracted, and the quick read of his face and build stays out of the test.
 - **Honest AI claims** (consumer protection): Ellis is always disclosed as AI and never claims to be a person.
@@ -129,23 +143,23 @@ The loop also breaks if the morning-after ask never reaches him, if his answer d
 
 **Who approves what:**
 - **He approves** anything that leaves the app or uses his data beyond his own outfit: a buy suggestion, importing his wardrobe, his cases in the panel or eval, and later his calendar.
-- **I approve every change to a step's prompt, model, effort or tool,** and only after:
+- **Every change to a step's prompt, model, effort or tool needs two people:** the engineer who made it runs the eval, and I approve it; nobody approves their own change. Only after:
   1. the eval passes, with hard rules and the zero-tolerance checks at 100%;
-  2. my blind taste check rates it at least as good as the current version 80% of the time;
+  2. the blind taste check (me and the stylist) rates it at least as good as the current version 80% of the time;
   3. a changed answer format is checked against the real API before deploying;
   4. the style guide and the model's house style change together.
 - **Moving a step to a cheaper or backup model** needs that step's eval cases to pass first. The rescue's Haiku backup has no eval yet, which breaks this rule; it's checked before the test, and comes out if it fails.
 - **Prompts are frozen** from the first man's start until the test closes, except for bug fixes.
 - **Ellis never changes its own rules.** What it learns from a man changes only his record, which he can fix. House-style rules come only from my curation of patterns across at least 3 men, after the test, and must pass the golden set.
-- **I flip the off switches and run every deploy.**
+- **Anyone on the team can flip an off switch;** stopping is never gated. Deploys follow the two-person rule.
 
 ## Shadow AI Audit
 
-AI that touches Mercer + Taylor's work or data outside the product's governed steps. Both repos are private.
+AI that touches Mercer + Taylor's work or data outside the product's governed steps. Both repos are private. Until Dec 1 the product lead is the only person using these tools; from Dec 1, the engineers' and the stylist's tools join this table under the same rules (below).
 
 | Tool | Owner | Risk Level | Decision |
 |------|-------|-----------|----------|
-| Claude Code (the build chat) | Me | H | Govern |
+| Claude Code (build tool) | Me, then the engineers | H | Govern |
 | The LinkedIn chat | Me | L today, H once men exist | Govern |
 | The browser's dictation ("Say it instead") | Apple or Google (his phone) | M | Govern |
 | The eval's judge (Opus) | Me | M | Govern |
@@ -156,13 +170,13 @@ AI that touches Mercer + Taylor's work or data outside the product's governed st
 | Lovable (the original prototype) | Me | L | Retire |
 | His own assistant, during the import | Him | L | Not ours to govern |
 
-**Claude Code (the build chat): H, govern.** It builds the app; today it can reach production (the local environment holds the database's service key), and it has Gmail, Calendar, Drive and a signed-in browser available. The risk: a test man's data reaching a developer tool his consent doesn't describe. Before the first man:
+**Claude Code (build tool): H, govern.** It builds the app; today it can reach production (the local environment holds the database's service key), and it has Gmail, Calendar, Drive and a signed-in browser available. The risk: a test man's data reaching a developer tool his consent doesn't describe. Before the first man:
 - the service key comes out of local development (or development moves to a separate project);
 - participant contact details stay outside any repo;
 - Claude Code never uses its connectors or browser for anything about a test man;
 - the secrets scan before every commit stays.
 
-**The LinkedIn chat: L today, H once men exist, govern.** It writes public posts from one file I write. At about 10 men from my network, an anonymized event can still identify him. The gate is the weekly notes: counts and patterns only, once 3+ men share them; never one man's event, outfit, job, city or words without his agreement to that post. My own events are fine. The consent screen says nothing about his events is posted publicly.
+**The LinkedIn chat: L today, H once men exist, govern.** It writes public posts from one file I write. At about 10 men from our networks, an anonymized event can still identify him. The gate is the weekly notes: counts and patterns only, once 3+ men share them; never one man's event, outfit, job, city or words without his agreement to that post. My own events are fine. The consent screen says nothing about his events is posted publicly.
 
 **The browser's dictation: M, govern.** "Say it instead" uses Apple's or Google's speech recognition, so his words, names included, reach them before intake. It's named in consent, or replaced by the keyboard's own dictation.
 
@@ -184,4 +198,10 @@ AI that touches Mercer + Taylor's work or data outside the product's governed st
 
 **Total tools found:** 10
 **Tools after triage:** 9 (Lovable retired)
-**Estimated hidden spend:** About $20 a month, my Claude plan (Claude Code). No other AI tool is paid, so nothing is hidden.
+**Estimated hidden spend:** About $20 a month today, one Claude plan (Claude Code). No other AI tool is paid, so nothing is hidden. Each new person's tools add to it and are tracked here.
+
+**Rules for every person's tools:**
+- **Each person's AI tools join this table before they touch the product:** coding assistants, chat assistants, meeting-note tools. The rule is the same as for Claude Code: nothing about a test man goes into a tool his consent doesn't name.
+- **Access follows the data register:** production data by role only, and never in a build tool.
+- **The audit re-runs** whenever someone joins, and monthly.
+- **It also looks outward:** which AI the men themselves use for style advice, from the follow-up call ("Did you also ask another assistant?") and Module 2's direct question. That's the competition, and this audit used to look only inward.

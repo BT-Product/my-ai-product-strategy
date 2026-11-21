@@ -3,7 +3,7 @@
 ## Product
 <!-- Name the product you're diagnosing. Real product at your company — not a hypothetical. -->
 
-**Product:** Mercer + Taylor, an AI personal stylist for men in their 30s–40s earning around $250K a year, mostly in tech, finance and real estate.
+**Product:** Ellis, Mercer + Taylor's first product: an AI personal stylist for men in their 30s–40s earning around $250K a year, mostly in tech, finance and real estate.
 
 **Buying triggers:**
 1. **Career inflection.** A promotion, a new leadership role, or fundraising, where founders feel they represent their company in investor rooms.
@@ -80,7 +80,7 @@
 
 **Hook vs. moat:** The hero feature is the hook, and it's deliberately the part that can be copied. It only has to win the first try. Defensibility comes from the history it starts. The metric that matters is **time-to-moat**: we aim for his second recommendation to visibly use his history.
 
-**Score rationale:** A generic version of the hero feature already works in ChatGPT today, so we're not at 1 only because a platform is unlikely to build for this niche specifically, and a solo product lead can pivot within a week. We reach 3 when the history, not the hook, is what men pick us for.
+**Score rationale:** A generic version of the hero feature already works in ChatGPT today, so we're not at 1 only because a platform is unlikely to build for this niche specifically, and a small team can pivot within weeks. We reach 3 when the history, not the hook, is what men pick us for.
 
 **Milestone (target earned when):** All three hold:
 - A blind panel of men picks our recommendation over a plain assistant's at least 70% of the time.

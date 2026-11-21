@@ -14,7 +14,7 @@
 **Dates (decided Nov 15):**
 - **Build:** Nov 16 to about Dec 4.
 - **The 10-man test:** about Dec 7–20, in holiday-party season (real events, skewed to one type, so results are reported by event type), with a midpoint review about Dec 13–14. Bugs and screens are fixed as they show up; only the prompts are frozen.
-- **The cohort starts on a gate, not a date:** the test's fixes built, the new prompt version passing the eval and my blind taste check, and the readiness bar holding. That's Jan 4 at the earliest, Jan 11 if the test turns up problems, for three weeks; the readout lands in late January or early February. _Why a gate:_ I'm off Dec 25–Jan 1, so about four working days separate the test from Jan 4, and late check-ins run to about Jan 3.
+- **The cohort starts on a gate, not a date:** the test's fixes built, the new prompt version passing the eval and the blind taste check, and the readiness bar holding. That's Jan 4 at the earliest, Jan 11 if the test turns up problems, for three weeks; the readout lands in late January or early February. _Why a gate:_ the team is off Dec 25–Jan 1, so about four working days separate the test from Jan 4, and late check-ins run to about Jan 3.
 
 **Problems are sorted before any data:**
 - **Bugs and screens** are fixed during the test.
@@ -33,7 +33,8 @@ The capstone versions of Nov 16 and about Nov 23 contain no test data, and say s
 |-----------|--------|-----------|
 | **Ellis prepares him without being asked.** First, outreach a week before events he's flagged; then, only if that works, read-only, opt-in calendar access for flagged events. Ellis prepares the outfit early and flags a gap while there's time to buy, rent or tailor; it never buys or books | At least half of outreach messages lead to a started event, and fewer men also ask their own assistant for those events; gaps found early, supporting. Today: no data (tested by hand in the cohort) | L–M: the edge is outreach plus his wardrobe plus taste, since platforms are moving toward proactive calendar features |
 | **Proposing from his wardrobe when it covers the event,** the first step from a workflow toward agency: after the read, one step chooses to propose now, ask questions or ask for pieces, tried first as rules in code | For men whose wardrobe covers the event, time to the outfit roughly halved with no drop in the hit rate; the right path chosen on at least 90% of the routing eval's cases | M (one real case, mine) |
-| **A backup provider that passes the eval** (Portability: Partial → Ready) | One provider passes every zero-tolerance case at 100% and the hard rules, and is rated at least as good in my blind taste check 80% of the time. Today: no backup tested | M |
+| **A limited paid launch** (about March, ~200 men, only if both January checkpoints pass): recurring $11.99 billing, a small acquisition budget, and a one-event price tested against the subscription | Profit per paying man over his first 90 days above zero; at least 5% of men paying; at least half of paying men still paying after 90 days; acquisition cost measured | L (no man has paid yet) |
+| **A backup provider that passes the eval** (Portability: Partial → Ready) | One provider passes every zero-tolerance case at 100% and the hard rules, and is rated at least as good in the blind taste check 80% of the time. Today: no backup tested | M |
 
 **Not in Horizon 2:**
 - **Who saw him in what:** it needs several events of history per man first.
@@ -78,11 +79,32 @@ H1 proves Ellis wins a first try; H2 makes Ellis the first place he goes; **H3 m
 **The risks:**
 1. **Trust: what happens when Ellis is wrong about how a man looks?** A single comment about his body, or a flaw invented from a photo, would end his trust at the moment he's most nervous. Ellis comments on clothes only, never on him. Five mistakes are zero tolerance: a comment about his body, an outfit built from a piece he didn't send, a venue fact the research didn't find, a condition flaw the photo doesn't clearly show, and describing anyone in a review photo. Each is checked before any change ships and has its own off switch. When Ellis is unsure, it asks or says nothing rather than hedging, and when something goes wrong, he's told by me within a day.
 2. **Scale: what breaks as this grows?** Report-back, the top risk since Module 1: if men stop telling Ellis how it went, nothing compounds and the moat never forms. So the record is collected when he cares, not only the morning after: how he feels in it at the mirror, then whether it was right for the room, with a kill rule under 50%. Behind that: Ellis may prepare, but only he may act; it's a fixed workflow, so every step can be tested and switched off on its own; and production data access is removed from the build tools before the first man. Today it runs on one model provider, with no backup that has passed the eval yet; that test is on the roadmap.
-3. **Competitive: what if ChatGPT does this?** It partly already does. In week one I chose my own assistant over Ellis because it knew my closet, and the platforms are moving toward proactive calendar features. The styling edge is thin. Ellis's edge is asking for what he wouldn't think to mention, and a record of what actually worked for him, which his own assistant doesn't collect. The blind panel tests the first; the cohort tests whether he comes back on his own.
+3. **Competitive: what if ChatGPT does this?** It partly already does. In week one I chose my own assistant over Ellis because it knew my closet, and the platforms are moving toward proactive calendar features. The styling edge is thin. Ellis's edge is asking for what he wouldn't think to mention, and a record of what actually worked for him, which his own assistant doesn't collect. Big platforms also keep features that use personal photos shallow, because the liability grows with every user, so a long-term record of how a man looked in which rooms is data they'd rather not hold. That buys time, not a wall, and only if we handle it better than they would. The blind panel tests the first; the cohort tests whether he comes back on his own.
 
-**The ask:** Two things.
-1. **Introductions:** busy professional men who've never hired a stylist and have an event between Dec 7 and 20. I need 10 to take part, and about 6 more to rate pairs blind on the panel, which takes about 10 minutes and never involves their own case.
-2. **Hold me to my rules:** if the blind panel picks Ellis on fewer than 40% of pairs, or fewer than half of events get the morning-after answer within 48 hours, I stop or redesign before the January cohort. I set those numbers before any data, so nobody can move them afterward, including me.
+**The ask:** Mercer + Taylor is the company, and Ellis is its first product. Fund two phases, the second only if the first passes. Every number is a planning estimate, set before any data.
+
+**Phase 1: prove the value (about Dec 1 to mid-February, ~12 weeks), about $150K beyond my own time.**
+- **Team:** me as product lead, plus two engineers moved from existing teams for one quarter (not new hires; hiring by December isn't realistic):
+  - **a full-stack engineer:** the app, the check-ins, production keys out of the build tools, and consent, retention and deletion for his photos and history;
+  - **an AI engineer:** the eval from 13 golden rows toward about 500, the judge model, and the panel's pairs;
+  - **a stylist, about 10 hours a week,** as a second taste grader, so the eval doesn't rest on my taste alone.
+- **Cost:** about $120K for the two engineers (roughly $20K a month each, fully loaded), about $15K for the stylist, and about $15K for raters' thanks, a privacy review and tools. Model calls are a rounding error: about 25¢ an event.
+- **Recruiting:** 10 men with an event between Dec 7 and 20, and about 6 more to rate pairs blind, through the company's network.
+- **Checkpoint 1, early January: does Ellis beat a general assistant?** The 10-man test. Panel picks of 70%+ pass; 50–69% get one fix and a retest; 40–49% mean Ellis lost and is redesigned; under 40% stops the bet. Report-back under 50% also stops it.
+- **Checkpoint 2, early February: will men pay, and does Ellis get better for them?** The ~20-man cohort: 70% make the $11.99 founding-member payment; 40% bring a second event unprompted; outfits made with his history win 60%+ of blind pairs against the same outfit made without it.
+
+**Phase 2: a limited paid launch (about March to August), only if both checkpoints pass, about $400K.**
+- **Team:** three engineers and a part-time designer.
+- **The work:** a paid launch to about 200 men, with a small acquisition budget so the cost to bring in a man is measured, not assumed; a one-event price tested against the subscription; outreach before events he's flagged; a backup provider that passes the eval.
+- **Checkpoint 3, around June: is each paying man profitable?** Profit per paying man over his first 90 days (revenue minus model, hosting and acquisition costs) above zero; at least 5% of men paying (the planning case); at least half of paying men still paying after 90 days.
+
+**When customers pay the $11.99:**
+- **About early February:** founding-member payments at the end of the cohort. Real money, refundable until launch.
+- **About March:** the first recurring charges, when the limited launch opens, if both checkpoints pass.
+
+**What the board should expect:** first-year revenue is small. If 5% of 200 men pay, that's about $120 a month. Phase 1 buys evidence, not revenue. For scale: paying for a three-engineer team (about $60K a month) takes roughly 10,000 paying men at the planning case's margin, about 200,000 men if 5% pay.
+
+**Hold me to my rules:** the stop lines were set before any data, so nobody can move them afterward, including me. If a checkpoint fails, the engineers go back to their teams and Phase 2 isn't requested.
 
 ## M1 Baseline vs. Now
 *Your 3-sentence AI strategy from Module 1 vs. what you'd say now:*

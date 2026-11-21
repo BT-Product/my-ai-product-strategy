@@ -7,7 +7,7 @@
 | **Provider** | Anthropic only (Sonnet 5.5 + Haiku 5.5); never run on another provider | H today → M after the build | Pause new first events, re-run stored cases on OpenAI and Google, resume on the best one that passes |
 | **Abstraction** | One provider-neutral interface (Vercel AI SDK); prompts as data; model per task in config | M today → L after the build | Change one setting (provider and model per task); add a provider version of any prompt the stored cases show underperforming |
 | **Routing** | Model per task (Haiku 5.5: intake with Sonnet as backup, event intelligence, wardrobe import; Sonnet 5.5: the read with web search, recommendation, vision, try-on, mirror check); Haiku backs up "Change something" (its eval not passed yet); the mirror check is Sonnet only, with no backup yet | H today → L at the mirror, M overall after the build | In the moment, not 48 hours. Mirror: saved checklist shown at once; live check on Sonnet ~12s, then Haiku ~8s once it passes the clothes-only cases at 100%, then the top-ranked backup provider; photo always saved. Change something: Sonnet, then Haiku once, then ask him to try again. Recommendation: retry once, then ask him to retry |
-| **Eval** | 13 golden rows (3 adversarial) and a 22-case eval of the read, built; I'm the taste grader | H today → M at about 30 cases → L at 50+ cases and a second taste grader | Run the full set in about an hour: a script for hard rules, a judge model (Opus; never the one tested) for dress code and clothes-only, me blind for taste. New first events stay paused until it passes |
+| **Eval** | 13 golden rows (3 adversarial) and a 22-case eval of the read, built; two taste graders, me and a stylist (from Dec 1) | H today → M at about 30 cases → L at 50+ cases and a second taste grader | Run the full set in about an hour: a script for hard rules, a judge model (Opus; never the one tested) for dress code and clothes-only, me blind for taste. New first events stay paused until it passes |
 
 ### Provider
 **Current state:** Anthropic only.
@@ -76,18 +76,18 @@ Nothing is automatic: a slow or failed call shows an error.
 - **The read's eval:** 22 cases. Research ran on all 5 named public places and on none of the private ones, including 3 attack cases; asks met the rules 95% of the time (74% on the first run); wardrobe-first passed 3 of 3.
 - **Added Nov 12: does the asks step surface the deciding piece?** First run: 8 of 8, on small wardrobes; the target is 90%+ on full wardrobes. Cases where one missing piece decides the outfit (like the blazer and overcoat on Nov 10), reported as "the asks found the deciding piece in X of Y cases." It tests the claim that the asks are the edge (see the craft section of the [data flywheel](data-flywheel.md)).
 - **Added Nov 12, not yet run: does intake route the read correctly?** Intake flags named public places correctly in X of Y cases. It guards the cascade in Module 3: a missed venue would send the read to Haiku without research.
-- **The taste grader** is me.
+- **The taste graders:** me and a stylist (about 10 hours a week, from Dec 1), grading blind and independently. A change passes taste only if both rate it at least as good.
 
 **Next:** about 30 cases from the 10-man test: each man's real event and every rejection at the mirror. About 500 golden cases before production; about 300 clothes-only cases to show a failure rate under 1% (rule of three).
 
-**Risk: H today → M at about 30 cases → L** once there are 50+ cases and a second taste grader. *(Open: the bar for L may need to rise to match the ~300 clothes-only target.)*
+**Risk: H today → M at about 30 cases → L** once there are 50+ cases and the stylist is grading. *(Open: the bar for L may need to rise to match the ~300 clothes-only target.)*
 
 **48-hour action:** Run the full set in about an hour. Three graders, each for what it can judge:
 - **A script** checks the hard rules: one outfit, only his pieces.
 - **A judge model (Opus)** checks dress code, the clothes-only rule, and that any leave-out is a real mistake, never forced. It's never the model being tested; the eval runner refuses to run if it is.
-- **I grade taste** blind, side by side against the current version.
+- **The stylist and I grade taste** blind and independently, side by side against the current version.
 
-Most of the house style is written as checkable rules, so only what's left needs me.
+Most of the house style is written as checkable rules, so only what's left needs a person.
 
 **Checking the judge:** I grade the first 10 cases myself, and the judge grades the same 10. I trust the judge only on checks where it agrees with me on at least 9 of 10. Otherwise I grade that check myself until it does. I re-check whenever the judge model changes.
 

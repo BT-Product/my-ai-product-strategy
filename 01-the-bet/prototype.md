@@ -76,9 +76,9 @@ At this sample size, every result is **directional**: 70% or more means *not fal
    - *40–60% (about 8–12):* not proven.
    - *30% or less (about 6 or fewer):* stop or reposition.
    - **What counts as committing: a founding-member payment.** At the end of the cohort, each man gets a one-time payment link for $11.99, his first paid month, starting when the polished version launches. No auto-renew and no card stored. Full refund on request any time before launch, and a refund takes his commitment off the count. "I'd pay for this" on the call doesn't count; men are polite to the person who built it.
-   - **What a pass means:** cohort men likely come from my network and are friendlier than the market, and many are test men who chose to continue, so a 70% pass means "worth building," not "the market will pay."
+   - **What a pass means:** cohort men likely come from our networks and are friendlier than the market, and many are test men who chose to continue, so a 70% pass means "worth building," not "the market will pay."
    - *Price questions at the follow-up call:* "At what monthly price would this feel like a bargain?" and "At what price would you stop considering it?" Ten answers won't set the price, but they show whether $11.99 sits near the floor or the ceiling.
-4. **He leaves after one event** (cohort, from Jan 4 at the earliest). Of the men who completed a first event **and had another event to dress for within 14 days**, the share who used Mercer + Taylor for it without being prompted:
+4. **He leaves after one event** (cohort, from Jan 4 at the earliest). Of the men who completed a first event **and had another event to dress for within 14 days**, the share who used Ellis for it without being prompted:
    - *40% or more:* passes.
    - *20–40%:* not proven.
    - *Under 20%:* the risk that he leaves after one event is confirmed, and calendar-driven prep moves up the roadmap.

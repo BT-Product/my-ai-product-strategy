@@ -104,7 +104,7 @@ The H1 blind panel is designed to test this whole flow against what his own assi
 
 **Attacker:** OpenAI (ChatGPT)
 
-**Attack vector (target the weakest loop):** Win the first try with scale, which is the loop we conceded (Network), and then take the outcome loop, so his history never builds up with Mercer + Taylor. We don't need to beat your stylist. We just need to ask him "how did it go?" first.
+**Attack vector (target the weakest loop):** Win the first try with scale, which is the loop we conceded (Network), and then take the outcome loop, so his history never builds up with Ellis. We don't need to beat your stylist. We just need to ask him "how did it go?" first.
 
 **Weeks 1-4 - what they ship:** "Get Ready," a free style mode in ChatGPT.
 - He snaps the pieces he's considering and gets one outfit with reasons. It's the same shape as your hero feature, backed by far more cold-start data.
@@ -117,9 +117,9 @@ The H1 blind panel is designed to test this whole flow against what his own assi
 - He doesn't decide to switch. He just answers the question that arrived first. Your "Was it right for the room?" shows up an hour later, after he's already answered us.
 
 **Weeks 9-12 - why users don't come back:** His new history builds up with us, not you.
-- His Mercer + Taylor record stalls around event 3. "Who saw him in what" (Horizon 3) goes stale, because you no longer see what he wears.
+- His Ellis record stalls around event 3. "Who saw him in what" (Horizon 3) goes stale, because you no longer see what he wears.
 - Your second recommendation can't visibly use his history, so the 40% time-to-moat milestone fails.
-- Your report-back rate falls below 50%, and **your own kill rule fires.** You'll read it as a product failure, not an attack. The men didn't dislike Mercer + Taylor; they just reported somewhere else first.
+- Your report-back rate falls below 50%, and **your own kill rule fires.** You'll read it as a product failure, not an attack. The men didn't dislike Ellis; they just reported somewhere else first.
 
 **Your defense:**
 
@@ -139,6 +139,9 @@ The H1 blind panel is designed to test this whole flow against what his own assi
   - The morning-after question names the stake: "Was it right for the room? I'll remember it for the next time you see these investors" (the role, never a name; the repeat check itself is Horizon 3).
   - His next recommendation shows the history at work (at Horizon 3, "You wore the navy suit with these investors on Oct 14; here's a variation") and says honestly when something is missing.
   - Later, a "What I know about you" card makes the record visible and his.
+- **Why a platform is slow to rebuild it (added Nov 20):** big platforms keep features that use personal photos shallow, because the liability grows with every user: Meta paid Texas $1.4B in 2024 over facial recognition, after $650M in Illinois. Amazon's Echo Look (2017–2020) and Google's Doppl (2025, now being retired) both styled people from their own photos, and both were folded back into shopping. A long-term record of how a man looked in which rooms is data they'd rather not hold.
+  - **Hesitation, not a wall:** it lasts until the market looks worth the risk.
+  - **It holds only if Mercer + Taylor handles this data better than they would.** The same risk applies to us, at a size that can't absorb a lawsuit. The moat is his labels (Great, Right for the room), not the photos, so photos of him are kept only as long as they're needed. Mirror photos are deleted 30 days after the event (Module 5's data register).
 
 **3. Detect it early: attack or failure?**
 - **Signal 1: what he does before the event.** If he keeps starting new events, opening his recommendations and using the mirror check while his post-event answers fall, he still values us; we're losing his answer, not him. If everything falls, he stopped caring.
@@ -151,7 +154,7 @@ The H1 blind panel is designed to test this whole flow against what his own assi
 **4. The fallback: ChatGPT as a front door, never the record.** The Module 1 fallback needs two changes.
 - **A new trigger.** It used to fire if men picked us half the time or less. But that test runs inside our app, so losing it means our advice wasn't better, and moving the same advice into ChatGPT doesn't fix that. The new trigger: men pick our recommendation but don't come back to our app, because habit pulls them to ChatGPT. That's a distribution problem, and meeting them inside ChatGPT answers it. If men don't pick us, we reposition or stop, as before.
 - **ChatGPT is a front door, never the record.** Inside ChatGPT, he gets one free outfit from his own pieces, the part that can be copied. Everything that builds his history stays in our own app and our own system: the mirror check that records what he actually wore, the post-event question (sent as a notification or email, because apps inside ChatGPT can't ask first), his lookbook, and, at Horizon 3, who has seen him in what (by role). Saving anything requires his own account with us. OpenAI sees the first recommendation, but never what he wore or how he felt in it.
-- **The number that decides it:** the share of men who move from ChatGPT to our app. Of the men who get a free outfit in ChatGPT for a real event, how many link a Mercer + Taylor account and use the mirror check or answer the post-event question in our app within 14 days:
+- **The number that decides it:** the share of men who move from ChatGPT to our app. Of the men who get a free outfit in ChatGPT for a real event, how many link an Ellis account and use the mirror check or answer the post-event question in our app within 14 days:
   - *30% or more:* the front door works.
   - *15–30%, not proven yet:* make one fix to the handoff and measure again.
   - *Under 15%:* the ChatGPT app feeds OpenAI more than it feeds us, so we shut it down.
